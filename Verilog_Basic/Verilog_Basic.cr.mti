@@ -1,0 +1,13 @@
+C:/Project/Verilog_Basic/test.v {1 {vlog -work work -stats=none C:/Project/Verilog_Basic/test.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module not_gate
+
+Top level modules:
+	not_gate
+
+} {} {}} C:/Project/Verilog_Basic/gate.v {0 {vlog -work work -stats=none C:/Project/Verilog_Basic/gate.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module gate
+** Error: (vlog-13069) C:/Project/Verilog_Basic/gate.v(5): near "EOF": syntax error, unexpected end of source code.
+
+} {4.0 5.0} {}}
