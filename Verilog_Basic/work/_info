@@ -1,0 +1,104 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Verilog
+vgate
+Z0 !s110 1684686018
+!i10b 1
+!s100 4AKzO6CT;UOJ@eFzNH;6C1
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ik>nXg`:ZT?JMZ_3j2Ce5=1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/Verilog/Verilog_Basic
+w1684684699
+8C:/Verilog/Verilog_Basic/gate.v
+FC:/Verilog/Verilog_Basic/gate.v
+!i122 4
+L0 1 12
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z5 !s108 1684686018.000000
+!s107 C:/Verilog/Verilog_Basic/gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Verilog_Basic/gate.v|
+!i113 1
+Z6 o-work work
+Z7 tCvgOpt 0
+vnot_gate
+R0
+!i10b 1
+!s100 mk14kPKl08]K[[4T>lXjX2
+R1
+II=O8L1k5aTB_AIno@WRf12
+R2
+R3
+w1684684989
+8C:/Verilog/Verilog_Basic/not_gate.v
+FC:/Verilog/Verilog_Basic/not_gate.v
+!i122 5
+L0 1 6
+R4
+r1
+!s85 0
+31
+R5
+!s107 C:/Verilog/Verilog_Basic/not_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Verilog_Basic/not_gate.v|
+!i113 1
+R6
+R7
+vTB_not_gate
+!s110 1684686056
+!i10b 1
+!s100 =9=RS;HK^Xz3RFDhmJCWo2
+R1
+I5GU0Z7M]HQRQJ`B]1AA6e3
+R2
+R3
+w1684686054
+8C:/Verilog/Verilog_Basic/tb_not_gate.v
+FC:/Verilog/Verilog_Basic/tb_not_gate.v
+!i122 6
+L0 2 20
+R4
+r1
+!s85 0
+31
+!s108 1684686056.000000
+!s107 C:/Verilog/Verilog_Basic/tb_not_gate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Verilog_Basic/tb_not_gate.v|
+!i113 1
+R6
+R7
+n@t@b_not_gate
+vtb_twos_com
+!s110 1684686526
+!i10b 1
+!s100 <[DUkg6dOM0c[S:N6i=jL2
+R1
+Ik_99IGb@d_?mg]NUgLXma3
+R2
+R3
+w1684686524
+8C:/Verilog/Verilog_Basic/tb_twos_com.v
+FC:/Verilog/Verilog_Basic/tb_twos_com.v
+!i122 8
+L0 1 14
+R4
+r1
+!s85 0
+31
+!s108 1684686526.000000
+!s107 C:/Verilog/Verilog_Basic/tb_twos_com.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Verilog_Basic/tb_twos_com.v|
+!i113 1
+R6
+R7

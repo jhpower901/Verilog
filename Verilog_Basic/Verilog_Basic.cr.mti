@@ -1,0 +1,29 @@
+C:/Verilog/Verilog_Basic/gate.v {1 {vlog -work work -stats=none C:/Verilog/Verilog_Basic/gate.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module gate
+
+Top level modules:
+	gate
+
+} {} {}} C:/Verilog/Verilog_Basic/not_gate.v {1 {vlog -work work -stats=none C:/Verilog/Verilog_Basic/not_gate.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module not_gate
+
+Top level modules:
+	not_gate
+
+} {} {}} C:/Verilog/Verilog_Basic/tb_not_gate.v {1 {vlog -work work -stats=none C:/Verilog/Verilog_Basic/tb_not_gate.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module TB_not_gate
+
+Top level modules:
+	TB_not_gate
+
+} {} {}} C:/Verilog/Verilog_Basic/tb_twos_com.v {1 {vlog -work work -stats=none C:/Verilog/Verilog_Basic/tb_twos_com.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module tb_twos_com
+
+Top level modules:
+	tb_twos_com
+
+} {} {}}
