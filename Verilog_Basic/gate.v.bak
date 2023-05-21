@@ -1,4 +1,0 @@
-module gate (
-	input a, b,
-	output o_and, o_or, o_not, o_nand, o_nor, o_xor);
-
