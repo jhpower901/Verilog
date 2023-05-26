@@ -61,7 +61,7 @@ int fixed_ponit_checker(Gene* state, Gene* current, unsigned int init_val) {
 사이클 생성 검사
 반환: 0(), 1(사이클 생성)
 */
-int cycle_checker(Gene* state[], int time) {
+int cycle_checker(Gene* state[], int time, unsigned int init_val) {
 	int flag = 0;
 	int i;
 	int current;
@@ -77,6 +77,10 @@ int cycle_checker(Gene* state[], int time) {
 	}
 	if (flag == 0) {
 		printf("t=(%d, %d) cycle 발생\n", current, time);
+		fprintf(file, "cycle,%d,", init_val);
+		for (int i = GENE - 1; i >= 0; i--)
+			fprintf(file, "%d", state[current]->x[i]);
+		fprintf(file, "\n");
 		return 1;
 	}
 	else
@@ -137,7 +141,7 @@ int main() {
 			printf("     [%3d] ", time);
 			for (int i = GENE - 1; i >= 0; i--)
 				printf("%2d", node[time]->x[i]);
-		} while (!fixed_ponit_checker(node[time - 1], node[time], init_val) && !cycle_checker(node, time));
+		} while (!fixed_ponit_checker(node[time - 1], node[time], init_val) && !cycle_checker(node, time, init_val));
 
 		for (int i = 1; i <= time; i++) {
 			free(node[i]);
