@@ -4,7 +4,7 @@ module TB_not_gate (
 );
 	reg A_i;
 	wire F_o;
-
+	//how to do rrrr
 	//DUT inst
 	not_gate u_not_gate (
 		.A_i	( A_i ),

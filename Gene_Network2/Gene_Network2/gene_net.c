@@ -65,7 +65,7 @@ int cycle_checker(Gene* state[], int time) {
 	int flag = 0;
 	int i;
 	int current;
-	int deep = time - 4;
+	int deep = time - 3;
 	if (deep < 0)
 		return 0;
 	for (current = time - 2; current > deep; current--) {
