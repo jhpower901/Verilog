@@ -1,7 +1,4 @@
 C:/Verilog/Gene_Network/cycle.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/cycle.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
-} {} {}} C:/Verilog/Gene_Network/gene_net.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/cycle.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
-
 } {} {}}
