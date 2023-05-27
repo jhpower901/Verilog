@@ -2267,5 +2267,5 @@ t=(7, 9) cycle 발생
 
 
 
-C:\Verilog\Gene_Network2\x64\Debug\Gene_Network2.exe(프로세스 16332개)이(가) 종료되었습니다(코드: 0개).
+C:\Verilog\Gene_Network2\x64\Debug\Gene_Network2.exe(프로세스 4428개)이(가) 종료되었습니다(코드: 0개).
 이 창을 닫으려면 아무 키나 누르세요...

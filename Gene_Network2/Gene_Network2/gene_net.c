@@ -36,8 +36,7 @@ int fixed_ponit_checker(Gene* state, Gene* current, unsigned int init_val) {
 		printf(" ---> fixed point 발견!!\n\n");
 
 		fixed_points = *current;
-		fprintf(file, "%d,", counter);
-		fprintf(file, "%d,", init_val);
+		fprintf(file, "%d,fixed,%d,", init_val, counter);
 		for (int i = GENE - 1; i >= 0; i--)
 			fprintf(file, "%d", fixed_points.x[i]);
 		fprintf(file, "\n");
@@ -79,7 +78,7 @@ int cycle_checker(Gene* state[], int time, unsigned int init_val) {
 	}
 	if (flag == 0) {
 		printf("t=(%d, %d) cycle 발생\n", current, time);
-		fprintf(file, "cycle,%d,", init_val);
+		fprintf(file, "%d,cycle,,", init_val);
 		for (int i = GENE - 1; i >= 0; i--)
 			fprintf(file, "%d", state[current]->x[i]);
 		fprintf(file, "\n");
