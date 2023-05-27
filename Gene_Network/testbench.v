@@ -10,7 +10,7 @@ endmodule
 module tb_gene_net;
 	reg clk;
 	reg [7:0] init_val;
-	wire [7:0] x_out;
+	wire [7:0] x;
 
 	//clk signal generation
 	initial begin
@@ -23,6 +23,9 @@ module tb_gene_net;
 		$dumpfile("wave.vcd");
 		$dumpvars(0, tb_gene_net);
 	end
+
+	//instansiation gene_net
+	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
 
 	//input signal generation
 	initial begin
@@ -38,10 +41,6 @@ module tb_gene_net;
 		#20
 		$finish;					//end simulation
 	end
-
-	//instansiation gene_net
-	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x_out));
-
 
 endmodule
 

@@ -1,18 +1,4 @@
-C:/Verilog/Gene_Network/testbench.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/testbench.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module gene_net
--- Compiling module tb_top
--- Compiling module tb_gene_net
--- Compiling module tb_fixed_point_chk
--- Compiling module tb_cycle
-
-Top level modules:
-	tb_top
-	tb_gene_net
-	tb_fixed_point_chk
-	tb_cycle
-
-} {} {}} C:/Verilog/Gene_Network/cycle.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/cycle.v
+C:/Verilog/Gene_Network/cycle.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/cycle.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 
 } {} {}} C:/Verilog/Gene_Network/gene_net.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/gene_net.v
