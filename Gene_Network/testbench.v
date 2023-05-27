@@ -49,7 +49,7 @@ module tb_fixed_point_cheker;
 	reg clk;
 	reg [7:0] init_val;
 	wire [7:0] x;
-	wire flag;
+	wire fixed_chk;
 
 	//clk signal generation
 	initial begin
@@ -58,7 +58,7 @@ module tb_fixed_point_cheker;
 	end
 
 	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
-	fixed_point_cheker F1 (.clk(clk), .init_val_chk(init_val), .x(x), .flag(flag));
+	fixed_point_cheker F1 (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
 
 
 	initial begin
@@ -91,7 +91,7 @@ module tb_cycle;
 	end
 
 	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
-	cycle C1 (.clk(clk), .init_val_chk(init_val), .x(x), .cycle_chk(cycle_chk));
+	cycle C1 (.clk(clk), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
 
 	initial begin
 		init_val = 8'b0000_0000;	//0 	fixed_point	0000_0000

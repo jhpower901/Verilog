@@ -1,9 +1,9 @@
 `timescale 1ns/100ps
-module cycle (clk, init_val_chk, x, cycle_chk);
+module cycle (clk, init_val_chk, x, flag);
 	input wire clk;
 	input wire init_val_chk;
 	input wire [7:0] x;
-	output reg cycle_chk;
+	output reg flag;
 	reg [7:0] state_1;
 	reg [7:0] state_2;
 

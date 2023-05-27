@@ -1,23 +1,17 @@
 # Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
-# Compile of testbench.v failed with 4 errors.
-# Compile of counter.v failed with 1 errors.
-# 5 compiles, 2 failed with 5 errors.
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
 # Compile of testbench.v was successful.
 # Compile of counter.v was successful.
 # 5 compiles, 0 failed with no errors.
-vsim -gui work.tb_fixed_point_cheker
-add wave -position end  sim:/tb_fixed_point_cheker/clk
-add wave -position end  sim:/tb_fixed_point_cheker/init_val
-add wave -position 1  sim:/tb_fixed_point_cheker/reset
-add wave -position 2  sim:/tb_fixed_point_cheker/count
-add wave -position end  sim:/tb_fixed_point_cheker/x
-add wave -position end  sim:/tb_fixed_point_cheker/flag
+vsim -gui work.tb_cycle
+add wave -position end  sim:/tb_cycle/clk
+add wave -position end  sim:/tb_cycle/init_val
+add wave -position end  sim:/tb_cycle/x
+add wave -position end  sim:/tb_cycle/cycle_chk
+add wave -position 3  sim:/tb_cycle/C1/state_1
+add wave -position 4  sim:/tb_cycle/C1/state_2
 run -all
 # 1
-# Break in Module tb_fixed_point_cheker at C:/Verilog/Gene_Network/testbench.v line 81
-quit -sim
+# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 107
+add wave -position 5  sim:/tb_cycle/C1/flag
