@@ -1,5 +1,5 @@
 `timescale 1ns/100ps
-module fixed_point_cheker(clk, , init_val_chk, x, flag);
+module fixed_point_cheker(clk, init_val_chk, x, flag);
 	input wire clk;
 	input wire [7:0] init_val_chk;
 	input wire [7:0] x;
@@ -8,7 +8,7 @@ module fixed_point_cheker(clk, , init_val_chk, x, flag);
 
 	always @(init_val_chk) begin
 		flag = 0;
-		state = 0;
+		state = 8'b0000_0000;
 	end
 
 	always @(posedge clk) begin

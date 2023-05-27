@@ -9,29 +9,52 @@ z2
 !i10f 100
 cModel Technology
 dC:/intelFPGA/20.1/modelsim_ase/win32aloem
-vfixed_point_cheker
-Z0 !s110 1685177488
+vcounter
+Z0 !s110 1685179370
 !i10b 1
-!s100 1je2kXf7WPg@diTVY6Y`Z2
+!s100 P3lUdCfV`m8EGJ]VYaWim3
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IGDa:YaX4Qo7680PQOnLPB1
+Ik2ZeWeR>L_U`kbm:05li`2
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/Verilog/Gene_Network
-w1685177461
-8fixed_point_checker.v
-Ffixed_point_checker.v
-!i122 127
-L0 2 20
+w1685179178
+8C:/Verilog/Gene_Network/counter.v
+FC:/Verilog/Gene_Network/counter.v
+!i122 134
+L0 2 9
 Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1685177488.000000
-!s107 cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-Z6 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
+!s108 1685179370.000000
+!s107 C:/Verilog/Gene_Network/counter.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/counter.v|
 !i113 1
-Z7 o-work work
-Z8 tCvgOpt 0
+Z5 o-work work
+Z6 tCvgOpt 0
+vfixed_point_cheker
+R0
+!i10b 1
+!s100 4QQ>He8_S;;TSl1eIBTVl1
+R1
+I:9Nm3`HHAR5>lM9cn62I10
+R2
+R3
+w1685179243
+8fixed_point_checker.v
+Ffixed_point_checker.v
+!i122 133
+L0 2 20
+R4
+r1
+!s85 0
+31
+Z7 !s108 1685179369.000000
+Z8 !s107 cycle.v|fixed_point_checker.v|gene_net.v|counter.v|C:/Verilog/Gene_Network/testbench.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
+!i113 1
+R5
+R6
 vgene_net
 R0
 !i10b 1
@@ -43,64 +66,64 @@ R3
 w1685173660
 8gene_net.v
 Fgene_net.v
-!i122 127
+!i122 133
 L0 3 25
 R4
 r1
 !s85 0
 31
-R5
-Z9 !s107 cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-R6
-!i113 1
 R7
 R8
+R9
+!i113 1
+R5
+R6
 vtb_cycle
 R0
 !i10b 1
-!s100 9kNg5GfGzYW1[ooVjGXoV0
+!s100 ^^CiUog7^o=0B5a<9gze51
 R1
-IdG20@0H>l?EKGoQZ6jIFo1
+I`:Ro=GVCh6Kcg2a9beVIX2
 R2
 R3
-Z10 w1685177278
+Z10 w1685179347
 Z11 8C:/Verilog/Gene_Network/testbench.v
 Z12 FC:/Verilog/Gene_Network/testbench.v
-!i122 127
-L0 80 3
+!i122 133
+L0 87 3
 R4
 r1
 !s85 0
 31
-R5
-R9
-R6
-!i113 1
 R7
 R8
+R9
+!i113 1
+R5
+R6
 vtb_fixed_point_cheker
 R0
 !i10b 1
-!s100 6:Yn`Ckn:8DTUelk=VD4T0
+!s100 _I1zm]g=mc6nW]G@CVZPH2
 R1
-IQNKDW?J^I[lj5;=;P?Rb=1
+I?Z7mOlzI;RgPIh:V3PAQU2
 R2
 R3
 R10
 R11
 R12
-!i122 127
-L0 47 32
+!i122 133
+L0 48 38
 R4
 r1
 !s85 0
 31
-R5
-R9
-R6
-!i113 1
 R7
 R8
+R9
+!i113 1
+R5
+R6
 vtb_fixed_point_chk
 !s110 1685175243
 !i10b 1
@@ -120,53 +143,53 @@ r1
 31
 !s108 1685175243.000000
 !s107 cycle.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-R6
+R9
 !i113 1
-R7
-R8
+R5
+R6
 vtb_gene_net
 R0
 !i10b 1
-!s100 Hz13mFhMNznbzJmC4[OVU1
+!s100 ]iV1K0F[X@Hj=lda=>_Bn1
 R1
-IRahR=:eBCmC9ghW<I3i>N3
+IBnS8ea40ZCK@7F;fQ^:_]0
 R2
 R3
 R10
 R11
 R12
-!i122 127
-L0 10 36
+!i122 133
+L0 11 36
 R4
 r1
 !s85 0
 31
-R5
-R9
-R6
-!i113 1
 R7
 R8
+R9
+!i113 1
+R5
+R6
 vtb_top
 R0
 !i10b 1
-!s100 Zoz=Kj<V3kj]RJ5bjSY>30
+!s100 50onhH0:XIBjHzm:@i9FW0
 R1
-IY`f3X[GDERkF96UNTOc?z2
+IO6kZ?h@eVGNCm4JgdkRKb3
 R2
 R3
 R10
 R11
 R12
-!i122 127
-L0 6 2
+!i122 133
+L0 7 2
 R4
 r1
 !s85 0
 31
-R5
-R9
-R6
-!i113 1
 R7
 R8
+R9
+!i113 1
+R5
+R6
