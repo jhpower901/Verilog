@@ -30,6 +30,38 @@ module tb_gene_net;
 	//input signal generation
 	initial begin
 		init_val = 8'b0000_0000;	//0 	fixed_point	0000_0000
+		#10
+		init_val = 8'b0011_1000;	//56 	cycle		0001_1100
+		#10
+		init_val = 8'b0110_0011;	//99 	fixed_point	0101_0011
+		#10
+		init_val = 8'b0111_1100;	//124 	cycle		1011_0010
+		#10
+		init_val = 8'b1111_1111;	//255 	fixed_point	0101_0011
+		#10
+		$finish;					//end simulation
+	end
+
+endmodule
+
+module tb_fixed_point_cheker;
+	reg clk;
+	reg [7:0] init_val;
+	wire [7:0] x;
+	wire flag;
+
+	//clk signal generation
+	initial begin
+		clk = 0;
+		forever #1 clk = ~clk;
+	end
+
+	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
+	fixed_point_cheker F1 (.clk(clk), .init_val_chk(init_val), .x(x), .flag(flag));
+
+
+	initial begin
+		init_val = 8'b0000_0000;	//0 	fixed_point	0000_0000
 		#20
 		init_val = 8'b0011_1000;	//56 	cycle		0001_1100
 		#20
@@ -42,12 +74,7 @@ module tb_gene_net;
 		$finish;					//end simulation
 	end
 
-endmodule
 
-
-
-module tb_fixed_point_chk;
-//
 endmodule
 
 module tb_cycle;

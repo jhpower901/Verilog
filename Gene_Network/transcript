@@ -3,143 +3,42 @@
 # Compile of cycle.v was successful.
 # Compile of testbench.v was successful.
 # 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-quit -sim
-# Load canceled
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v was successful.
-# 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-run
-# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 29
-run
-# Break in Module gene_net at gene_net.v line 9
-run -continue
-# Break in Module gene_net at gene_net.v line 9
-run
-# Break in Module gene_net at gene_net.v line 13
-run
-# Break in Module gene_net at gene_net.v line 13
-run
-run
-# Break in Module gene_net at gene_net.v line 13
-run
-# Break in Module gene_net at gene_net.v line 13
-add wave -position end  sim:/tb_gene_net/G1/clk
-add wave -position end  sim:/tb_gene_net/G1/x_in
-add wave -position end  sim:/tb_gene_net/G1/x_out
-add wave -position end  sim:/tb_gene_net/G1/state
-run
-run
-# Break in Module gene_net at gene_net.v line 13
-run
-# Break in Module gene_net at gene_net.v line 13
-run
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-# Next activity is in 1 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-# Next activity is in 1 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-# Next activity is in 1 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Break key hit
-quit -sim
-# Compile of testbench.v failed with 8 errors.
-# Compile of gene_net.v failed with 8 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 8 errors.
-# 4 compiles, 2 failed with 16 errors.
-# Compile of gene_net.v failed with 8 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 8 errors.
-# 4 compiles, 2 failed with 16 errors.
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v was successful.
-# 4 compiles, 0 failed with no errors.
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v was successful.
-# 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clk
-add wave -position end  sim:/tb_gene_net/init_val
-add wave -position end  sim:/tb_gene_net/x_out
+vsim -gui work.tb_fixed_point_cheker
+add wave -position end  sim:/tb_fixed_point_cheker/clk
+add wave -position end  sim:/tb_fixed_point_cheker/init_val
+add wave -position end  sim:/tb_fixed_point_cheker/x
+add wave -position end  sim:/tb_fixed_point_cheker/flag
 run -all
 # 1
-# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 42
+# Break in Module tb_fixed_point_cheker at C:/Verilog/Gene_Network/testbench.v line 74
 quit -sim
 # Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
 # Compile of testbench.v was successful.
 # 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clk
-add wave -position end  sim:/tb_gene_net/init_val
-add wave -position end  sim:/tb_gene_net/x_out
+vsim -gui work.tb_fixed_point_cheker
+add wave -position end  sim:/tb_fixed_point_cheker/clk
+add wave -position end  sim:/tb_fixed_point_cheker/init_val
+add wave -position end  sim:/tb_fixed_point_cheker/x
+add wave -position end  sim:/tb_fixed_point_cheker/flag
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+add wave -position end  sim:/tb_fixed_point_cheker/F1/init_val_chk
+add wave -position end  sim:/tb_fixed_point_cheker/F1/state
+step
 step
 step
 step
@@ -158,104 +57,41 @@ step
 step
 step
 # Next activity is in 1 ns.
-quit -sim
-# Compile of testbench.v was successful.
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v was successful.
-# 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clk
-add wave -position end  sim:/tb_gene_net/init_val
-add wave -position end  sim:/tb_gene_net/x_out
+step
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run -continue
+run
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+run
+run
 step
 step
 step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-quit -sim
-# Compile of gene_net.v failed with 11 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 15 errors.
-# 4 compiles, 2 failed with 26 errors.
-# Compile of gene_net.v failed with 10 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 14 errors.
-# 4 compiles, 2 failed with 24 errors.
-# Compile of gene_net.v failed with 1 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 1 errors.
-# 4 compiles, 2 failed with 2 errors.
-# Compile of gene_net.v failed with 8 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v failed with 8 errors.
-# 4 compiles, 2 failed with 16 errors.
-# Compile of gene_net.v was successful.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# Compile of testbench.v was successful.
-# 4 compiles, 0 failed with no errors.
+run -continue
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
 # Load canceled
-vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clk
-add wave -position end  sim:/tb_gene_net/init_val
-add wave -position end  sim:/tb_gene_net/x_out
 step
 step
 step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-step
-# Next activity is in 1 ns.
-step
-step
-# Next activity is in 1 ns.
 step
 step
 step
@@ -281,6 +117,19 @@ step
 step
 step
 step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+step
+step
+step
+step
+step
+step
+step
+step
+step
 step
 step
 step
@@ -290,27 +139,124 @@ step
 step
 step
 # Next activity is in 1 ns.
+step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 9
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 9
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 13
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 9
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 9
+run -all
+# 1
+# Break in Module tb_fixed_point_cheker at C:/Verilog/Gene_Network/testbench.v line 74
 quit -sim
 # Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
 # Compile of testbench.v was successful.
 # 4 compiles, 0 failed with no errors.
-vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clk
-add wave -position end  sim:/tb_gene_net/init_val
-add wave -position end  sim:/tb_gene_net/x_out
-step -over
-step -over
-step -over
-step -over
+vsim -gui work.tb_fixed_point_cheker
+add wave -position end  sim:/tb_fixed_point_cheker/clk
+add wave -position end  sim:/tb_fixed_point_cheker/init_val
+add wave -position end  sim:/tb_fixed_point_cheker/G1/x_out
+add wave -position end  sim:/tb_fixed_point_cheker/F1/x
+add wave -position end  sim:/tb_fixed_point_cheker/F1/state
+add wave -position 2  sim:/tb_fixed_point_cheker/F1/init_val_chk
+add wave -position end  sim:/tb_fixed_point_cheker/F1/flag
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 9
+step
+step
+# Load canceled
+quit -sim
+# Compile of gene_net.v was successful.
+# Compile of fixed_point_checker.v was successful.
+# Compile of cycle.v was successful.
+# Compile of testbench.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_fixed_point_cheker
+add wave -position end  sim:/tb_fixed_point_cheker/clk
+add wave -position end  sim:/tb_fixed_point_cheker/x
+add wave -position 1  sim:/tb_fixed_point_cheker/F1/init_val_chk
+add wave -position end  sim:/tb_fixed_point_cheker/F1/state
+add wave -position end  sim:/tb_fixed_point_cheker/F1/flag
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
 step
 step
 step
 step
-add wave -position end  sim:/tb_gene_net/G1/x_in
-add wave -position end  sim:/tb_gene_net/G1/x_out
-add wave -position end  sim:/tb_gene_net/G1/state
+step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
 step
 step
 step
@@ -320,7 +266,85 @@ step
 step
 step
 step
-add wave -position end  sim:/tb_gene_net/G1/x
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+step
+step
+step
+step
+step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+step
+step
+step
+step
+step
+step
+step
+step
 step
 step
 step
@@ -341,6 +365,43 @@ step
 step
 step
 step
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+step
+step
+step
+step
+step
+step
+step
+step
+step
 step
 step
 step
@@ -352,65 +413,92 @@ step
 # Next activity is in 1 ns.
 step
 step
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+run -all
+# Break in Module fixed_point_cheker at fixed_point_checker.v line 14
+vsim -gui work.tb_fixed_point_cheker
+add wave -position end  sim:/tb_fixed_point_cheker/x
+add wave -position 0  sim:/tb_fixed_point_cheker/init_val
+add wave -position 0  sim:/tb_fixed_point_cheker/clk
+add wave -position end  sim:/tb_fixed_point_cheker/flag
+run -all
 # 1
-# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 42
-run
-run
-run
-run
-run
+# Break in Module tb_fixed_point_cheker at C:/Verilog/Gene_Network/testbench.v line 74

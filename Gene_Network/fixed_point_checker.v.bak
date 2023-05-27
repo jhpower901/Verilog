@@ -1,0 +1,14 @@
+`timescale 1ns/100ps
+module tb_fixed_point_chk(clk, x, flag);
+	input wire clk;
+	input wire [7:0] x;
+	output reg flag;
+	reg [7:0] state;
+
+	always @(x)
+
+	always @(posedge clk) begin
+		if ()
+
+	end
+endmodule
