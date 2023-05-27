@@ -1,0 +1,24 @@
+### IntelliJ IDEA ###
+out/
+.idea/
+*.iml
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### VS Code ###
+.vscode/
+
+### VS  ###
+.vs/
+x64/
+*.vcxproj
+*.filters
+*.user
+
+### modelsim  ###
+*.mti
+transcript
+*.bak
+*.wlf
+*.vstf
+!work
