@@ -1,23 +1,32 @@
-# reading C:/intelFPGA/20.1/modelsim_ase/win32aloem/../modelsim.ini
-# Loading project Gene_Network
-# Compile of gene_net.v failed with 3 errors.
+# Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
-# 3 compiles, 1 failed with 3 errors.
-# Compile of gene_net.v failed with 3 errors.
+# Compile of testbench.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_gene_net
+add wave -position insertpoint  \
+sim:/tb_gene_net/clock
+add wave -position end  sim:/tb_gene_net/x_in
+add wave -position end  sim:/tb_gene_net/x_out
+run
+run
+run
+run
+run -all
+# 1
+# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 40
+quit -sim
+# Compile of gene_net.v was successful.
+# Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
-# 3 compiles, 1 failed with 3 errors.
-# Compile of gene_net.v failed with 3 errors.
-# Error opening C:/Verilog/Gene_Network/(vlog-13069) C:/Verilog/Gene_Network/gene_net.v
-# Path name 'C:/Verilog/Gene_Network/(vlog-13069) C:/Verilog/Gene_Network/gene_net.v' doesn't exist.
-# Compile of gene_net.v failed with 3 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# 3 compiles, 1 failed with 3 errors.
-# Compile of gene_net.v failed with 3 errors.
-# Compile of gene_net.v failed with 1 errors.
-# Compile of fixed_point_checker.v was successful.
-# Compile of cycle.v was successful.
-# 3 compiles, 1 failed with 1 error.
-# Compile of gene_net.v failed with 1 errors.
+# Compile of testbench.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_gene_net
+add wave -position end  sim:/tb_gene_net/clock
+add wave -position end  sim:/tb_gene_net/x_in
+add wave -position end  sim:/tb_gene_net/x_out
+run -all
+# 1
+# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 40
+quit -sim

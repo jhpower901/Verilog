@@ -15,8 +15,8 @@ module tb_gene_net;
 
 	//clock signal generation
 	always begin
-		clock = 0; #1;
-		clock = 1; #1;
+		clock = 0; #5;
+		clock = 1; #5;
 	end
 
 	//file dumping
@@ -27,17 +27,17 @@ module tb_gene_net;
 
 	//input signal generation
 	initial begin
-		x_in = 8'b0000_0000;	//0 	fixed_point	0000_0000
-		#20
-		x_in = 8'b0011_1000;	//56 	cycle		0001_1100
-		#20
-		x_in = 8'b0110_0011;	//99 	fixed_point	0101_0011
-		#20
-		x_in = 8'b0111_1100;	//124 	cycle		1011_0010
-		#20
-		x_in = 8'b1111_1111;	//255 	fixed_point	0101_0011
-		#20
-		$finish;					//end simulation
+		x_in = 8'b0000_0000;	//0
+		#100
+		x_in = 8'b0011_1000;	//56
+		#100
+		x_in = 8'b0100_0001;	//65
+		#100
+		x_in = 8'b0110_01000;	//200
+		#100
+		x_in = 8'b1111_1111;	//255
+		#100
+		$finish					//end simulation
 	end
 
 	gene_net G1 (

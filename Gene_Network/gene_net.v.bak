@@ -18,9 +18,4 @@ module gene_net(clock, x_in, x_out);
 		x_out[7] <= ~(state[0] | state[1]) & (state[3] | state[6]);
 		state = x_out;
 	end
-
-	always @(x_in) begin
-		state <= x_in;
-	end
-
 endmodule

@@ -1,0 +1,46 @@
+C:/Verilog/22-1/testbench.v {1 {vlog -work work -stats=none C:/Verilog/22-1/testbench.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ham_enc
+-- Compiling module ham_dec
+-- Compiling module bit_com
+-- Compiling module top
+-- Compiling module tb_top
+-- Compiling module tb_ham_enc
+-- Compiling module tb_ham_dec
+-- Compiling module tb_bit_com
+
+Top level modules:
+	tb_top
+	tb_ham_enc
+	tb_ham_dec
+	tb_bit_com
+
+} {} {}} C:/Verilog/22-1/ham_dec.v {1 {vlog -work work -stats=none C:/Verilog/22-1/ham_dec.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ham_dec
+
+Top level modules:
+	ham_dec
+
+} {} {}} C:/Verilog/22-1/bit_com.v {1 {vlog -work work -stats=none C:/Verilog/22-1/bit_com.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module bit_com
+
+Top level modules:
+	bit_com
+
+} {} {}} C:/Verilog/22-1/Top.v {1 {vlog -work work -stats=none C:/Verilog/22-1/Top.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module top
+
+Top level modules:
+	top
+
+} {} {}} C:/Verilog/22-1/ham_enc.v {1 {vlog -work work -stats=none C:/Verilog/22-1/ham_enc.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module ham_enc
+
+Top level modules:
+	ham_enc
+
+} {} {}}
