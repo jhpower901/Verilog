@@ -3,8 +3,43 @@
 `include "gene_net.v"
 `include "fixed_point_checker.v"
 `include "cycle.v"
+`include "init_val_gen.v"
 
 module tb_top;
+	reg clk;
+	reg reset;
+	reg [7:0] init_val;
+	wire [7:0] init_mod;
+	wire [3:0] count;
+	wire [7:0] x;
+	wire fixed_chk;
+	wire cycle_chk;
+
+	//clk signal generation
+	initial begin
+		clk = 0;
+		reset = 1;
+		init_val = 8'b0000_0000;
+		#1	reset = 0;
+		forever #1 clk = ~clk;
+	end
+
+	always @(init_mod) begin
+		if (init_mod == 0)
+			$finish;
+		reset = 1;
+		#1
+		reset = 0;
+		#1
+		init_val = init_mod;
+	end
+
+	init_val_gen INIT (.clk(clk), .current_val(init_val), .fixed(fixed_chk), .cycle(cycle_chk), .init_val_out(init_mod));
+	cycle CYCLE (.clk(clk), .cnt(count), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
+	fixed_point_cheker FIX (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
+	gene_net GENE (.clk(clk), .x_in(init_val), .x_out(x));
+	counter CNT (.clk(clk), .rst(reset), .cnt(count));
+
 endmodule
 
 
@@ -26,7 +61,7 @@ module tb_gene_net;
 	end
 
 	//instansiation gene_net
-	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
+	gene_net GENE (.clk(clk), .x_in(init_val), .x_out(x));
 
 	//input signal generation
 	initial begin
@@ -57,8 +92,8 @@ module tb_fixed_point_cheker;
 		forever #1 clk = ~clk;
 	end
 
-	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
-	fixed_point_cheker F1 (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
+	gene_net GENE (.clk(clk), .x_in(init_val), .x_out(x));
+	fixed_point_cheker FIX (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
 
 
 	initial begin
@@ -93,8 +128,8 @@ module tb_cycle;
 	end
 
 	counter CNT (.clk(clk), .rst(reset), .cnt(count));
-	gene_net G1 (.clk(clk), .x_in(init_val), .x_out(x));
-	cycle C1 (.clk(clk), .cnt(count), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
+	gene_net GENE (.clk(clk), .x_in(init_val), .x_out(x));
+	cycle CYCLE (.clk(clk), .cnt(count), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
 
 	initial begin
 		reset = 1;
