@@ -4,29 +4,36 @@
 # Compile of testbench.v was successful.
 # 4 compiles, 0 failed with no errors.
 vsim -gui work.tb_gene_net
-add wave -position insertpoint  \
-sim:/tb_gene_net/clock
-add wave -position end  sim:/tb_gene_net/x_in
+add wave -position end  sim:/tb_gene_net/clk
+add wave -position end  sim:/tb_gene_net/init_val
 add wave -position end  sim:/tb_gene_net/x_out
-run
-run
-run
-run
 run -all
 # 1
-# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 40
+# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 39
 quit -sim
-# Compile of gene_net.v was successful.
 # Compile of gene_net.v was successful.
 # Compile of fixed_point_checker.v was successful.
 # Compile of cycle.v was successful.
 # Compile of testbench.v was successful.
 # 4 compiles, 0 failed with no errors.
 vsim -gui work.tb_gene_net
-add wave -position end  sim:/tb_gene_net/clock
-add wave -position end  sim:/tb_gene_net/x_in
+# Error loading design
+# Compile of gene_net.v was successful.
+# Compile of fixed_point_checker.v was successful.
+# Compile of cycle.v was successful.
+# Compile of testbench.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_gene_net
+# Error loading design
+# Compile of gene_net.v was successful.
+# Compile of fixed_point_checker.v was successful.
+# Compile of cycle.v was successful.
+# Compile of testbench.v was successful.
+# 4 compiles, 0 failed with no errors.
+vsim -gui work.tb_gene_net
+add wave -position end  sim:/tb_gene_net/clk
+add wave -position end  sim:/tb_gene_net/init_val
 add wave -position end  sim:/tb_gene_net/x_out
 run -all
 # 1
-# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 40
-quit -sim
+# Break in Module tb_gene_net at C:/Verilog/Gene_Network/testbench.v line 39

@@ -1,12 +1,16 @@
 `timescale 1ns/100ps
 
-module gene_net(clock, x_in, x_out);
-	input wire clock;
+module gene_net(clk, x_in, x_out);
+	input wire clk;
 	input wire [7:0] x_in;
 	output reg [7:0] x_out;
 	reg [7:0] state;
 	
-	always @(posedge clock)
+	always @(x_in) begin
+		state <= x_in;
+	end
+
+	always @(posedge clk)
 	begin
 		x_out[0] <= ~state[2] & state[6] & ~state[7];
 		x_out[1] <= (state[4] | state[5]) & ~state[7];
