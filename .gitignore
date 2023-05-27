@@ -8,13 +8,6 @@ out/
 ### VS Code ###
 .vscode/
 
-### VS  ###
-.vs/
-x64/
-*.vcxproj
-*.filters
-*.user
-
 ### modelsim  ###
 *.mti
 transcript
