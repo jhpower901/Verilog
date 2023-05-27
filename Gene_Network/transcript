@@ -6,12 +6,240 @@
 # 5 compiles, 0 failed with no errors.
 vsim -gui work.tb_cycle
 add wave -position end  sim:/tb_cycle/clk
+add wave -position end  sim:/tb_cycle/reset
 add wave -position end  sim:/tb_cycle/init_val
+add wave -position end  sim:/tb_cycle/count
 add wave -position end  sim:/tb_cycle/x
 add wave -position end  sim:/tb_cycle/cycle_chk
-add wave -position 3  sim:/tb_cycle/C1/state_1
-add wave -position 4  sim:/tb_cycle/C1/state_2
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+run
+# Break in Module cycle at cycle.v line 15
+add wave -position end  sim:/tb_cycle/C1/state_1
+add wave -position end  sim:/tb_cycle/C1/state_2
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+quit -sim
+# Load canceled
+# Compile of gene_net.v was successful.
+# Compile of fixed_point_checker.v was successful.
+# Compile of cycle.v was successful.
+# Compile of testbench.v was successful.
+# Compile of counter.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.tb_cycle
+add wave -position end  sim:/tb_cycle/clk
+add wave -position end  sim:/tb_cycle/reset
+add wave -position end  sim:/tb_cycle/count
+add wave -position end  sim:/tb_cycle/C1/x
+add wave -position end  sim:/tb_cycle/C1/state_2
+add wave -position end  sim:/tb_cycle/C1/state_1
+add wave -position 3  sim:/tb_cycle/C1/cnt
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+# Next activity is in 1 ns.
+step
+step
+step
+step
+step
+step
+step
+step
+step
+add wave -position end  sim:/tb_cycle/cycle_chk
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# Next activity is in 1 ns.
+step
+step
+# Next activity is in 1 ns.
 run -all
 # 1
-# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 107
-add wave -position 5  sim:/tb_cycle/C1/flag
+# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 130
+quit -sim
+vsim -gui work.tb_cycle
+add wave -position end  sim:/tb_cycle/clk
+add wave -position end  sim:/tb_cycle/init_val
+add wave -position end  sim:/tb_cycle/C1/x
+add wave -position end  sim:/tb_cycle/C1/state_1
+add wave -position end  sim:/tb_cycle/C1/state_2
+add wave -position end  sim:/tb_cycle/C1/flag
+add wave -position 2  sim:/tb_cycle/C1/init_val_chk
+add wave -position 1  sim:/tb_cycle/C1/cnt
+run -all
+# 1
+# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 130
+quit -sim
+# Compile of gene_net.v was successful.
+# Compile of fixed_point_checker.v was successful.
+# Compile of cycle.v was successful.
+# Compile of testbench.v was successful.
+# Compile of counter.v was successful.
+# 5 compiles, 0 failed with no errors.
+vsim -gui work.tb_cycle
+run -all
+# 1
+# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 130
+vsim -gui work.tb_cycle
+add wave -position end  sim:/tb_cycle/C1/clk
+add wave -position end  sim:/tb_cycle/C1/cnt
+add wave -position end  sim:/tb_cycle/C1/init_val_chk
+add wave -position end  sim:/tb_cycle/C1/x
+add wave -position end  sim:/tb_cycle/C1/flag
+add wave -position end  sim:/tb_cycle/C1/state_1
+add wave -position end  sim:/tb_cycle/C1/state_2
+run -all
+# 1
+# Break in Module tb_cycle at C:/Verilog/Gene_Network/testbench.v line 130

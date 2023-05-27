@@ -5,6 +5,13 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	cycle
 
+} {} {}} C:/Verilog/Gene_Network/counter.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/counter.v
+Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
+-- Compiling module counter
+
+Top level modules:
+	counter
+
 } {} {}} C:/Verilog/Gene_Network/testbench.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/testbench.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
 -- Compiling module counter
@@ -17,18 +24,10 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 -- Compiling module tb_cycle
 
 Top level modules:
-	counter
 	tb_top
 	tb_gene_net
 	tb_fixed_point_cheker
 	tb_cycle
-
-} {} {}} C:/Verilog/Gene_Network/counter.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/counter.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module counter
-
-Top level modules:
-	counter
 
 } {} {}} C:/Verilog/Gene_Network/gene_net.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/gene_net.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020

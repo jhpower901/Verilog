@@ -1,7 +1,8 @@
 `timescale 1ns/100ps
-module cycle (clk, init_val_chk, x, flag);
+module cycle (clk, cnt, init_val_chk, x, flag);
 	input wire clk;
-	input wire init_val_chk;
+	input wire [3:0] cnt;
+	input wire [7:0] init_val_chk;
 	input wire [7:0] x;
 	output reg flag;
 	reg [7:0] state_1;
@@ -9,15 +10,15 @@ module cycle (clk, init_val_chk, x, flag);
 
 	always @(init_val_chk) begin
 		flag = 0;
-		state_1 = 8'b0000_0000;
-		state_2 = 8'b0000_0000;
 	end
 
 	always @(posedge clk) begin
-		if (state_2 == x)
-			flag = 1;
-		else
-			flag = 0;
+		if (cnt > 2) begin
+			if (state_2 == x)
+				flag = 1;
+			else
+				flag = 0;
+		end
 		state_2 = state_1;
 		state_1 = x;
 	end
