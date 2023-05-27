@@ -7,7 +7,6 @@ Top level modules:
 
 } {} {}} C:/Verilog/Gene_Network/testbench.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/testbench.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module counter
 -- Compiling module gene_net
 -- Compiling module fixed_point_cheker
 -- Compiling module cycle
@@ -30,12 +29,12 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 Top level modules:
 	cycle
 
-} {} {}} C:/Verilog/Gene_Network/counter.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/counter.v
+} {} {}} C:/Verilog/Gene_Network/fixed_point_checker.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/fixed_point_checker.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module counter
+-- Compiling module fixed_point_cheker
 
 Top level modules:
-	counter
+	fixed_point_cheker
 
 } {} {}} C:/Verilog/Gene_Network/gene_net.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/gene_net.v
 Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
@@ -43,12 +42,5 @@ Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 
 
 Top level modules:
 	gene_net
-
-} {} {}} C:/Verilog/Gene_Network/fixed_point_checker.v {1 {vlog -work work -stats=none C:/Verilog/Gene_Network/fixed_point_checker.v
-Model Technology ModelSim - Intel FPGA Edition vlog 2020.1 Compiler 2020.02 Feb 28 2020
--- Compiling module fixed_point_cheker
-
-Top level modules:
-	fixed_point_cheker
 
 } {} {}}

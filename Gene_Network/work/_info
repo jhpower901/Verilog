@@ -10,232 +10,232 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1/modelsim_ase/win32aloem
 vcounter
-Z0 !s110 1685200342
+!s110 1685202938
 !i10b 1
 !s100 hm@^8EAJTja?Gg@B3U59S0
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
 ImQRFh6Im0IG1@g_m:>d1L2
-Z2 VDg1SIo80bB@j0V0VzS_@n1
-Z3 dC:/Verilog/Gene_Network
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Verilog/Gene_Network
 w1685184500
 8C:/Verilog/Gene_Network/counter.v
 FC:/Verilog/Gene_Network/counter.v
-!i122 332
+!i122 350
 L0 2 12
-Z4 OV;L;2020.1;71
+Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z5 !s108 1685200342.000000
+!s108 1685202937.000000
 !s107 C:/Verilog/Gene_Network/counter.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/counter.v|
 !i113 1
-Z6 o-work work
-Z7 tCvgOpt 0
+Z4 o-work work
+Z5 tCvgOpt 0
 vcycle
-R0
+Z6 !s110 1685204737
 !i10b 1
-!s100 jY<cKZ9<QdCcYb4XP^m6g1
+!s100 @]9=^TegE?kUbWk4Pg3K12
+R0
+I7im8H5YlRnAOCegj_]Xf_3
 R1
-IzJnJmFlDm5m7FnYb^60WI1
 R2
-R3
-w1685186003
+Z7 w1685204409
 8cycle.v
 Fcycle.v
-!i122 331
-L0 2 24
-R4
+!i122 370
+L0 2 26
+R3
 r1
 !s85 0
 31
-R5
-Z8 !s107 init_val_gen.v|cycle.v|fixed_point_checker.v|gene_net.v|counter.v|C:/Verilog/Gene_Network/testbench.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
+Z8 !s108 1685204737.000000
+Z9 !s107 init_val_gen.v|cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
 !i113 1
-R6
-R7
+R4
+R5
 vfixed_point_cheker
-R0
+R6
 !i10b 1
-!s100 ^Gak;iIbhif?7D<MhFme]3
+!s100 zAULkW38gOJ:66j<FN67a0
+R0
+IWlmPh;KfK96Z4><:]8iJN3
 R1
-IiDBAiFXWXNlkli@fHXkXD0
 R2
-R3
-w1685180245
+R7
 8fixed_point_checker.v
 Ffixed_point_checker.v
-!i122 331
-L0 2 20
-R4
+!i122 370
+L0 2 19
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
 vgene_net
-R0
+R6
 !i10b 1
-!s100 8@FiA`Db:Xf<V0^5bgNi^1
+!s100 VFTe?g3a83>`L5568d==h2
+R0
+I2h9A0jCoCPEo>k`8zbd<C3
 R1
-Iei`7DR:NR6HZNPP3Vig6k3
 R2
-R3
-w1685173660
+w1685204408
 8gene_net.v
 Fgene_net.v
-!i122 331
+!i122 370
 L0 3 25
-R4
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
 vinit_val_gen
-R0
+!s110 1685204738
 !i10b 1
-!s100 jh_D>b[OX6g1C1RTZXiCf2
+!s100 P4aTi[T:P85LKGUJb:6lR2
+R0
+IhSHLiddHg=BK`;jS9l``I2
 R1
-IWXHPaf^hEkd2M_Ced^_^k0
 R2
-R3
-w1685199867
+w1685204412
 8C:/Verilog/Gene_Network/init_val_gen.v
 FC:/Verilog/Gene_Network/init_val_gen.v
-!i122 333
-L0 1 12
-R4
+!i122 371
+L0 1 11
+R3
 r1
 !s85 0
 31
-R5
+R8
 !s107 C:/Verilog/Gene_Network/init_val_gen.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/init_val_gen.v|
 !i113 1
-R6
-R7
-vtb_cycle
-R0
-!i10b 1
-!s100 I1PH2nB<fHaRoM^<nzM1^0
-R1
-Ia9VNYE2RGnSoJZWL?[O6X3
-R2
-R3
-Z10 w1685200332
-Z11 8C:/Verilog/Gene_Network/testbench.v
-Z12 FC:/Verilog/Gene_Network/testbench.v
-!i122 331
-L0 116 53
 R4
+R5
+vtb_cycle
+R6
+!i10b 1
+!s100 7JW1][j1Q5BQ<7>1IWHYP3
+R0
+I`^;QJ_?=OoYN6XCaKh^@K3
+R1
+R2
+Z11 w1685204724
+Z12 8C:/Verilog/Gene_Network/testbench.v
+Z13 FC:/Verilog/Gene_Network/testbench.v
+!i122 370
+L0 128 34
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
-!i113 1
-R6
-R7
-vtb_fixed_point_cheker
-R0
-!i10b 1
-!s100 _^T61^QJo0le_nQZTBoj`0
-R1
-IIC@XiMOef6EP^gXgXN9RA3
-R2
-R3
 R10
+!i113 1
+R4
+R5
+vtb_fixed_point_cheker
+R6
+!i10b 1
+!s100 ea65=3ZlHkD@RkE^;E@nV1
+R0
+I]O8emD[SLRNg_Vh4k9=@K2
+R1
+R2
 R11
 R12
-!i122 331
-L0 83 32
-R4
+R13
+!i122 370
+L0 88 34
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
 vtb_fixed_point_chk
 !s110 1685175243
 !i10b 1
 !s100 C7Z>ie^LH6Z0e4DeME4Q]3
-R1
+R0
 I>bjag8;TiaQFMejhK<`cL3
+R1
 R2
-R3
 w1685174940
-R11
 R12
+R13
 !i122 94
 L0 47 3
-R4
+R3
 r1
 !s85 0
 31
 !s108 1685175243.000000
 !s107 cycle.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
 vtb_gene_net
-R0
+R6
 !i10b 1
-!s100 PI^i`ZzQZm8ghYYMo3PT>0
+!s100 k[o3>G?f:jfZPLneY`cn33
+R0
+IQ9ZzR8bOULE<8SNEV;SbV0
 R1
-IEN0XkPNaKn3VhS;6NEEe[1
 R2
-R3
-R10
 R11
 R12
-!i122 331
-L0 46 36
-R4
+R13
+!i122 370
+L0 44 38
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
 vtb_top
-R0
+R6
 !i10b 1
-!s100 aZdTZTd<A9ASJNA?CXWOZ1
+!s100 CMZY?NIGCI:e::TezUX>n3
+R0
+IST_RjaB_]Ybk]9fPHU9B50
 R1
-I?@^1okkVSn?AQXCIi7nB;0
 R2
-R3
-R10
 R11
 R12
-!i122 331
-L0 8 36
-R4
+R13
+!i122 370
+L0 7 32
+R3
 r1
 !s85 0
 31
-R5
 R8
 R9
+R10
 !i113 1
-R6
-R7
+R4
+R5
