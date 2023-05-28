@@ -21,7 +21,7 @@ module tb_top;
 	initial begin
 		clk = 0;
 		init_val = 8'b0000_0000;
-		forever #1 clk = ~clk;
+		forever #0.5 clk = ~clk;
 	end
 
 	always @(init_mod) begin
