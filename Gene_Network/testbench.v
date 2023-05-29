@@ -83,7 +83,7 @@ module tb_fixed_point_cheker;
 
 	//instansiation gene_net
 	fixed_point_cheker FIX (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
-	gene_net GENE (.clk(clk), .x_in(init_val), .x_out(x));
+	gene_net GENE (.clk(clk), .init_val_chk(init_val), .x_out(x));
 
 endmodule
 
