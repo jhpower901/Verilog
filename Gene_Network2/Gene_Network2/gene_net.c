@@ -4,6 +4,7 @@
 #include <memory.h>
 #define GENE 8
 #define MAX 100
+#define DEEP 10
 
 typedef struct gene {
 	int x[8];
@@ -64,13 +65,13 @@ int cycle_checker(Gene* state[], int time, unsigned int init_val) {
 	int flag = 0;
 	int i;
 	int current;
-	int deep = 3;				//cycle 탐색 깊이
-	if (time - deep < 0)		//최소 deep개 이상의 인덱스 필요
+	int deep = DEEP;				//cycle 탐색 깊이
+	if (time < 2)		//최소 2개 이상의 인덱스 필요
 		return 0;
 	//time-1 index는 fixed point에서 확인함. 따라서 time-2부터 time - deep까지 검사
 	//deep가 3인 경우 t-2부터 t-3까지 2개 원소에 대해 가까운 원소부터 검사함
-	for (current = time - 2; current >= time - deep; current--) {
-		for (flag = 0, i = 0; flag == 0, i < 8; i++)
+	for (current = time - 2 ; current >= time - deep && current >= 0; current--) {
+		for (flag = 0, i = 0; flag == 0 && i < 8; i++)
 			if (state[time]->x[i] != state[current]->x[i])
 				flag++;
 		if (flag == 0)
@@ -94,7 +95,7 @@ int main() {
 		printf("파일 열기 실패\n");
 		exit(-2);
 	}
-	fputs("num,init_val,val\n", file);
+	fputs("num,init_val,fixed point num,val\n", file);
 	Gene* node[MAX];
 	if (node == NULL) {
 		printf("node 할당 실패\n");

@@ -82,8 +82,8 @@ module tb_fixed_point_cheker;
 	end
 
 	//instansiation gene_net
-	fixed_point_cheker FIX (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
-	gene_net GENE (.clk(clk), .init_val_chk(init_val), .x_out(x));
+	fixed_point_cheker FIX	(.clk(clk), .rst(init_val), .x(x), .flag(fixed_chk));
+	gene_net GENE			(.clk(clk), .init_val_chk(init_val), .x_out(x));
 
 endmodule
 
@@ -122,7 +122,7 @@ module tb_cycle;
 		end
 
 	//instansiation gene_net
-	cycle CYCLE (.clk(clk), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
-	gene_net GENE (.clk(clk), .init_val_chk(init_val), .x_out(x));
+	cycle CYCLE		(.clk(clk), .rst(init_val), .x(x), .flag(cycle_chk));
+	gene_net GENE	(.clk(clk), .init_val_chk(init_val), .x_out(x));
 
 endmodule

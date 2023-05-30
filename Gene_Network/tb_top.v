@@ -30,9 +30,9 @@ module tb_top;
 		init_val = init_mod;
 	end
 
-	init_val_gen INIT (.clk(clk), .current_val(init_val), .fixed(fixed_chk), .cycle(cycle_chk), .init_val_out(init_mod));
-	cycle CYCLE (.clk(clk), .init_val_chk(init_val), .x(x), .flag(cycle_chk));
-	fixed_point_cheker FIX (.clk(clk), .init_val_chk(init_val), .x(x), .flag(fixed_chk));
-	gene_net GENE (.clk(clk), .init_val_chk(init_val), .x_out(x));
+	init_val_gen INIT		(.clk(clk), .current_val(init_val), .fixed(fixed_chk), .cycle(cycle_chk), .init_val_out(init_mod));
+	cycle CYCLE				(.clk(clk), .rst(init_val), .x(x), .flag(cycle_chk));
+	fixed_point_cheker FIX	(.clk(clk), .rst(init_val), .x(x), .flag(fixed_chk));
+	gene_net GENE			(.clk(clk), .init_val_chk(init_val), .x_out(x));
 
 endmodule
