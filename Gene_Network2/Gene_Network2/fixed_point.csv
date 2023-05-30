@@ -1,4 +1,4 @@
-num,init_val,val
+num,init_val,fixed point num,val
 0,fixed,0,00000000
 1,fixed,1,00000000
 2,cycle,,00011100
@@ -27,7 +27,7 @@ num,init_val,val
 25,fixed,8,01010011
 26,fixed,9,01010011
 27,fixed,10,01010011
-28,cycle,,10110010
+28,cycle,,00011100
 29,fixed,11,01010011
 30,fixed,12,01010011
 31,fixed,13,01010011
@@ -177,7 +177,7 @@ num,init_val,val
 175,cycle,,00011100
 176,cycle,,00011100
 177,cycle,,00011100
-178,cycle,,00011100
+178,cycle,,10110010
 179,cycle,,00011100
 180,cycle,,00011100
 181,cycle,,00011100

@@ -1,5 +1,4 @@
 `timescale 1ns/100ps
-
 module gene_net(clk, init_val_chk, x_out);
 	input wire clk;					//clock signal
 	input wire [7:0] init_val_chk;	//init value
