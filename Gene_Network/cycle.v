@@ -16,9 +16,10 @@ module cycle (clk, rst, x, flag);
 	always @(posedge clk) begin		//synchronized with positive edge clock signal
 		cnt <= cnt + 1;				//counter++
 		if (cnt > 2) begin			//when counter > 2
-			if (state_2 == x && state_1 != x)			//when x[t-1] == x[t+1]
-				flag = 1;					//It's cycle
-			else
+			if (state_2 == x && state_1 != x) begin			//when x[t-1] == x[t+1]
+				flag = 1;									//It's cycle
+				$display("init: %d -> cycle_pnt: %b", rst, x);
+			end else
 				flag = 0;
 		end
 		state_2 = state_1;			//save x[t-1]
