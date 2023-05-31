@@ -11,10 +11,9 @@ module fixed_point_cheker(clk, rst, x, flag);
 	end
 
 	always @(posedge clk) begin		//synchronized with positive edge clock signal
-		if (state == x) begin				//when x[t-1] == x[t+1]
-			flag = 1;					//FIXED POINT!!!
-			$display("init: %d -> fixed_pnt: %b", rst, x);
-		end else
+		if (state == x)				//when x[t-1] == x[t+1]
+			flag = 1;					//FIXED POINT!!!	
+		else
 			flag = 0;
 		state = x;					//save x[t]
 	end

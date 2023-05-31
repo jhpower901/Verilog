@@ -17,8 +17,13 @@ module cycle (clk, rst, x, flag);
 		cnt <= cnt + 1;				//counter++
 		if (cnt > 2) begin			//when counter > 2
 			if (state_2 == x && state_1 != x) begin			//when x[t-1] == x[t+1]
+<<<<<<< HEAD
 				flag = 1;					//It's cycle
 				$display("init: %b -> cycle_pnt: %b", rst, x);
+=======
+				flag = 1;									//It's cycle
+				$display("init: %d -> cycle_pnt: %b", rst, x);
+>>>>>>> 5a261705bd7ce5e9a7e8f6cc7ebb676da95037f7
 			end else
 				flag = 0;
 		end
