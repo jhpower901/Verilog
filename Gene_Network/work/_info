@@ -33,23 +33,23 @@ r1
 Z4 o-work work
 Z5 tCvgOpt 0
 vcycle
-Z6 !s110 1685520500
+Z6 !s110 1685531535
 !i10b 1
 !s100 0U]U[[NKYmk^72[d0@;g`0
 R0
 IV4IZFmCNz>452BXg`bc3g0
 R1
 R2
-w1685520487
+w1685521075
 8cycle.v
 Fcycle.v
-!i122 471
+!i122 483
 L0 2 27
 R3
 r1
 !s85 0
 31
-Z7 !s108 1685520500.000000
+Z7 !s108 1685531535.000000
 !s107 init_val_gen.v|cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/tb_top.v|
 Z8 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/tb_top.v|
 !i113 1
@@ -63,10 +63,10 @@ R0
 In95^W=COY3K>6;2hMjG0Q0
 R1
 R2
-w1685520485
+w1685521151
 8fixed_point_checker.v
 Ffixed_point_checker.v
-!i122 471
+!i122 483
 L0 2 20
 R3
 r1
@@ -89,7 +89,7 @@ R2
 w1685452098
 8gene_net.v
 Fgene_net.v
-!i122 471
+!i122 483
 L0 2 25
 R3
 r1
@@ -112,7 +112,7 @@ R2
 w1685204412
 8init_val_gen.v
 Finit_val_gen.v
-!i122 471
+!i122 483
 L0 1 11
 R3
 r1
@@ -125,48 +125,48 @@ R8
 R4
 R5
 vtb_cycle
-R6
+Z10 !s110 1685531534
 !i10b 1
 !s100 dR>2z]UzaMYUVIB6RlGkR3
 R0
 I]5od0Z_7XOAmZdY]eSc=91
 R1
 R2
-Z10 w1685452429
-Z11 8C:/Verilog/Gene_Network/testbench.v
-Z12 FC:/Verilog/Gene_Network/testbench.v
-!i122 469
+Z11 w1685452429
+Z12 8C:/Verilog/Gene_Network/testbench.v
+Z13 FC:/Verilog/Gene_Network/testbench.v
+!i122 481
 L0 95 34
 R3
 r1
 !s85 0
 31
-R7
-Z13 !s107 init_val_gen.v|cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-Z14 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
+Z14 !s108 1685531534.000000
+Z15 !s107 init_val_gen.v|cycle.v|fixed_point_checker.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/Gene_Network/testbench.v|
 !i113 1
 R4
 R5
 vtb_fixed_point_cheker
-R6
+R10
 !i10b 1
 !s100 KU:cA^gYQkc?k9M`g[Ka_0
 R0
 IeLCMoZ5CfPWd6YFDFIMDN3
 R1
 R2
-R10
 R11
 R12
-!i122 469
+R13
+!i122 481
 L0 55 34
 R3
 r1
 !s85 0
 31
-R7
-R13
 R14
+R15
+R16
 !i113 1
 R4
 R5
@@ -179,8 +179,8 @@ I>bjag8;TiaQFMejhK<`cL3
 R1
 R2
 w1685174940
-R11
 R12
+R13
 !i122 94
 L0 47 3
 R3
@@ -189,30 +189,30 @@ r1
 31
 !s108 1685175243.000000
 !s107 cycle.v|gene_net.v|C:/Verilog/Gene_Network/testbench.v|
-R14
+R16
 !i113 1
 R4
 R5
 vtb_gene_net
-R6
+R10
 !i10b 1
 !s100 lmLQOCL5P62ILiW`CaEVn2
 R0
 IEJcSiaTRNNYJfIXf?J85f1
 R1
 R2
-R10
 R11
 R12
-!i122 469
+R13
+!i122 481
 L0 11 38
 R3
 r1
 !s85 0
 31
-R7
-R13
 R14
+R15
+R16
 !i113 1
 R4
 R5
@@ -227,7 +227,7 @@ R2
 w1685450644
 8C:/Verilog/Gene_Network/tb_top.v
 FC:/Verilog/Gene_Network/tb_top.v
-!i122 471
+!i122 483
 L0 7 32
 R3
 r1
