@@ -1,0 +1,4 @@
+Breakpoint File Version 1.0
+13,true,"C:/Verilog/vivado/project_2/project_2.srcs/sources_1/imports/FPGA_project/keypad_driver.v"
+14,true,"C:/Verilog/vivado/project_2/project_2.srcs/sources_1/imports/FPGA_project/keypad_driver.v"
+23,true,"C:/Verilog/vivado/project_2/project_2.srcs/sources_1/imports/FPGA_project/keypad_driver.v"
