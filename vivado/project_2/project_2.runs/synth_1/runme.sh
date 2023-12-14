@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log tb_calculator.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_calculator.tcl
+EAStep vivado -log segment_driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source segment_driver.tcl

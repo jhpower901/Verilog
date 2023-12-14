@@ -1,4 +1,4 @@
-`timescale 1ns / 100ps
+`timescale 10ns / 1ns
 `include "keypad_driver.v"
 `include "clock_divider.v"
 
@@ -38,22 +38,26 @@ module tb_clock_divider();
 	wire fnd_clk;
 
 	initial begin
-		rst = 1;
-		clock_50m = 0;
-		forever #10 clock_50m = ~clock_50m;
+		rst <= 1;
+		clock_50m <= 0;
+		forever #1 clock_50m = ~clock_50m;
 	end
 
 	initial begin
-		#1000000
+		#10
 		rst = 0;
 		#100000
 		rst = 1;
-		#1000
-		$finish
+		#1000000000
+		$finish;
 	end
 
 
 	/*clock 분주*/
 	clock_divider  CLK     (.clock_50m(clock_50m), .rst(rst),
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));		
+endmodule
+
+module tb_segment_driver();
+
 endmodule

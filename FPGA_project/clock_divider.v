@@ -15,14 +15,14 @@ module clock_divider (clock_50m, rst, sw_clk, fnd_clk);
 	output sw_clk;		//sw 동작 clk
 	output fnd_clk;		//segment 표시 주파수 clk
 
-	reg [31:0] init_counter;	//50MHz counter
+	reg [31:0] init_counter = 0;	//50MHz counter
 	reg sw_clk;					//2^(-21) 분주 
 	reg fnd_clk;				//2^(-17) 분주
 
 
 	// clock_50m. clock counter.
 	always @(posedge clock_50m, negedge rst) begin
-		if (~rst) begin
+		if (~rst) begin							//비동기 초기화
 			init_counter <= 0;
 			sw_clk <= 0;
 			sw_clk <= 0;
