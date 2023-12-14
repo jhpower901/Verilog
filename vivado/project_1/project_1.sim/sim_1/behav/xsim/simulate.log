@@ -1,0 +1,18 @@
+Time resolution is 1 ps
+DEC1 : 00000001
+DEC2 : 00000001
+DEC1 : 00000010
+DEC2 : 00000010
+DEC1 : 00000100
+DEC2 : 00000100
+DEC1 : 00001000
+DEC2 : 00001000
+DEC1 : 00010000
+DEC2 : 00010000
+DEC1 : 00100000
+DEC2 : 00100000
+DEC1 : 01000000
+DEC2 : 01000000
+DEC1 : 10000000
+DEC2 : 10000000
+$finish called at time : 50 ns : File "C:/Verilog/vivado/project_1/project_1.srcs/sources_1/new/tb_Decoder.v" Line 21
