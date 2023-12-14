@@ -1,0 +1,137 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "fnd_s[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[6]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[7]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50m",
+					"strict" : false
+				},
+				{
+					"name" : "pb[15]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[0]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[1]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[2]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[3]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[5]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[4]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[7]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[8]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[9]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[10]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[11]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[12]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[13]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[14]",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
