@@ -125,19 +125,21 @@ module segment_driver (fnd_clk, fnd_serial, fnd_s, fnd_d);
 						temp <=  data % 10;	//자릿 수 추출
 						data <= data / 10;			//10진수 오른쪽 shift
 						if (~|data && !temp)		//data == 0일 때 loop 탈출
-							break;
-						case (temp)			//10진수에 맞는 anode 저장
-							0 : segment[i] <= fnd_0;
-							1 : segment[i] <= fnd_1;
-							2 : segment[i] <= fnd_2;
-							3 : segment[i] <= fnd_3;
-							4 : segment[i] <= fnd_4;
-							5 : segment[i] <= fnd_5;
-							6 : segment[i] <= fnd_6;
-							7 : segment[i] <= fnd_7;
-							8 : segment[i] <= fnd_8;
-							9 : segment[i] <= fnd_9;
-						endcase
+							segment[i] <= fnd_;
+						else begin
+							case (temp)					//10진수에 맞는 anode 저장
+								0 : segment[i] <= fnd_0;
+								1 : segment[i] <= fnd_1;
+								2 : segment[i] <= fnd_2;
+								3 : segment[i] <= fnd_3;
+								4 : segment[i] <= fnd_4;
+								5 : segment[i] <= fnd_5;
+								6 : segment[i] <= fnd_6;
+								7 : segment[i] <= fnd_7;
+								8 : segment[i] <= fnd_8;
+								9 : segment[i] <= fnd_9;
+							endcase
+						end
 					end
 					if (signBit)							//음수일 때
 						segment[5] <= fnd_h;				//부호 출력

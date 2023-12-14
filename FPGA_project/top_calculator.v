@@ -32,7 +32,7 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));			
 	/*segment 출력*/
 	segment_driver SDI     (.fnd_clk(fnd_clk), .fnd_serial(fnd_serial),
-							.nfnd_s(fnd_s), .fnd_d(fnd_d));
+							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
 	keypad_driver  KDI     (.sw_clk(sw_clk), .pb(pb),
 							.eBCD(eBCD), .rst(rst));
