@@ -2,7 +2,6 @@
 `include "keypad_driver.v"
 `include "clock_divider.v"
 `include "segment_driver.v"
-`include "test.v"
 
 module tb_keypad_driver();
 	reg			sw_clk;
@@ -124,9 +123,6 @@ module tb_calulate();
 	reg [2:0]  operator;
 	wire [31:0] ans;
 
-	reg signBit;						//입력 버퍼 부호
-	reg signed [30:0] buffer;			//입력 버퍼 절대값
-
 	initial begin
 		sw_clk <= 0;
 		rst <= 1;
@@ -186,5 +182,5 @@ module tb_calulate();
 
 	/*연산기+error detector*/
 	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
-							.result(ans));
+							.ans(ans));
 endmodule
