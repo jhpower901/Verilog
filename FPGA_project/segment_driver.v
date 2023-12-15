@@ -125,6 +125,15 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[1] <= fnd_y;
 					segment[0] <= fnd_;
 				end
+				//Negative
+				'hE000_000 : begin
+					segment[5] <= fnd_h;
+					segment[4] <= fnd_;
+					segment[3] <= fnd_;
+					segment[2] <= fnd_;
+					segment[1] <= fnd_;
+					segment[0] <= fnd_0;
+				end
 				default : begin
 					signBit = fnd_serial[31];			//부호 비트 추출
 					if (signBit)						//음수일 때

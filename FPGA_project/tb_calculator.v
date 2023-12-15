@@ -132,19 +132,19 @@ module tb_calulate();
 	initial begin
 		#10	operand1 <= 10;
 			operand2 <= 101;
-			operator <= 0;			//+
+			operator <= 3;			//+
 		#10	operand1 <= 10;
 			operand2 <= 101;
-			operator <= 1;			//-
+			operator <= 4;			//-
 		#10	operand1 <= 10;
 			operand2 <= 101;
-			operator <= 2;			//*
+			operator <= 1;			//*
 		#10	operand1 <= 10;
 			operand2 <= 101;
-			operator <= 3;			///
+			operator <= 2;			///
 		#10	operand1 <= 10;
 			operand2 <= 101;
-			operator <= 4;			//%
+			operator <= 5;			//%
 
 		#50	operand1 <= -10;
 			operand2 <= 101;
@@ -184,3 +184,5 @@ module tb_calulate();
 	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 endmodule
+
+module buffer

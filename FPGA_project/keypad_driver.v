@@ -83,9 +83,10 @@ module keypad_driver (sw_clk, pb, eBCD, rst);
 					'h0800: /*+-*/begin
 						eBCD <= 5'h1c;
 					end
-					'h1000: /*AC*/begin
-						eBCD <= 5'h1d;
-					end
+					//'h1000는 비동기 rst 신호임
+					//'h1000: /*AC*/begin
+					//	eBCD <= 5'h1d;
+					//end
 					'h2000: /*0*/begin
 						eBCD <= 5'h10;
 					end

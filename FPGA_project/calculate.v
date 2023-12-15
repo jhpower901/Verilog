@@ -1,10 +1,10 @@
 module calculate (sw_clk, rst, operand1, operand2, operator, ans);
 	input sw_clk;
 	input rst;										//reset
-	input	signed 	[31:0]	operand1;				//피연산자 2
-	input	signed 	[31:0]	operand2;				//피연산자 1
+	input	signed 	[31:0]	operand1 = 0;			//피연산자 2
+	input	signed 	[31:0]	operand2 = 0;			//피연산자 1
 	input 			[2:0]	operator;				//연산자
-	output	reg		[31:0]	ans = 'h00CC0000;	//연산 결과 출력
+	output	reg		[31:0]	ans = 'h00CC0000;		//연산 결과 출력
 
 	reg signed	[63:0]	result;				//연산 결과
 
@@ -12,12 +12,21 @@ module calculate (sw_clk, rst, operand1, operand2, operator, ans);
 		if (~rst) begin
 			result <= 0;
 		end else begin
+			/*
+				연산자 별 code
+				=:	0 000
+				*:	1 001
+				/:	2 010
+				+:	3 011
+				-:	4 100
+				%:	5 101
+			*/
 			case(operator)
-				0 : result <= operand1 + operand2;
-				1 : result <= operand1 - operand2;
-				2 : result <= operand1 * operand2;
-				3 : result <= operand1 / operand2;
-				4 : result <= operand1 % operand2;
+				1 : result <= operand1 * operand2;
+				2 : result <= operand1 / operand2;
+				3 : result <= operand1 + operand2;
+				4 : result <= operand1 - operand2;
+				5 : result <= operand1 % operand2
 				default : result <= 'h00CC0000;		//NULL
 			endcase
 		end
