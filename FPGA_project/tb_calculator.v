@@ -4,7 +4,7 @@
 `include "segment_driver.v"
 `include "test.v"
 
-module tb_calculator();
+module tb_keypad_driver();
 	reg			sw_clk;
 	reg	[15:0]	npb;
 	reg	[15:0]	pb;
@@ -114,4 +114,77 @@ module tb_segment_driver();
 	/*segment 출력*/
 	segment_driver SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
+endmodule
+
+module tb_calulate();
+	reg sw_clk;
+	reg rst;
+	reg [31:0] operand1;
+	reg [31:0] operand2;
+	reg [2:0]  operator;
+	wire [31:0] ans;
+
+	reg signBit;						//입력 버퍼 부호
+	reg signed [30:0] buffer;			//입력 버퍼 절대값
+
+	initial begin
+		sw_clk <= 0;
+		rst <= 1;
+		forever #1 sw_clk = ~sw_clk;
+	end
+
+	initial begin
+		#10	operand1 <= 10;
+			operand2 <= 101;
+			operator <= 0;			//+
+		#10	operand1 <= 10;
+			operand2 <= 101;
+			operator <= 1;			//-
+		#10	operand1 <= 10;
+			operand2 <= 101;
+			operator <= 2;			//*
+		#10	operand1 <= 10;
+			operand2 <= 101;
+			operator <= 3;			///
+		#10	operand1 <= 10;
+			operand2 <= 101;
+			operator <= 4;			//%
+
+		#50	operand1 <= -10;
+			operand2 <= 101;
+			operator <= 0;			//+
+		#10	operand1 <= -10;
+			operand2 <= 101;
+			operator <= 1;			//-
+		#10	operand1 <= -10;
+			operand2 <= 101;
+			operator <= 2;			//*
+		#10	operand1 <= -10;
+			operand2 <= 101;
+			operator <= 3;			///
+		#10	operand1 <= -10;
+			operand2 <= 101;
+			operator <= 4;			//%
+
+		#50	operand1 <= 100000;
+			operand2 <= -500;
+			operator <= 0;			//+
+		#10	operand1 <= 100000;
+			operand2 <= -500;
+			operator <= 1;			//-
+		#10	operand1 <= 100000;
+			operand2 <= -500;
+			operator <= 2;			//*
+		#10	operand1 <= 100000;
+			operand2 <= -500;
+			operator <= 3;			///
+		#10	operand1 <= 100000;
+			operand2 <= -500;
+			operator <= 4;			//%
+		#10 $finish;
+	end
+
+	/*연산기+error detector*/
+	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
+							.result(ans));
 endmodule

@@ -2,54 +2,53 @@ m255
 K4
 z2
 !s11f vlog 2020.1 2020.02, Feb 28 2020
-13
 !s112 1.1
 !i10d 8192
 !i10e 25
 !i10f 100
 cModel Technology
-dC:/intelFPGA/20.1
+Z0 dC:/Verilog/FPGA_project
 vcalculate
-!s110 1702642877
+!s110 1702656239
 !i10b 1
-!s100 CNb4Jc_C7zN79I`o?jITe2
-Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
-IQJQ0ojS01BL13KlKGRS2l3
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Verilog/FPGA_project
-w1702568895
+!s100 UYoJTSSV8e`k1]UklQjTW0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I0GFP76SakX4IQ2n`8@d:B2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1702653127
 8C:/Verilog/FPGA_project/calculate.v
 FC:/Verilog/FPGA_project/calculate.v
-!i122 378
-L0 1 25
+!i122 42
+L0 1 32
 Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1702642877.000000
+!s108 1702656239.000000
 !s107 C:/Verilog/FPGA_project/calculate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/calculate.v|
 !i113 1
 Z4 o-work work
 Z5 tCvgOpt 0
 vclock_divider
-Z6 !s110 1702642879
+Z6 !s110 1702656240
 !i10b 1
 !s100 0Pi3W4J9Z=8jL8o<;gFIl0
-R0
-InVTa6Jf;WlAF_`GCGo1i[1
 R1
+InVTa6Jf;WlAF_`GCGo1i[1
 R2
+R0
 w1702582988
 8clock_divider.v
 Fclock_divider.v
-!i122 383
+!i122 47
 L0 1 36
 R3
 r1
 !s85 0
 31
-Z7 !s108 1702642878.000000
+Z7 !s108 1702656240.000000
 !s107 test.v|segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
 Z8 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/tb_calculator.v|
 !i113 1
@@ -59,14 +58,14 @@ vkeypad_driver
 R6
 !i10b 1
 !s100 LX=ISL]=5Y3`CIaiP;aQ<1
-R0
-InIfA@ff[JIVMHC2Ce4L]22
 R1
+InIfA@ff[JIVMHC2Ce4L]22
 R2
+R0
 w1702578055
 8keypad_driver.v
 Fkeypad_driver.v
-!i122 383
+!i122 47
 L0 9 96
 R3
 r1
@@ -82,14 +81,14 @@ vsegment_driver
 R6
 !i10b 1
 !s100 gPRUbld4a<D?JVPEdNjIm3
-R0
-IICb2D2FPlZBCc7??4h=zV3
 R1
+IICb2D2FPlZBCc7??4h=zV3
 R2
+R0
 w1702642867
 8segment_driver.v
 Fsegment_driver.v
-!i122 383
+!i122 47
 L0 1 262
 R3
 r1
@@ -101,19 +100,19 @@ R8
 !i113 1
 R4
 R5
-vtb_calculator
+vtb_calulate
 R6
 !i10b 1
-!s100 YXj8fNS>UUH^n=7Fe_a3M2
-R0
-I1OfBJ:UAR^cY3`WE]4O>E1
+!s100 _8_a`FjI2ojj^z`3ZM8H50
 R1
+I2:c`5_n248X0jWlbLGOJL0
 R2
-Z10 w1702642707
+R0
+Z10 w1702656234
 Z11 8C:/Verilog/FPGA_project/tb_calculator.v
 Z12 FC:/Verilog/FPGA_project/tb_calculator.v
-!i122 383
-L0 7 28
+!i122 47
+L0 119 72
 R3
 r1
 !s85 0
@@ -128,15 +127,38 @@ vtb_clock_divider
 R6
 !i10b 1
 !s100 gKGdiK^`:0Mmob`_@YZ>O0
-R0
-I4e0zhTlP7XXCA]DQM99Q[0
 R1
+I4e0zhTlP7XXCA]DQM99Q[0
 R2
+R0
 R10
 R11
 R12
-!i122 383
+!i122 47
 L0 36 26
+R3
+r1
+!s85 0
+31
+R7
+R9
+R8
+!i113 1
+R4
+R5
+vtb_keypad_driver
+R6
+!i10b 1
+!s100 5fIK8Jic3g?mg3VeY>PDA1
+R1
+IZ`WU07hL>4KiKg6z^CImQ1
+R2
+R0
+R10
+R11
+R12
+!i122 47
+L0 7 28
 R3
 r1
 !s85 0
@@ -151,14 +173,14 @@ vtb_segment_driver
 R6
 !i10b 1
 !s100 7c2V24[2R5eTE>EkzA1CA3
-R0
-I=W0QO73CXb^IiSPe2IgA41
 R1
+I=W0QO73CXb^IiSPe2IgA41
 R2
+R0
 R10
 R11
 R12
-!i122 383
+!i122 47
 L0 63 55
 R3
 r1
@@ -174,14 +196,14 @@ vtest
 R6
 !i10b 1
 !s100 lCYV3GGP7P;N5F4db]5^>0
-R0
-ISk:GGZR`zTF?_cP99[cd40
 R1
+ISk:GGZR`zTF?_cP99[cd40
 R2
+R0
 w1702640267
 8test.v
 Ftest.v
-!i122 383
+!i122 47
 L0 1 76
 R3
 r1
@@ -194,17 +216,17 @@ R8
 R4
 R5
 vtop_calculator
-!s110 1702642878
+R6
 !i10b 1
 !s100 ZhgNjC0>E2k]38H@jfQib3
-R0
-I5^=<<1T4K2B:Xa[i8ll7?0
 R1
+I5^=<<1T4K2B:Xa[i8ll7?0
 R2
+R0
 w1702591979
 8C:/Verilog/FPGA_project/top_calculator.v
 FC:/Verilog/FPGA_project/top_calculator.v
-!i122 382
+!i122 46
 L0 1 44
 R3
 r1
