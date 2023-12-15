@@ -5,11 +5,11 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 	output [7:0] fnd_d;		//segment anode  positive decoder
 
 	/*Clock*/
-	reg sw_clk;					//2^(-21) 분주 
+	wire sw_clk;				//2^(-21) 분주 
 	wire fnd_clk;				//2^(-17) 분주
 
 	/*key input*/
-	wire [3:0]	eBCD;			//extended BCD code 키패드 입력 데이터
+	wire [4:0]	eBCD;			//extended BCD code 키패드 입력 데이터
 	wire rst;					//reset
 
 	/*Buffer*/
@@ -25,20 +25,36 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 	reg signed [31:0]	fnd_serial;		//segment 출력 데이터
 
 
+	/*입력 buffer*/
+	always @(negedge sw_clk) begin
+		//입력 enable bit 확인
+		if(eBCD[4]) begin
+			case(eBCD[3:0])
+				'ha: /* /% */ begin
+				end
+				'hb: /* * */
+				'hc: /* +- */
+				'hd: /* AC */
+				'he: /* ans */
+				'hf: /* = */
+				default : buffer = buffer * 10 + eBDC[3:0];
+			endcase
+		end
+	end
+
+
 
 
 	/*clock 분주*/
-	clock_divider  CLK     (.clock_50m(clock_50m), .rst(rst),
-							.sw_clk(sw_clk), .fnd_clk(fnd_clk));			
+	clock_divider	CLK     (.clock_50m(clock_50m), .rst(rst),
+							.sw_clk(sw_clk), .fnd_clk(fnd_clk));	
 	/*segment 출력*/
-	segment_driver SDI     (.fnd_clk(fnd_clk), .fnd_serial(fnd_serial),
+	segment_driver	SDI     (.fnd_clk(fnd_clk), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
-	keypad_driver  KDI     (.sw_clk(sw_clk), .pb(pb),
+	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
 							.eBCD(eBCD), .rst(rst));
 	/*연산기+error detector*/
-	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
+	calculate		CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.result(ans));
-	
-
 endmodule

@@ -1,8 +1,8 @@
 /*
-가장 먼저 눌린 키 값을 1clk width 동안 출력.
-계속 누르고 있어도 1 clk width 동안만 신호가 출력됨.
-posedge sw_clk 부터 다음 posedge까지 1주기 동안 출력 유지
-negedge에서 keypad 값 읽어와 이용.
+	가장 먼저 눌린 키 값을 1clk width 동안 출력.
+	계속 누르고 있어도 1 clk width 동안만 신호가 출력됨.
+	posedge sw_clk 부터 다음 posedge까지 1주기 동안 출력 유지
+	negedge에서 keypad 값 읽어와 이용.
 */
 
 
