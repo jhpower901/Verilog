@@ -24,7 +24,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log segment_driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source segment_driver.tcl" );
+         "-log tb_segment_driver.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source tb_segment_driver.tcl" );
 
 
 

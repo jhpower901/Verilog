@@ -1,5 +1,6 @@
-module segment_driver (fnd_clk, fnd_serial, fnd_s, fnd_d);
+module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	input fnd_clk;				//fnd clock
+	input rst;
 	input [31:0] fnd_serial;	//출력해야하는 데이터
 	output reg [5:0] fnd_s;	//segment select negative decoder 필요
 	output reg [7:0] fnd_d;		//segment anode  positive decoder 
@@ -7,6 +8,8 @@ module segment_driver (fnd_clk, fnd_serial, fnd_s, fnd_d);
 	reg [2:0] fnd_cnt = 0;		//segment selector
 	reg [7:0] segment [5:0];	//fnd 표시 위치별 데이터
 	reg [47:0] segment_serial;	//출력 anode serial
+	reg [31:0] data;
+	reg [3:0]  temp;
 
 
 	localparam fnd_0 = 8'b0011_1111;		//0
@@ -44,87 +47,99 @@ module segment_driver (fnd_clk, fnd_serial, fnd_s, fnd_d);
 		input [31:0] fnd_serial;		//출력해야하는 데이터
 		output [47:0] segment_serial;	//출력 anode serial
 
+		output reg [31:0] data;			//fnd_serial 저장해 놓을 레지스터
+		output reg [3:0]  temp;			//임시 변수
 		reg [7:0] segment [5:0];		//각 자리마다 출력되는 anode
 		reg signBit;					//출력되는 데이터의 부호
-		reg [31:0] data;				//fnd_serial 저장해 놓을 레지스터
-		reg [3:0]  temp;				//임시 변수
 		reg [2:0]  i;				//for loop 제어 변수
 
 		begin
 			/*입력 데이터에 따른 출력 값 지정*/
 			//특정 문자 출력인 경우 확인
 			case (fnd_serial)
+				//NULL
+				'h00CC_0000 : begin
+					segment[5] <= fnd_;
+					segment[4] <= fnd_;
+					segment[3] <= fnd_;
+					segment[3] <= fnd_;
+					segment[1] <= fnd_;
+					segment[0] <= fnd_;
+				end
 				//Error
 				'h00EE_0000 : begin
-					segment[0] <= fnd_;
-					segment[1] <= fnd_E;
-					segment[2] <= fnd_r;
+					segment[5] <= fnd_;
+					segment[4] <= fnd_E;
 					segment[3] <= fnd_r;
-					segment[4] <= fnd_o;
-					segment[5] <= fnd_r;
+					segment[3] <= fnd_r;
+					segment[1] <= fnd_o;
+					segment[0] <= fnd_r;
 				end
 				//PLUS
 				'h0010_0000 : begin
-					segment[0] <= fnd_;
-					segment[1] <= fnd_p;
-					segment[2] <= fnd_L;
-					segment[3] <= fnd_u;
-					segment[4] <= fnd_5;
 					segment[5] <= fnd_;
+					segment[4] <= fnd_p;
+					segment[3] <= fnd_L;
+					segment[2] <= fnd_u;
+					segment[1] <= fnd_5;
+					segment[0] <= fnd_;
 				end
 				//MINUS
 				'h0020_0000 : begin
-					segment[0] <= fnd_n;
-					segment[1] <= fnd_n;
-					segment[2] <= fnd_i;
-					segment[3] <= fnd_n;
-					segment[4] <= fnd_u;
-					segment[5] <= fnd_5;
+					segment[5] <= fnd_n;
+					segment[4] <= fnd_n;
+					segment[3] <= fnd_i;
+					segment[2] <= fnd_n;
+					segment[1] <= fnd_u;
+					segment[0] <= fnd_5;
 				end
 				//MULTIPLE
 				'h0030_0000 : begin
-					segment[0] <= fnd_;
-					segment[1] <= fnd_;
-					segment[2] <= fnd_n;
+					segment[5] <= fnd_;
+					segment[4] <= fnd_;
 					segment[3] <= fnd_n;
-					segment[4] <= fnd_u;
-					segment[5] <= fnd_L;
+					segment[2] <= fnd_n;
+					segment[1] <= fnd_u;
+					segment[0] <= fnd_L;
 				end
 				//DIVID
 				'h0040_0000 : begin
-					segment[0] <= fnd_;
-					segment[1] <= fnd_0;
-					segment[2] <= fnd_i;
-					segment[3] <= fnd_v;
-					segment[4] <= fnd_i;
-					segment[5] <= fnd_0;
+					segment[5] <= fnd_;
+					segment[4] <= fnd_0;
+					segment[3] <= fnd_i;
+					segment[2] <= fnd_v;
+					segment[1] <= fnd_i;
+					segment[0] <= fnd_0;
 				end
 				//MODULO
 				'h0050_0000 : begin
-					segment[0] <= fnd_;
-					segment[1] <= fnd_;
-					segment[2] <= fnd_n;
+					segment[5] <= fnd_;
+					segment[4] <= fnd_;
 					segment[3] <= fnd_n;
-					segment[4] <= fnd_o;
-					segment[5] <= fnd_D;
+					segment[2] <= fnd_n;
+					segment[1] <= fnd_o;
+					segment[0] <= fnd_D;
 				end
 				//HAPPY
 				'h00A0_0000 : begin
-					segment[0] <= fnd_H;
-					segment[1] <= fnd_A;
-					segment[2] <= fnd_p;
+					segment[5] <= fnd_H;
+					segment[4] <= fnd_A;
 					segment[3] <= fnd_p;
-					segment[4] <= fnd_y;
-					segment[5] <= fnd_;
+					segment[2] <= fnd_p;
+					segment[1] <= fnd_y;
+					segment[0] <= fnd_;
 				end
 				default : begin
-					signBit <= fnd_serial[31];			//부호 비트 추출
+					signBit = fnd_serial[31];			//부호 비트 추출
 					if (signBit)						//음수일 때
-						data <= ~fnd_serial + 1;		//2의 보수
+						data = ~fnd_serial + 1;			//2의 보수
+					else
+						data = fnd_serial;
+
 					for (i = 0; i < 6; i = i + 1) begin
-						temp <=  data % 10;	//자릿 수 추출
-						data <= data / 10;			//10진수 오른쪽 shift
-						if (~|data && !temp)		//data == 0일 때 loop 탈출
+						temp =  data % 10;		//자릿 수 추출
+						data = data / 10;		//10진수 오른쪽 shift
+						if (!data)		//data == 0일 때 loop 탈출
 							segment[i] <= fnd_;
 						else begin
 							case (temp)					//10진수에 맞는 anode 저장
@@ -149,20 +164,22 @@ module segment_driver (fnd_clk, fnd_serial, fnd_s, fnd_d);
 		end
 	endtask
 
-	always @(posedge fnd_clk) begin
-		fnd_cnt <= fnd_cnt + 1;
-		if (fnd_cnt == 6)
-			fnd_cnt <= 6;
-		set_segment(fnd_serial, segment_serial);		//전달 받은 데이터 디코딩
+
+	/*segment 배열에 anode 저장*/
+	always @(fnd_serial) begin
+		set_segment(fnd_serial, segment_serial, data, temp);		//전달 받은 데이터 디코딩
 		segment[0] <= segment_serial[7:0];
 		segment[1] <= segment_serial[15:8];
 		segment[2] <= segment_serial[23:16];
 		segment[3] <= segment_serial[31:24];
 		segment[4] <= segment_serial[39:32];
 		segment[5] <= segment_serial[47:40];
-		fnd_d <= segment[fnd_cnt];									//해당 위치에 출력할 anode
-		fnd_s <= ~(6'b00_0001 << fnd_cnt);							//segment 선택
 	end
 
+	always @(posedge fnd_clk) begin
+		fnd_cnt <= (fnd_cnt == 5) ? 0 : fnd_cnt + 1;		//fnd selector count
+		fnd_d <= segment[fnd_cnt];						//해당 위치에 출력할 anode
+		fnd_s <= ~(6'b00_0001 << fnd_cnt);				//segment 선택
+	end
 
 endmodule
