@@ -1,4 +1,4 @@
-`timescale 1ns / 100ps
+`timescale 10ns / 1ns
 `include "keypad_driver.v"
 `include "clock_divider.v"
 `include "segment_driver.v"
@@ -86,7 +86,7 @@ module tb_segment_driver();
 		#10 fnd_serial = 'h00A0_0000;	//HAPPY
 		#10 fnd_serial = 0;
 
-		#20 fnd_serial = 1;
+		#50 fnd_serial = 1;
 		#10 fnd_serial = 12;
 		#10 fnd_serial = 123;
 		#10 fnd_serial = 1234;
@@ -94,12 +94,14 @@ module tb_segment_driver();
 		#10 fnd_serial = 123456;
 		#10 fnd_serial = 0;
 
-		#20 fnd_serial = 1;
+		#50 fnd_serial = 1;
 		#10 fnd_serial = 10;
 		#10 fnd_serial = 100;
 		#10 fnd_serial = 1000;
+		#10 fnd_serial = 10000;
+		#10 fnd_serial = 100000;
 
-		#20 fnd_serial = -1;
+		#50 fnd_serial = -1;
 		#10 fnd_serial = -12;
 		#10 fnd_serial = -123;
 		#10 fnd_serial = -1234;

@@ -58,7 +58,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[5] <= fnd_;
 					segment[4] <= fnd_;
 					segment[3] <= fnd_;
-					segment[3] <= fnd_;
+					segment[2] <= fnd_;
 					segment[1] <= fnd_;
 					segment[0] <= fnd_;
 				end
@@ -236,14 +236,23 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	endtask
 
 
-	always @(posedge fnd_clk) begin
-		set_segment(fnd_serial, segment_serial);		//전달 받은 데이터 디코딩
-		segment[0] <= segment_serial[7:0];
-		segment[1] <= segment_serial[15:8];
-		segment[2] <= segment_serial[23:16];
-		segment[3] <= segment_serial[31:24];
-		segment[4] <= segment_serial[39:32];
-		segment[5] <= segment_serial[47:40];
+	always @(posedge fnd_clk, negedge rst) begin
+		if (~rst) begin
+			segment[0] <= fnd_h;
+			segment[1] <= fnd_h;
+			segment[2] <= fnd_h;
+			segment[3] <= fnd_h;
+			segment[4] <= fnd_h;
+			segment[5] <= fnd_h;
+		end else begin
+			set_segment(fnd_serial, segment_serial);		//전달 받은 데이터 디코딩
+			segment[0] <= segment_serial[7:0];
+			segment[1] <= segment_serial[15:8];
+			segment[2] <= segment_serial[23:16];
+			segment[3] <= segment_serial[31:24];
+			segment[4] <= segment_serial[39:32];
+			segment[5] <= segment_serial[47:40];
+		end
 
 		fnd_cnt <= (fnd_cnt == 5) ? 0 : fnd_cnt + 1;		//fnd selector count
 		fnd_d <= segment[fnd_cnt];						//해당 위치에 출력할 anode
