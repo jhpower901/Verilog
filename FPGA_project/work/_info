@@ -9,209 +9,232 @@ z2
 cModel Technology
 Z0 dC:/Verilog/FPGA_project
 vcalculate
-!s110 1702685584
+Z1 !s110 1702688541
 !i10b 1
-!s100 j:4z4c5:^_E@l4aHNU1NY1
-Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
-INk9;a_[oLYe:kY7g5S=XZ3
-Z2 VDg1SIo80bB@j0V0VzS_@n1
+!s100 ?m7a=h10QgkPGgPGNfJ2g1
+Z2 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IbXkGCKdiUO@5V_208VJ`X3
+Z3 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1702685581
+w1702688537
 8C:/Verilog/FPGA_project/calculate.v
 FC:/Verilog/FPGA_project/calculate.v
-!i122 24
-L0 1 41
-Z3 OV;L;2020.1;71
+!i122 89
+L0 1 45
+Z4 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1702685584.000000
+Z5 !s108 1702688541.000000
 !s107 C:/Verilog/FPGA_project/calculate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/calculate.v|
 !i113 1
-Z4 o-work work
-Z5 tCvgOpt 0
+Z6 o-work work
+Z7 tCvgOpt 0
 vclock_divider
-Z6 !s110 1702685585
+Z8 !s110 1702688542
 !i10b 1
 !s100 0Pi3W4J9Z=8jL8o<;gFIl0
-R1
-InVTa6Jf;WlAF_`GCGo1i[1
 R2
+InVTa6Jf;WlAF_`GCGo1i[1
+R3
 R0
 w1702582988
 8clock_divider.v
 Fclock_divider.v
-!i122 29
+!i122 94
 L0 1 36
-R3
+R4
 r1
 !s85 0
 31
-Z7 !s108 1702685585.000000
-!s107 segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
-Z8 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/tb_calculator.v|
-!i113 1
-R4
 R5
-vkeypad_driver
+!s107 segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/tb_calculator.v|
+!i113 1
 R6
+R7
+vkeypad_driver
+R8
 !i10b 1
 !s100 9Xc_heKW^Vcn<g[Ka=?S21
-R1
-Ich[TfT1ONYAnmUlmH7X^02
 R2
+Ich[TfT1ONYAnmUlmH7X^02
+R3
 R0
 w1702667653
 8keypad_driver.v
 Fkeypad_driver.v
-!i122 29
+!i122 94
 L0 9 97
-R3
+R4
 r1
 !s85 0
 31
-R7
-Z9 !s107 segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
-R8
-!i113 1
-R4
 R5
-vsegment_driver
+Z10 !s107 segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
+R9
+!i113 1
 R6
+R7
+vsegment_driver
+R8
 !i10b 1
 !s100 S?^>N]I[_5E9lAcbB^SId1
-R1
-I:@kE?RdOLQR`C7Hb5?1392
 R2
+I:@kE?RdOLQR`C7Hb5?1392
+R3
 R0
-w1702683202
+w1702686267
 8segment_driver.v
 Fsegment_driver.v
-!i122 29
+!i122 94
 L0 1 290
-R3
+R4
 r1
 !s85 0
 31
-R7
-R9
-R8
-!i113 1
-R4
 R5
+R10
+R9
+!i113 1
+R6
+R7
 vtb_calulate
-R6
+R8
 !i10b 1
-!s100 jT^W3>KSR:jzlHB;l=jgO3
-R1
-Ih`oF6<HT0YP?ZlGFm8G5z0
+!s100 ANE:VZnJgGmn_0PXBO7>80
 R2
-R0
-Z10 w1702685154
-Z11 8C:/Verilog/FPGA_project/tb_calculator.v
-Z12 FC:/Verilog/FPGA_project/tb_calculator.v
-!i122 29
-L0 118 69
+I]dXa7_KZ9[DOQW:H41PJj2
 R3
+R0
+Z11 w1702687115
+Z12 8C:/Verilog/FPGA_project/tb_calculator.v
+Z13 FC:/Verilog/FPGA_project/tb_calculator.v
+!i122 94
+L0 120 101
+R4
 r1
 !s85 0
 31
-R7
-R9
-R8
-!i113 1
-R4
 R5
-vtb_clock_divider
+R10
+R9
+!i113 1
 R6
+R7
+vtb_clock_divider
+R8
 !i10b 1
 !s100 mkHbg8o]9j^3fa63a8>ki3
-R1
-IiO7UQin>do?eg:<zG7l6W1
 R2
+IiO7UQin>do?eg:<zG7l6W1
+R3
 R0
-R10
 R11
 R12
-!i122 29
+R13
+!i122 94
 L0 35 26
-R3
+R4
 r1
 !s85 0
 31
-R7
-R9
-R8
-!i113 1
-R4
 R5
-vtb_keypad_driver
+R10
+R9
+!i113 1
 R6
+R7
+vtb_keypad_driver
+R8
 !i10b 1
 !s100 2HAY34XZ04Qaz>o@?0MlG2
-R1
+R2
 I6kASa:0JNkHIb>YHdhU?V0
-R2
+R3
 R0
-R10
 R11
 R12
-!i122 29
+R13
+!i122 94
 L0 6 28
-R3
+R4
 r1
 !s85 0
 31
-R7
-R9
-R8
-!i113 1
-R4
 R5
-vtb_segment_driver
-R6
-!i10b 1
-!s100 M_9`Fn]a_[H2iQmZ_G:>e3
-R1
-I;ZX]_0IaRYlC=2Q9X02Mg2
-R2
-R0
 R10
+R9
+!i113 1
+R6
+R7
+vtb_segment_driver
+R8
+!i10b 1
+!s100 8mANa=j[I]:1XR@7^C6UY3
+R2
+I`Ef45FJIj5i6KZVdK3<5g1
+R3
+R0
 R11
 R12
-!i122 29
-L0 62 55
-R3
+R13
+!i122 94
+L0 62 57
+R4
 r1
 !s85 0
 31
-R7
-R9
-R8
-!i113 1
-R4
 R5
-vtop_calculator
+R10
+R9
+!i113 1
 R6
+R7
+vtb_top_calculator
+R8
+!i10b 1
+!s100 [jW=Hc9RK4eoJY?=FgSU30
+R2
+IVgR2J@:;od;D<dT:Dg7Y@0
+R3
+R0
+R11
+R12
+R13
+!i122 94
+L0 222 15
+R4
+r1
+!s85 0
+31
+R5
+R10
+R9
+!i113 1
+R6
+R7
+vtop_calculator
+R1
 !i10b 1
 !s100 CC:`56XGdXo?b5aW2:0Dk3
-R1
-Ib=b39bg]1k:zAVY0WHZbY1
 R2
+Ib=b39bg]1k:zAVY0WHZbY1
+R3
 R0
 w1702685513
 8C:/Verilog/FPGA_project/top_calculator.v
 FC:/Verilog/FPGA_project/top_calculator.v
-!i122 28
+!i122 93
 L0 1 242
-R3
+R4
 r1
 !s85 0
 31
-R7
+R5
 !s107 C:/Verilog/FPGA_project/top_calculator.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/top_calculator.v|
 !i113 1
-R4
-R5
+R6
+R7

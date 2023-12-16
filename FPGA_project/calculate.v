@@ -4,7 +4,7 @@ module calculate (sw_clk, rst, operand1, operand2, operator, ans);
 	input	signed 	[31:0]	operand1;				//피연산자 2
 	input	signed 	[31:0]	operand2;				//피연산자 1
 	input 			[2:0]	operator;				//연산자
-	output	reg		[31:0]	ans = 'h00CC0000;		//연산 결과 출력
+	output	reg	signed [31:0]	ans = 'h00CC0000;		//연산 결과 출력
 
 	reg signed	[63:0]	result;				//연산 결과
 
@@ -23,10 +23,14 @@ module calculate (sw_clk, rst, operand1, operand2, operator, ans);
 			*/
 			case(operator)
 				1 : result <= operand1 * operand2;
-				2 : result <= operand2 ? 'h00EE0000 : operand1 / operand2;	//DIV 0!
+				2 : if (operand2)
+						result <= operand1 / operand2;	//DIV 0!
+					else result <= 'h00EE0000;
 				3 : result <= operand1 + operand2;
 				4 : result <= operand1 - operand2;
-				5 : result <= operand1 % operand2;
+				5 : if (operand2)
+						result <= operand1 % operand2;	//DIV 0!
+					else result <= 'h00EE0000;
 				default : result <= 'h00CC0000;		//NULL
 			endcase
 		end

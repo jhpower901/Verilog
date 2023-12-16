@@ -77,12 +77,14 @@ module tb_segment_driver();
 	initial begin
 
 		#20 fnd_serial = 'h00EE_0000;	//Error
-		#10 fnd_serial = 'h0010_0000;	//PLUS
-		#10 fnd_serial = 'h0020_0000;	//MINUS
-		#10 fnd_serial = 'h0030_0000;	//MULTIPLE
-		#10 fnd_serial = 'h0040_0000;	//DIVID
+		#10 fnd_serial = 'h0030_0000;	//PLUS
+		#10 fnd_serial = 'h0040_0000;	//MINUS
+		#10 fnd_serial = 'h0010_0000;	//MULTIPLE
+		#10 fnd_serial = 'h0020_0000;	//DIVID
 		#10 fnd_serial = 'h0050_0000;	//MODULO
-		#10 fnd_serial = 'h00A0_0000;	//HAPPY
+		#10 fnd_serial = 'h00B0_0000;	//ANS
+		#10 fnd_serial = 'hE0B0_0000;	//-ANS
+		#10 fnd_serial = 'hE000_000;	//-0
 		#10 fnd_serial = 0;
 
 		#50 fnd_serial = 1;
@@ -148,39 +150,87 @@ module tb_calulate();
 
 		#50	operand1 <= -10;
 			operand2 <= 101;
-			operator <= 0;			//+
+			operator <= 3;			//+
 		#10	operand1 <= -10;
 			operand2 <= 101;
-			operator <= 1;			//-
+			operator <= 4;			//-
 		#10	operand1 <= -10;
 			operand2 <= 101;
-			operator <= 2;			//*
+			operator <= 1;			//*
 		#10	operand1 <= -10;
 			operand2 <= 101;
-			operator <= 3;			///
+			operator <= 2;			///
 		#10	operand1 <= -10;
 			operand2 <= 101;
-			operator <= 4;			//%
+			operator <= 5;			//%
+
+		#50	operand1 <= -10;
+			operand2 <= -101;
+			operator <= 3;			//+
+		#10	operand1 <= -10;
+			operand2 <= -101;
+			operator <= 4;			//-
+		#10	operand1 <= -10;
+			operand2 <= -101;
+			operator <= 1;			//*
+		#10	operand1 <= -10;
+			operand2 <= -101;
+			operator <= 2;			///
+		#10	operand1 <= -10;
+			operand2 <= -101;
+			operator <= 5;			//%
 
 		#50	operand1 <= 100000;
 			operand2 <= -500;
-			operator <= 0;			//+
+			operator <= 3;			//+
 		#10	operand1 <= 100000;
 			operand2 <= -500;
-			operator <= 1;			//-
+			operator <= 4;			//-
 		#10	operand1 <= 100000;
 			operand2 <= -500;
-			operator <= 2;			//*
+			operator <= 1;			//*
 		#10	operand1 <= 100000;
 			operand2 <= -500;
-			operator <= 3;			///
+			operator <= 2;			///
 		#10	operand1 <= 100000;
 			operand2 <= -500;
-			operator <= 4;			//%
+			operator <= 5;			//%
+
+		#50	operand1 <= 1023;
+			operand2 <= 0;
+			operator <= 3;			//+
+		#10	operand1 <= 1023;
+			operand2 <= 0;
+			operator <= 4;			//-
+		#10	operand1 <= 1023;
+			operand2 <= 0;
+			operator <= 1;			//*
+		#10	operand1 <= 1023;
+			operand2 <= 0;
+			operator <= 2;			///
+		#10	operand1 <= 1023;
+			operand2 <= 0;
+			operator <= 5;			//%
 		#10 $finish;
 	end
 
 	/*연산기+error detector*/
 	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
+endmodule
+
+module tb_top_calculator();
+reg clock_50m;
+reg [15:0] pb;
+wire [5:0] fnd_s;		//segment select negative decoder 필요
+wire [7:0] fnd_d;		//segment anode  positive decoder
+
+initial begin
+	clock_50m <= 0;
+	pb <= ~0;
+	forever #1 clock_50m = ~clock_50m;
+end
+
+tb_top_calculator	TOP (.clock_50m(clock_50m), .pb(pb),
+						.fnd_s(fnd_s), .fnd_d(fnd_d));
 endmodule

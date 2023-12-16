@@ -2,7 +2,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	input fnd_clk;				//fnd clock
 	input rst;
 	input [31:0] fnd_serial;	//출력해야하는 데이터
-	output reg [5:0] fnd_s;	//segment select negative decoder 필요
+	output reg [5:0] fnd_s;		//segment select negative decoder 필요
 	output reg [7:0] fnd_d;		//segment anode  positive decoder 
 
 	reg [2:0] fnd_cnt = 0;		//segment selector
