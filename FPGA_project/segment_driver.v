@@ -56,102 +56,102 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 			case (fnd_serial)
 				//NULL
 				'h00CC_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_;
-					segment[2] <= fnd_;
-					segment[1] <= fnd_;
-					segment[0] <= fnd_;
+					segment[5] = fnd_;
+					segment[4] = fnd_;
+					segment[3] = fnd_;
+					segment[2] = fnd_;
+					segment[1] = fnd_;
+					segment[0] = fnd_;
 				end
 				//Error
 				'h00EE_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_E;
-					segment[3] <= fnd_r;
-					segment[3] <= fnd_r;
-					segment[1] <= fnd_o;
-					segment[0] <= fnd_r;
+					segment[5] = fnd_;
+					segment[4] = fnd_E;
+					segment[3] = fnd_r;
+					segment[3] = fnd_r;
+					segment[1] = fnd_o;
+					segment[0] = fnd_r;
 				end
 				//PLUS
 				'h0030_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_p;
-					segment[3] <= fnd_L;
-					segment[2] <= fnd_u;
-					segment[1] <= fnd_5;
-					segment[0] <= fnd_;
+					segment[5] = fnd_;
+					segment[4] = fnd_p;
+					segment[3] = fnd_L;
+					segment[2] = fnd_u;
+					segment[1] = fnd_5;
+					segment[0] = fnd_;
 				end
 				//MINUS
 				'h0040_0000 : begin
-					segment[5] <= fnd_n;
-					segment[4] <= fnd_n;
-					segment[3] <= fnd_i;
-					segment[2] <= fnd_n;
-					segment[1] <= fnd_u;
-					segment[0] <= fnd_5;
+					segment[5] = fnd_n;
+					segment[4] = fnd_n;
+					segment[3] = fnd_i;
+					segment[2] = fnd_n;
+					segment[1] = fnd_u;
+					segment[0] = fnd_5;
 				end
 				//MULTIPLE
 				'h0010_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_n;
-					segment[2] <= fnd_n;
-					segment[1] <= fnd_u;
-					segment[0] <= fnd_L;
+					segment[5] = fnd_;
+					segment[4] = fnd_;
+					segment[3] = fnd_n;
+					segment[2] = fnd_n;
+					segment[1] = fnd_u;
+					segment[0] = fnd_L;
 				end
 				//DIVID
 				'h0020_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_0;
-					segment[3] <= fnd_i;
-					segment[2] <= fnd_v;
-					segment[1] <= fnd_i;
-					segment[0] <= fnd_0;
+					segment[5] = fnd_;
+					segment[4] = fnd_0;
+					segment[3] = fnd_i;
+					segment[2] = fnd_v;
+					segment[1] = fnd_i;
+					segment[0] = fnd_0;
 				end
 				//MODULO
 				'h0050_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_n;
-					segment[2] <= fnd_n;
-					segment[1] <= fnd_o;
-					segment[0] <= fnd_D;
+					segment[5] = fnd_;
+					segment[4] = fnd_;
+					segment[3] = fnd_n;
+					segment[2] = fnd_n;
+					segment[1] = fnd_o;
+					segment[0] = fnd_D;
 				end
 				//HAPPY
 				'h00A0_0000 : begin
-					segment[5] <= fnd_H;
-					segment[4] <= fnd_A;
-					segment[3] <= fnd_p;
-					segment[2] <= fnd_p;
-					segment[1] <= fnd_y;
-					segment[0] <= fnd_;
+					segment[5] = fnd_H;
+					segment[4] = fnd_A;
+					segment[3] = fnd_p;
+					segment[2] = fnd_p;
+					segment[1] = fnd_y;
+					segment[0] = fnd_;
 				end
 				//ANS
 				'h00B0_0000 : begin
-					segment[5] <= fnd_;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_;
-					segment[2] <= fnd_A;
-					segment[1] <= fnd_N;
-					segment[0] <= fnd_5;
+					segment[5] = fnd_;
+					segment[4] = fnd_;
+					segment[3] = fnd_;
+					segment[2] = fnd_A;
+					segment[1] = fnd_N;
+					segment[0] = fnd_5;
 				end
 				//-ANS
 				'hE0B0_0000 : begin
-					segment[5] <= fnd_h;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_;
-					segment[2] <= fnd_A;
-					segment[1] <= fnd_N;
-					segment[0] <= fnd_5;
+					segment[5] = fnd_h;
+					segment[4] = fnd_;
+					segment[3] = fnd_;
+					segment[2] = fnd_A;
+					segment[1] = fnd_N;
+					segment[0] = fnd_5;
 				end
 				//Negative
 				'hE000_000 : begin
-					segment[5] <= fnd_h;
-					segment[4] <= fnd_;
-					segment[3] <= fnd_;
-					segment[2] <= fnd_;
-					segment[1] <= fnd_;
-					segment[0] <= fnd_0;
+					segment[5] = fnd_h;
+					segment[4] = fnd_;
+					segment[3] = fnd_;
+					segment[2] = fnd_;
+					segment[1] = fnd_;
+					segment[0] = fnd_0;
 				end
 				default : begin
 					signBit = fnd_serial[31];			//부호 비트 추출
@@ -162,104 +162,104 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 
 
 					case (data % 10)
-						0 : segment[0] <= fnd_0;
-						1 : segment[0] <= fnd_1;
-						2 : segment[0] <= fnd_2;
-						3 : segment[0] <= fnd_3;
-						4 : segment[0] <= fnd_4;
-						5 : segment[0] <= fnd_5;
-						6 : segment[0] <= fnd_6;
-						7 : segment[0] <= fnd_7;
-						8 : segment[0] <= fnd_8;
-						9 : segment[0] <= fnd_9;
+						0 : segment[0] = fnd_0;
+						1 : segment[0] = fnd_1;
+						2 : segment[0] = fnd_2;
+						3 : segment[0] = fnd_3;
+						4 : segment[0] = fnd_4;
+						5 : segment[0] = fnd_5;
+						6 : segment[0] = fnd_6;
+						7 : segment[0] = fnd_7;
+						8 : segment[0] = fnd_8;
+						9 : segment[0] = fnd_9;
 					endcase
 					if (!(data / 10))
-						segment[1] <= fnd_;
+						segment[1] = fnd_;
 					else begin
 						case ((data / 10) % 10)
-							0 : segment[1] <= fnd_0;
-							1 : segment[1] <= fnd_1;
-							2 : segment[1] <= fnd_2;
-							3 : segment[1] <= fnd_3;
-							4 : segment[1] <= fnd_4;
-							5 : segment[1] <= fnd_5;
-							6 : segment[1] <= fnd_6;
-							7 : segment[1] <= fnd_7;
-							8 : segment[1] <= fnd_8;
-							9 : segment[1] <= fnd_9;
+							0 : segment[1] = fnd_0;
+							1 : segment[1] = fnd_1;
+							2 : segment[1] = fnd_2;
+							3 : segment[1] = fnd_3;
+							4 : segment[1] = fnd_4;
+							5 : segment[1] = fnd_5;
+							6 : segment[1] = fnd_6;
+							7 : segment[1] = fnd_7;
+							8 : segment[1] = fnd_8;
+							9 : segment[1] = fnd_9;
 						endcase
 					end
 					if (!(data / 100))
-						segment[2] <= fnd_;
+						segment[2] = fnd_;
 					else begin
 						case ((data / 100) % 10)
-							0 : segment[2] <= fnd_0;
-							1 : segment[2] <= fnd_1;
-							2 : segment[2] <= fnd_2;
-							3 : segment[2] <= fnd_3;
-							4 : segment[2] <= fnd_4;
-							5 : segment[2] <= fnd_5;
-							6 : segment[2] <= fnd_6;
-							7 : segment[2] <= fnd_7;
-							8 : segment[2] <= fnd_8;
-							9 : segment[2] <= fnd_9;
+							0 : segment[2] = fnd_0;
+							1 : segment[2] = fnd_1;
+							2 : segment[2] = fnd_2;
+							3 : segment[2] = fnd_3;
+							4 : segment[2] = fnd_4;
+							5 : segment[2] = fnd_5;
+							6 : segment[2] = fnd_6;
+							7 : segment[2] = fnd_7;
+							8 : segment[2] = fnd_8;
+							9 : segment[2] = fnd_9;
 						endcase
 					end
 					if (!(data / 1000))
-						segment[3] <= fnd_;
+						segment[3] = fnd_;
 					else begin
 						case ((data / 1000) % 10)
-							0 : segment[3] <= fnd_0;
-							1 : segment[3] <= fnd_1;
-							2 : segment[3] <= fnd_2;
-							3 : segment[3] <= fnd_3;
-							4 : segment[3] <= fnd_4;
-							5 : segment[3] <= fnd_5;
-							6 : segment[3] <= fnd_6;
-							7 : segment[3] <= fnd_7;
-							8 : segment[3] <= fnd_8;
-							9 : segment[3] <= fnd_9;
+							0 : segment[3] = fnd_0;
+							1 : segment[3] = fnd_1;
+							2 : segment[3] = fnd_2;
+							3 : segment[3] = fnd_3;
+							4 : segment[3] = fnd_4;
+							5 : segment[3] = fnd_5;
+							6 : segment[3] = fnd_6;
+							7 : segment[3] = fnd_7;
+							8 : segment[3] = fnd_8;
+							9 : segment[3] = fnd_9;
 						endcase
 					end
 					if (!(data / 10000))
-						segment[4] <= fnd_;
+						segment[4] = fnd_;
 					else begin
 						case ((data / 10000) % 10)
-							0 : segment[4] <= fnd_0;
-							1 : segment[4] <= fnd_1;
-							2 : segment[4] <= fnd_2;
-							3 : segment[4] <= fnd_3;
-							4 : segment[4] <= fnd_4;
-							5 : segment[4] <= fnd_5;
-							6 : segment[4] <= fnd_6;
-							7 : segment[4] <= fnd_7;
-							8 : segment[4] <= fnd_8;
-							9 : segment[4] <= fnd_9;
+							0 : segment[4] = fnd_0;
+							1 : segment[4] = fnd_1;
+							2 : segment[4] = fnd_2;
+							3 : segment[4] = fnd_3;
+							4 : segment[4] = fnd_4;
+							5 : segment[4] = fnd_5;
+							6 : segment[4] = fnd_6;
+							7 : segment[4] = fnd_7;
+							8 : segment[4] = fnd_8;
+							9 : segment[4] = fnd_9;
 						endcase
 					end
 					if (signBit)							//음수일 때
-						segment[5] <= fnd_h;				//부호 출력
+						segment[5] = fnd_h;				//부호 출력
 					else begin
 						if (!(data / 100000))
-							segment[5] <= fnd_;
+							segment[5] = fnd_;
 						else begin
 							case ((data / 100000) % 10)
-								0 : segment[5] <= fnd_0;
-								1 : segment[5] <= fnd_1;
-								2 : segment[5] <= fnd_2;
-								3 : segment[5] <= fnd_3;
-								4 : segment[5] <= fnd_4;
-								5 : segment[5] <= fnd_5;
-								6 : segment[5] <= fnd_6;
-								7 : segment[5] <= fnd_7;
-								8 : segment[5] <= fnd_8;
-								9 : segment[5] <= fnd_9;
+								0 : segment[5] = fnd_0;
+								1 : segment[5] = fnd_1;
+								2 : segment[5] = fnd_2;
+								3 : segment[5] = fnd_3;
+								4 : segment[5] = fnd_4;
+								5 : segment[5] = fnd_5;
+								6 : segment[5] = fnd_6;
+								7 : segment[5] = fnd_7;
+								8 : segment[5] = fnd_8;
+								9 : segment[5] = fnd_9;
 							endcase
 						end
 					end
 				end
 			endcase
-			segment_serial <= {segment[5], segment[4], segment[3], segment[2], segment[1], segment[0]};
+			segment_serial = {segment[5], segment[4], segment[3], segment[2], segment[1], segment[0]};
 		end
 	endtask
 
