@@ -9,7 +9,7 @@ z2
 cModel Technology
 Z0 dC:/Verilog/FPGA_project
 vcalculate
-!s110 1702747828
+!s110 1702751897
 !i10b 1
 !s100 73WU`L?0>7ek<PRgO<7Si0
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
@@ -19,36 +19,36 @@ R0
 w1702740922
 8C:/Verilog/FPGA_project/calculate.v
 FC:/Verilog/FPGA_project/calculate.v
-!i122 169
+!i122 223
 L0 1 45
 Z3 OV;L;2020.1;71
 r1
 !s85 0
 31
-!s108 1702747828.000000
+!s108 1702751897.000000
 !s107 C:/Verilog/FPGA_project/calculate.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/calculate.v|
 !i113 1
 Z4 o-work work
 Z5 tCvgOpt 0
 vclock_divider
-Z6 !s110 1702747829
+Z6 !s110 1702751898
 !i10b 1
-!s100 L4^W=4;U:VQKj4iE9fABm1
+!s100 d3ji9CBJBD<2d7_?lXgCI0
 R1
-I6]Q@=Pn;=Q]R8cIJDaBo]3
+IaY[SiecXl4cRO5DBJ4nEJ1
 R2
 R0
-w1702731010
+w1702751273
 8clock_divider.v
 Fclock_divider.v
-!i122 173
-L0 1 38
+!i122 227
+L0 1 32
 R3
 r1
 !s85 0
 31
-Z7 !s108 1702747829.000000
+Z7 !s108 1702751898.000000
 Z8 !s107 interface.v|segment_driver.v|clock_divider.v|keypad_driver.v|C:/Verilog/FPGA_project/tb_calculator.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Verilog/FPGA_project/tb_calculator.v|
 !i113 1
@@ -57,16 +57,16 @@ R5
 vinterface
 R6
 !i10b 1
-!s100 2anHDjz3HB[^Q0OB0X9f:0
+!s100 RTSWWlOXbWoQ1Dk7ZE0>Z2
 R1
-IN14WEG=m]HUz3Y2lo587B0
+IM@jlPdOR8a<52WOWf5ObT1
 R2
 R0
-w1702747464
+w1702751887
 8C:/Verilog/FPGA_project/interface.v
 FC:/Verilog/FPGA_project/interface.v
-!i122 174
-L0 1 279
+!i122 228
+L0 1 300
 R3
 r1
 !s85 0
@@ -88,7 +88,7 @@ R0
 w1702692322
 8keypad_driver.v
 Fkeypad_driver.v
-!i122 173
+!i122 227
 L0 9 97
 R3
 r1
@@ -108,10 +108,10 @@ R1
 I0j0^:@QlheFZadl42D1XM2
 R2
 R0
-w1702726697
+w1702751240
 8segment_driver.v
 Fsegment_driver.v
-!i122 173
+!i122 227
 L0 1 290
 R3
 r1
@@ -131,10 +131,10 @@ R1
 I]k]ae7cGfY]ST33g8J=Yi3
 R2
 R0
-Z10 w1702747820
+Z10 w1702751011
 Z11 8C:/Verilog/FPGA_project/tb_calculator.v
 Z12 FC:/Verilog/FPGA_project/tb_calculator.v
-!i122 173
+!i122 227
 L0 122 125
 R3
 r1
@@ -157,7 +157,7 @@ R0
 R10
 R11
 R12
-!i122 173
+!i122 227
 L0 37 26
 R3
 r1
@@ -180,7 +180,7 @@ R0
 R10
 R11
 R12
-!i122 173
+!i122 227
 L0 248 78
 R3
 r1
@@ -203,7 +203,7 @@ R0
 R10
 R11
 R12
-!i122 173
+!i122 227
 L0 7 29
 R3
 r1
@@ -226,7 +226,7 @@ R0
 R10
 R11
 R12
-!i122 173
+!i122 227
 L0 64 57
 R3
 r1
@@ -241,16 +241,16 @@ R5
 vtb_top_calculator
 R6
 !i10b 1
-!s100 3fHR<I=oR`^UazAb6AE__0
+!s100 <:7liVPfJ>d`<C^ATA8Ad0
 R1
-IRdLU<@>5i9k2A9S2i7_m?1
+IHKi;L9EnjXz]eEWdEVO9M2
 R2
 R0
 R10
 R11
 R12
-!i122 173
-L0 327 155
+!i122 227
+L0 327 164
 R3
 r1
 !s85 0

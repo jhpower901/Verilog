@@ -52,6 +52,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 	reg	[27:0]	buffer		= 0;	//피연산자 절대값 입력 버퍼
 	reg [2:0]	cnt_buffer	= 0;	//버퍼 카운터
 	reg	[31:0]	mem;				//ans 메모리
+	reg [2:0]   cnt_input	= 0;	//입력 카운터
 
 
 	/*buffer 입력*/
@@ -74,6 +75,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 			operand1	<= 0;			//피연산자 초기화
 			operand2	<= 0;			//피연산자 초기화
 			operator	<= 0;			//연산자 초기화
+			cnt_input	<= 0;			//입력 카운터 초기화
 			/*reset segment serial*/
 			fnd_serial = 'h00CC_0000;	//segment 꺼짐
 		end else begin
@@ -89,6 +91,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 						operand1	<= 0;			//피연산자 초기화
 						operand2	<= 0;			//피연산자 초기화
 						operator	<= 0;			//연산자 초기화
+						cnt_input	<= 0;			//입력 카운터 초기화
 						cal_enable	<= 0;
 						signBit		<= 0;			//부호 비트 초기화
 						fnd_serial = 'h0000_0000;	//segment 0 출력
@@ -101,7 +104,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 						/*연산자 입력*/
 						if(buffer[3:0] > 'h9) begin
 							/*아무 숫자도 입력되지 않았을 때 연산자 누르는 경우*/
-							if (!operand1) begin
+							if (!cnt_input) begin
 								/*맨 처음 부호 입력*/
 								if (buffer[3:0] == 'hc) begin	//부호 입력
 									signBit = ~signBit;			//부호 비트 설정
@@ -124,11 +127,14 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 										operand1 <= mem;
 										fnd_serial = 'h00B0_0000;	//ANS 출력
 									end
+									cnt_input <= cnt_input +1;		//입력 카운터 증가
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 									buffer <= buffer >> 4;							
 								end
 							end
 							else begin
+								if (signBit)
+									operand1 = ~operand1 + 1;
 								state <= operator_in;			//연산자 입력 모드
 							end
 						end
@@ -137,6 +143,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 							//입력 공간이 있을 때 만 입력 받음 입력 무시
 							if ((operand1 < 10_000 && signBit) || operand1 < 100_000) begin
 								operand1 = operand1 * 10 + buffer[3:0];
+								cnt_input <= cnt_input +1;		//입력 카운터 증가
 							end
 							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 							buffer <= buffer >> 4;
@@ -152,6 +159,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 				operator_in : begin				//연산자 입력 모드
 					cal_enable	<= 0;
 					signBit		<= 0;			//sign 비트 초기화
+					cnt_input	<= 0;			//입력 카운터 초기화
 					if (cnt_buffer) begin
 						case(buffer[3:0])
 							'ha: /* /% */ begin
@@ -168,6 +176,15 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 								operator <= (operator == PLUS) || (operator == MINUS) ? ~operator : PLUS;
 								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 								buffer <= buffer >> 4;
+							end
+							'he: /* ans */ begin
+								if (operator) begin				//입력받은 연산자가 있을 때
+									state <= operand2_in;	//두번째 피연산자 입력 모드
+								end
+								else begin
+									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
+									buffer <= buffer >> 4;
+								end
 							end
 							'hf: /* = */ begin
 								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
@@ -187,7 +204,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 							/*아무 숫자도 입력되지 않았을 때 연산자 누르는 경우
 							*연산자 입력 모드에서 0을 누르고 넘어올 경우 가능함
 							*/
-							if (!operand2) begin
+							if (!cnt_input) begin
 								/*맨 처음 부호 입력*/
 								if (buffer[3:0] == 'hc) begin	//부호 입력
 									signBit = ~signBit;			//부호 비트 설정
@@ -210,6 +227,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 										operand2 <= mem;
 										fnd_serial = 'h00B0_0000;	//ANS 출력
 									end
+									cnt_input <= cnt_input +1;		//입력 카운터 증가
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 									buffer <= buffer >> 4;							
 								end
@@ -224,6 +242,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 						//입력 공간이 있을 때만 입력 받음 입력 무시
 							if ((operand2 < 10_000 && signBit) || operand2 < 100_000) begin	//입력 공간이 있을 때
 								operand2 = operand2 * 10 + buffer[3:0];
+								cnt_input <= cnt_input +1;		//입력 카운터 증가
 							end
 							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 							buffer <= buffer >> 4;
@@ -237,6 +256,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 				end
 
 				calculating : begin			//결과 출력 모드
+					cnt_input	<= 0;		//입력 카운터 초기화
 					cal_enable	<= 0;
 					if (cnt_buffer) begin
 						/*입력된 연산자가 등호일 때*/
@@ -254,6 +274,10 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 							operand1	<= 0;			//피연산자 초기화
 							operand2	<= 0;			//피연산자 초기화
 							operator	<= 0;			//연산자 초기화
+						end
+						/*입력된 연산자가 ans 일 때*/
+						else if (buffer[3:0] == 'he) begin
+							state <= ideal;		//연산자 입력 모드
 						end
 						/*입력된 연산자가 등호가 아닐 때*/
 						else if (buffer[3:0] > 'h9) begin
