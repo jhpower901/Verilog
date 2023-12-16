@@ -1,7 +1,7 @@
 module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 	input clock_50m;		//보드 입력 clk
 	input [15:0] pb;		//16bit key pad 입력
-	output [3:0] fnd_s;		//segment select negative decoder
+	output [5:0] fnd_s;		//segment select negative decoder
 	output [7:0] fnd_d;		//segment anode  positive decoder
 
 	/*Clock*/
@@ -57,9 +57,10 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 
 	/*buffer 입력*/
 	always @(posedge eBCD[4]) begin
-		cnt_buffer = cnt_buffer + 1;			//버퍼에 입력된 문자 수
-		buffer = (buffer << 4) + eBCD[3:0];		//버퍼에 문자 저장
+		buffer <= buffer + eBCD[3:0] << 4 * cnt_buffer;		//버퍼에 문자 저장
+		cnt_buffer <= cnt_buffer + 1;						//버퍼에 입력된 문자 수
 	end
+
 
 
 	/*buffer 처리*/
