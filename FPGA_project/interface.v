@@ -1,16 +1,15 @@
-module top_calculator(clock_50m, pb, fnd_s, fnd_d);
-	input clock_50m;		//보드 입력 clk
-	input [15:0] pb;		//16bit key pad 입력
-	output [5:0] fnd_s;		//segment select negative decoder
-	output [7:0] fnd_d;		//segment anode  positive decoder
-
-	/*Clock*/
-	wire sw_clk;				//2^(-21) 분주 
-	wire fnd_clk;				//2^(-17) 분주
-
+module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_serial);
+	input sw_clk;						//switch clk
 	/*key input*/
-	wire [4:0]	eBCD;			//extended BCD code 키패드 입력 데이터
-	wire rst;					//reset
+	input rst;							//비동기 reset
+	input [4:0]	eBCD;					//키보드 입력
+	/*claculate var*/
+	input [31:0] ans;			//연산 결과
+	output reg  [31:0]	operand1 = 0;	//피연산자
+	output reg  [31:0]	operand2 = 0;	//피연산자
+	output reg	 [2:0]	operator = 3;	//연산자
+	/*segment serial*/
+	output reg	[31:0]	fnd_serial;		//segment 출력 데이터
 
 
 	/*연산자 별 operator code*/
@@ -45,23 +44,12 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 	reg	[27:0]	buffer;			//피연산자 절대값 입력 버퍼
 	reg [2:0]	cnt_buffer = 0;	//버퍼 카운터
 
-	/*claculate var*/
-	reg  [31:0]	operand1 = 0;		//피연산자
-	reg  [31:0]	operand2 = 0;		//피연산자
-	reg	 [2:0]	operator = 3;		//연산자
-	wire [31:0]	ans = 0;			//연산 결과
-
-	/*segment serial*/
-	reg			[31:0]	fnd_serial;		//segment 출력 데이터
-
 
 	/*buffer 입력*/
 	always @(posedge eBCD[4]) begin
 		buffer <= buffer + eBCD[3:0] << 4 * cnt_buffer;		//버퍼에 문자 저장
 		cnt_buffer <= cnt_buffer + 1;						//버퍼에 입력된 문자 수
 	end
-
-
 
 	/*buffer 처리*/
 	always @(negedge sw_clk, negedge rst) begin
@@ -226,18 +214,4 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 			endcase
 		end
 	end
-
-
-	/*clock 분주*/
-	clock_divider	CLK     (.clock_50m(clock_50m), .rst(rst),
-							.sw_clk(sw_clk), .fnd_clk(fnd_clk));	
-	/*segment 출력*/
-	segment_driver	SDI     (.fnd_clk(fnd_clk), .fnd_serial(fnd_serial),
-							.fnd_s(fnd_s), .fnd_d(fnd_d));
-	/*keypad 입력*/
-	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
-							.eBCD(eBCD), .rst(rst));
-	/*연산기+error detector*/
-	calculate		CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
-							.ans(ans));
 endmodule
