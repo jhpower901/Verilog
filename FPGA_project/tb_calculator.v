@@ -253,6 +253,7 @@ module tb_interface;
 	wire [31:0]	operand1;		//피연산자
 	wire [31:0]	operand2;		//피연산자
 	wire [2:0]	operator;		//연산자
+	wire		cal_enable;		//연산기 enable
 	wire [31:0]	fnd_serial;		//segment 출력 데이터
 
 	initial begin
@@ -320,7 +321,7 @@ module tb_interface;
 
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
-							.operand1(operand1), .operand2(operand2), .operator(operator), .fnd_serial(fnd_serial));
+							.operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
 endmodule
 
 module tb_top_calculator;
@@ -339,13 +340,14 @@ module tb_top_calculator;
 	wire rst;					//reset
 
 	/*calculate*/
-	wire [31:0]	ans = 0;			//연산 결과
+	wire [31:0]	ans;			//연산 결과
 
 	/*interface*/
-	wire [31:0]	operand1 = 0;		//피연산자
-	wire [31:0]	operand2 = 0;		//피연산자
-	wire [2:0]	operator = 3;		//연산자
-	wire [31:0]	fnd_serial;			//segment 출력 데이터
+	wire [31:0]	operand1;		//피연산자
+	wire [31:0]	operand2;		//피연산자
+	wire [2:0]	operator;		//연산자
+	wire		cal_enable;		//연산기 enable
+	wire [31:0]	fnd_serial;		//segment 출력 데이터
 
 
 	initial begin
@@ -424,6 +426,36 @@ module tb_top_calculator;
 		//rst
 		#200 pb <= ~'h8000; #200
 		#200 pb <= ~'h0000; #200
+		//-
+		#200 pb <= ~'h0800; #200
+		#200 pb <= ~'h0000; #200
+		//1
+		#200 pb <= ~'h0001; #200
+		#200 pb <= ~'h0000; #200
+		//0
+		#200 pb <= ~'h2000; #200
+		#200 pb <= ~'h0000; #200
+		//*
+		#200 pb <= ~'h0080; #200
+		#200 pb <= ~'h0000; #200
+		//5
+		#200 pb <= ~'h0020; #200
+		#200 pb <= ~'h0000; #200
+		//=
+		#200 pb <= ~'h8000; #200
+		#200 pb <= ~'h0000; #200
+		//ans
+		#200 pb <= ~'h4000; #200
+		#200 pb <= ~'h0000; #200
+		///
+		#200 pb <= ~'h0008; #200
+		#200 pb <= ~'h0000; #200
+		//0
+		#200 pb <= ~'h2000; #200
+		#200 pb <= ~'h0000; #200
+		//rst
+		#200 pb <= ~'h8000; #200
+		#200 pb <= ~'h0000; #200
 		$finish;
 	end
 
@@ -445,5 +477,5 @@ module tb_top_calculator;
 							.ans(ans));
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
-							.operand1(operand1), .operand2(operand2), .operator(operator), .fnd_serial(fnd_serial));
+							.operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
 endmodule

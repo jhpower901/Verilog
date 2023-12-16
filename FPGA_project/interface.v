@@ -51,6 +51,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 	reg 		signBit		= 0;	//부호 입력 버퍼
 	reg	[27:0]	buffer		= 0;	//피연산자 절대값 입력 버퍼
 	reg [2:0]	cnt_buffer	= 0;	//버퍼 카운터
+	reg	[31:0]	mem;				//ans 메모리
 
 
 	/*buffer 입력*/
@@ -68,6 +69,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 			signBit		<= 0;			//부호 비트 초기화
 			buffer		<= 0;			//입력 버퍼 초기화
 			cnt_buffer	<= 0;			//버퍼 카운터 초기화
+			mem			<= 0;			//memory 초기화
 			/*reset calculator input*/
 			operand1	<= 0;			//피연산자 초기화
 			operand2	<= 0;			//피연산자 초기화
@@ -78,15 +80,19 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 			case(state)
 				//대기 상태
 				ideal : begin
-					if (cnt_buffer)				//버퍼에 입력 값 있는 경우
+					mem <= ans;
+					if (cnt_buffer) begin				//버퍼에 입력 값 있는 경우
 						state <= operand1_in;		//state 피연산자 입력 모드로
-					/*reset calculator input*/
-					operand1	<= 0;			//피연산자 초기화
-					operand2	<= 0;			//피연산자 초기화
-					operator	<= 0;			//연산자 초기화
-					cal_enable	<= 0;
-					signBit		<= 0;			//부호 비트 초기화
-					fnd_serial = 'h0000_0000;	//segment 0 출력
+					end
+					else begin
+						/*reset calculator input*/
+						operand1	<= 0;			//피연산자 초기화
+						operand2	<= 0;			//피연산자 초기화
+						operator	<= 0;			//연산자 초기화
+						cal_enable	<= 0;
+						signBit		<= 0;			//부호 비트 초기화
+						fnd_serial = 'h0000_0000;	//segment 0 출력
+					end
 				end
 
 				operand1_in : begin				//첫번째 피연산자 입력 모드
@@ -101,16 +107,21 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 									signBit = ~signBit;			//부호 비트 설정
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 									buffer <= buffer >> 4;
-									fnd_serial = 'hE000_0000;	//segment -0 출력
+									
+									if (signBit) begin
+										fnd_serial = 'hE000_0000;	//segment -0 출력
+									end else begin
+										fnd_serial = 'h0000_0000;	//segment 0 출력
+									end
 								end
 								/*맨 처음 ans 입력*/
 								else if (buffer[3:0] == 'he) begin	//ans 입력
 									/*부호 비트+문자 결합 출력*/
 									if (signBit) begin
-										operand1 <= ~ans + 1;
+										operand1 <= ~mem + 1;
 										fnd_serial = 'hE0B0_0000;	//-ANS 출력
 									end else begin
-										operand1 <= ans;
+										operand1 <= mem;
 										fnd_serial = 'h00B0_0000;	//ANS 출력
 									end
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
@@ -140,6 +151,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 
 				operator_in : begin				//연산자 입력 모드
 					cal_enable	<= 0;
+					signBit		<= 0;			//sign 비트 초기화
 					if (cnt_buffer) begin
 						case(buffer[3:0])
 							'ha: /* /% */ begin
@@ -154,10 +166,6 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 							end
 							'hc: /* +- */ begin
 								operator <= (operator == PLUS) || (operator == MINUS) ? ~operator : PLUS;
-								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-								buffer <= buffer >> 4;
-							end
-							'he: /* ans */ begin
 								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 								buffer <= buffer >> 4;
 							end
@@ -185,16 +193,21 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 									signBit = ~signBit;			//부호 비트 설정
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 									buffer <= buffer >> 4;
-									fnd_serial = 'hE000_0000;	//segment -0 출력
+									
+									if (signBit) begin
+										fnd_serial = 'hE000_0000;	//segment -0 출력
+									end else begin
+										fnd_serial = 'h0000_0000;	//segment 0 출력
+									end
 								end
 								/*맨 처음 ans 입력*/
 								else if (buffer[3:0] == 'he) begin	//ans 입력
 									/*부호 비트+문자 결합 출력*/
 									if (signBit) begin
-										operand2 <= ~ans + 1;
+										operand2 <= ~mem + 1;
 										fnd_serial = 'hE0B0_0000;	//-ANS 출력
 									end else begin
-										operand2 <= ans;
+										operand2 <= mem;
 										fnd_serial = 'h00B0_0000;	//ANS 출력
 									end
 									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
@@ -246,10 +259,12 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enabl
 						else if (buffer[3:0] > 'h9) begin
 							state <= operator_in;		//연산자 입력 모드
 							operand1 <= ans;			//피연산자1에 ans 대입
+							operand2 <= 0;				//피연산자 초기화
+							signBit	 <= 0;			//sign 비트 초기화
 						end
 						/*연산 결과 출력 모드에서 숫자 입력 시*/
 						else begin						//숫자 입력 시
-							state <= operand1_in;		//첫번재 피연산자 입력 모드로
+							state <= ideal;				//초기 화면으로
 						end
 					end
 				end
