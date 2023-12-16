@@ -120,7 +120,7 @@ module tb_segment_driver;
 endmodule
 
 module tb_calulate;
-	reg sw_clk;
+	reg cal_enable;
 	reg rst;
 	reg [31:0] operand1;
 	reg [31:0] operand2;
@@ -128,96 +128,120 @@ module tb_calulate;
 	wire [31:0] ans;
 
 	initial begin
-		sw_clk <= 0;
+		cal_enable <= 0;
 		rst <= 1;
-		forever #1 sw_clk = ~sw_clk;
 	end
 
 	initial begin
 		#10	operand1 <= 10;
 			operand2 <= 101;
 			operator <= 3;			//+
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 10;
 			operand2 <= 101;
 			operator <= 4;			//-
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 10;
 			operand2 <= 101;
 			operator <= 1;			//*
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 10;
 			operand2 <= 101;
 			operator <= 2;			///
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 10;
 			operand2 <= 101;
 			operator <= 5;			//%
+			cal_enable <= 1; #1 cal_enable <= 0;
 
 		#50	operand1 <= -10;
 			operand2 <= 101;
 			operator <= 3;			//+
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= 101;
 			operator <= 4;			//-
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= 101;
 			operator <= 1;			//*
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= 101;
 			operator <= 2;			///
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= 101;
 			operator <= 5;			//%
+			cal_enable <= 1; #1 cal_enable <= 0;
 
 		#50	operand1 <= -10;
 			operand2 <= -101;
 			operator <= 3;			//+
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= -101;
 			operator <= 4;			//-
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= -101;
 			operator <= 1;			//*
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= -101;
 			operator <= 2;			///
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= -10;
 			operand2 <= -101;
 			operator <= 5;			//%
+			cal_enable <= 1; #1 cal_enable <= 0;
 
 		#50	operand1 <= 100000;
 			operand2 <= -500;
 			operator <= 3;			//+
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 100000;
 			operand2 <= -500;
 			operator <= 4;			//-
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 100000;
 			operand2 <= -500;
 			operator <= 1;			//*
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 100000;
 			operand2 <= -500;
 			operator <= 2;			///
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 100000;
 			operand2 <= -500;
 			operator <= 5;			//%
+			cal_enable <= 1; #1 cal_enable <= 0;
 
 		#50	operand1 <= 1023;
 			operand2 <= 0;
 			operator <= 3;			//+
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 1023;
 			operand2 <= 0;
 			operator <= 4;			//-
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 1023;
 			operand2 <= 0;
 			operator <= 1;			//*
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 1023;
 			operand2 <= 0;
 			operator <= 2;			///
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10	operand1 <= 1023;
 			operand2 <= 0;
 			operator <= 5;			//%
+			cal_enable <= 1; #1 cal_enable <= 0;
 		#10 $finish;
 	end
 
 	/*연산기+error detector*/
-	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
+	calculate      CAL     (.enable(cal_enable), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 endmodule
 
@@ -266,6 +290,30 @@ module tb_interface;
 		#1	eBCD = 5'h00;
 		//9
 		#10	eBCD = 5'h19;
+		#1	eBCD = 5'h00;
+		//+
+		#10	eBCD = 5'h1c;
+		#1	eBCD = 5'h00;
+		//+
+		#10	eBCD = 5'h1c;
+		#1	eBCD = 5'h00;
+		//0
+		#10	eBCD = 5'h10;
+		#1	eBCD = 5'h00;
+		//3
+		#10	eBCD = 5'h13;
+		#1	eBCD = 5'h00;
+		//4
+		#10	eBCD = 5'h14;
+		#1	eBCD = 5'h00;
+		//5
+		#10	eBCD = 5'h15;
+		#1	eBCD = 5'h00;
+		//6
+		#10	eBCD = 5'h16;
+		#1	eBCD = 5'h00;
+		//=
+		#10	eBCD = 5'h1f;
 		#1	eBCD = 5'h00;
 		#10 $finish;
 	end
@@ -392,7 +440,8 @@ module tb_top_calculator;
 	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
 							.eBCD(eBCD), .rst(rst));
 	/*연산기+error detector*/
-	calculate		CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
+
+	calculate		CAL     (.enable(cal_enable), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),

@@ -1,4 +1,4 @@
-module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_serial);
+module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, cal_enable, fnd_serial);
 	input sw_clk;						//switch clk
 	/*key input*/
 	input rst;							//비동기 reset
@@ -8,6 +8,7 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 	output reg  [31:0]	operand1 = 0;	//피연산자
 	output reg  [31:0]	operand2 = 0;	//피연산자
 	output reg	 [2:0]	operator = 3;	//연산자
+	output reg			cal_enable = 0;	//연산기 enable
 	/*segment serial*/
 	output reg	[31:0]	fnd_serial;		//segment 출력 데이터
 
@@ -19,6 +20,13 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 	localparam PLUS		= 3'b011;
 	localparam MINUS	= 3'b100;
 	localparam MOD		= 3'b101;
+	/*
+	* eBCD code mapping
+	* 맨 앞 1bit는 입력 enable임
+	* 0 1 2 3 4 5 6 7 8 9 a  b c  d  e   f
+	* 0 1 2 3 4 5 6 7 8 9 /% * +- AC ans =
+	*/	
+
 
 	/*System state*/
 	/*
@@ -29,8 +37,8 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 
 		System state circulate 0 -> 1 -> (2 -> 3 -> 4 ->) before enter '=' key!
 	*/
-	localparam ideal		= 0;
-	localparam operand1_in	= 1;
+	localparam ideal		= 0;	//대기 모드
+	localparam operand1_in	= 1;	//첫번째 피연산자 입력 모드
 	localparam operator_in	= 2;
 	localparam operand2_in	= 3;
 	localparam calculating	= 4;
@@ -70,37 +78,48 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 			case(state)
 				//대기 상태
 				ideal : begin
-					fnd_serial <= 'h0000_0000;	//segment 0 출력
 					if (cnt_buffer)				//버퍼에 입력 값 있는 경우
 						state <= operand1_in;		//state 피연산자 입력 모드로
+					/*reset calculator input*/
+					operand1	<= 0;			//피연산자 초기화
+					operand2	<= 0;			//피연산자 초기화
+					operator	<= 0;			//연산자 초기화
+					cal_enable	<= 0;
+					signBit		<= 0;			//부호 비트 초기화
+					fnd_serial = 'h0000_0000;	//segment 0 출력
 				end
 
-				operand1_in : begin
+				operand1_in : begin				//첫번째 피연산자 입력 모드
+					cal_enable	<= 0;
 					if (cnt_buffer) begin
-						/*부호 입력*/
-						if (buffer[3:0] == 'hc) begin	//부호 입력
-							signBit = ~signBit;			//부호 비트 설정
-							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-							buffer <= buffer >> 4;
-							fnd_serial <= 'hE000_0000;	//segment -0 출력
-						end
-						/*ans 입력*/
-						else if (buffer[3:0] == 'he) begin	//ans 입력
-							/*부호 비트+문자 결합 출력*/
-							if (signBit) begin
-								operand1 <= ~ans + 1;
-								fnd_serial <= 'hE0B0_0000;	//-ANS 출력
-							end else begin
-								operand1 <= ans;
-								fnd_serial <= 'h00B0_0000;	//ANS 출력
-							end
-							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-							buffer <= buffer >> 4;							
-						end
 						/*연산자 입력*/
-						else if (buffer[3:0] > 'h9) begin	//연산자 입력이라면
-							operand1 <= ans;				//첫번째 피연산자 ans 대입
-							state <= operator_in;			//연산자 입력 모드
+						if(buffer[3:0] > 'h9) begin
+							/*아무 숫자도 입력되지 않았을 때 연산자 누르는 경우*/
+							if (!operand1) begin
+								/*맨 처음 부호 입력*/
+								if (buffer[3:0] == 'hc) begin	//부호 입력
+									signBit = ~signBit;			//부호 비트 설정
+									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
+									buffer <= buffer >> 4;
+									fnd_serial = 'hE000_0000;	//segment -0 출력
+								end
+								/*맨 처음 ans 입력*/
+								else if (buffer[3:0] == 'he) begin	//ans 입력
+									/*부호 비트+문자 결합 출력*/
+									if (signBit) begin
+										operand1 <= ~ans + 1;
+										fnd_serial = 'hE0B0_0000;	//-ANS 출력
+									end else begin
+										operand1 <= ans;
+										fnd_serial = 'h00B0_0000;	//ANS 출력
+									end
+									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
+									buffer <= buffer >> 4;							
+								end
+							end
+							else begin
+								state <= operator_in;			//연산자 입력 모드
+							end
 						end
 						/*숫자 입력*/
 						else begin
@@ -112,14 +131,15 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 							buffer <= buffer >> 4;
 							/*부호 비트+숫자 결합 출력*/
 							if (signBit)
-								fnd_serial <= ~operand1 + 1;
+								fnd_serial = ~operand1 + 1;
 							else
-								fnd_serial <= operand1;
+								fnd_serial = operand1;
 						end
 					end
 				end
 
-				operator_in : begin
+				operator_in : begin				//연산자 입력 모드
+					cal_enable	<= 0;
 					if (cnt_buffer) begin
 						case(buffer[3:0])
 							'ha: /* /% */ begin
@@ -145,54 +165,74 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 								buffer <= buffer >> 4;
 							end
-							'h0: /* 0 */ begin
-								cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-								buffer <= buffer >> 4;
-							end
 							default: state <= operand2_in;	//두번째 피연산자 입력 모드
 						endcase
 					end
-					fnd_serial <= {operator, 20'h0_0000};
+					fnd_serial = {operator, 20'h0_0000};
 				end
 
-				operand2_in : begin
+				operand2_in : begin			//두번째 피연산자 입력 모드
+					cal_enable	<= 0;
 					if (cnt_buffer) begin
-						if (buffer[3:0] == 'hc) begin	//부호 입력
-							signBit = ~signBit;			//부호 비트 설정
-							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-							buffer <= buffer >> 4;
-							fnd_serial <= 'hE000_0000;	//segment -0 출력
-						end
-						else if (buffer[3:0] == 'he) begin	//ans 입력
-							if (signBit) begin
-								operand2 <= ~ans + 1;
-								fnd_serial <= 'hE0B0_0000;	//-ANS 출력
-							end else begin
-								operand2 <= ans;
-								fnd_serial <= 'h00B0_0000;	//ANS 출력
+						/*연산자 입력*/
+						if (buffer[3:0] > 'h9) begin		//연산자 입력이라면
+							/*아무 숫자도 입력되지 않았을 때 연산자 누르는 경우
+							*연산자 입력 모드에서 0을 누르고 넘어올 경우 가능함
+							*/
+							if (!operand2) begin
+								/*맨 처음 부호 입력*/
+								if (buffer[3:0] == 'hc) begin	//부호 입력
+									signBit = ~signBit;			//부호 비트 설정
+									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
+									buffer <= buffer >> 4;
+									fnd_serial = 'hE000_0000;	//segment -0 출력
+								end
+								/*맨 처음 ans 입력*/
+								else if (buffer[3:0] == 'he) begin	//ans 입력
+									/*부호 비트+문자 결합 출력*/
+									if (signBit) begin
+										operand2 <= ~ans + 1;
+										fnd_serial = 'hE0B0_0000;	//-ANS 출력
+									end else begin
+										operand2 <= ans;
+										fnd_serial = 'h00B0_0000;	//ANS 출력
+									end
+									cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
+									buffer <= buffer >> 4;							
+								end
 							end
-							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
-							buffer <= buffer >> 4;							
+							else begin
+								cal_enable	<= 1;				//ans 얻어옴
+								state <= calculating;			//계산 모드
+							end
 						end
-						else if (buffer[3:0] > 'h9) begin	//연산자 입력이라면
-							state <= calculating;			//계산 모드
-						end else begin
+						/*숫자 입력*/
+						else begin
+						//입력 공간이 있을 때만 입력 받음 입력 무시
 							if ((operand2 < 10_000 && signBit) || operand2 < 100_000) begin	//입력 공간이 있을 때
-								operand2 <= operand2 * 10 + buffer[3:0];
+								operand2 = operand2 * 10 + buffer[3:0];
 							end
 							cnt_buffer <= cnt_buffer - 1;	//buffer에서 문자 삭제
 							buffer <= buffer >> 4;
+							/*부호 비트+숫자 결합 출력*/
 							if (signBit)
-								fnd_serial <= ~operand2 + 1;
+								fnd_serial = ~operand2 + 1;
 							else
-								fnd_serial <= operand2;
+								fnd_serial = operand2;
 						end
 					end
 				end
 
-				calculating : begin
+				calculating : begin			//결과 출력 모드
+					cal_enable	<= 0;
 					if (cnt_buffer) begin
+						/*입력된 연산자가 등호일 때*/
 						if(buffer[3:0] == 'hf) begin	// 등호 입력
+							/*overflow 확인*/
+							if (ans == 'h00EE_0000)
+								state <= ERROR;			//Error state 초기화
+							else
+								fnd_serial = ans;		//연산 결과 출력
 							/*reset buffer*/
 							signBit		<= 0;			//부호 비트 초기화
 							buffer		<= 0;			//입력 버퍼 초기화
@@ -201,23 +241,22 @@ module interface(sw_clk, rst, eBCD, ans, operand1, operand2, operator, fnd_seria
 							operand1	<= 0;			//피연산자 초기화
 							operand2	<= 0;			//피연산자 초기화
 							operator	<= 0;			//연산자 초기화
-							if (ans == 'h00EE_0000)
-								state <= ERROR;
-							else
-								fnd_serial <= ans;
-							
 						end
+						/*입력된 연산자가 등호가 아닐 때*/
 						else if (buffer[3:0] > 'h9) begin
 							state <= operator_in;		//연산자 입력 모드
 							operand1 <= ans;			//피연산자1에 ans 대입
-						end else begin					//숫자 입력 시
-							state <= ideal;				//초기 상태로
+						end
+						/*연산 결과 출력 모드에서 숫자 입력 시*/
+						else begin						//숫자 입력 시
+							state <= operand1_in;		//첫번재 피연산자 입력 모드로
 						end
 					end
 				end
 
 				ERROR : begin
 					//error
+					fnd_serial = 'h00EE_0000;
 				end
 			endcase
 		end
