@@ -4,7 +4,7 @@
 `include "segment_driver.v"
 `include "interface.v"
 
-module tb_keypad_driver();
+module tb_keypad_driver;
 	reg			sw_clk;
 	reg	[15:0]	npb;
 	reg	[15:0]	pb;
@@ -34,7 +34,7 @@ module tb_keypad_driver();
 							.eBCD(eBCD), .rst(rst));
 endmodule
 
-module tb_clock_divider();
+module tb_clock_divider;
 	reg clock_50m;
 	reg rst;
 	wire sw_clk;
@@ -61,7 +61,7 @@ module tb_clock_divider();
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));		
 endmodule
 
-module tb_segment_driver();
+module tb_segment_driver;
 	reg fnd_clk;
 	reg rst;
 	reg signed [31:0] fnd_serial;
@@ -119,7 +119,7 @@ module tb_segment_driver();
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 endmodule
 
-module tb_calulate();
+module tb_calulate;
 	reg sw_clk;
 	reg rst;
 	reg [31:0] operand1;
@@ -221,7 +221,61 @@ module tb_calulate();
 							.ans(ans));
 endmodule
 
-module tb_interface();
+module tb_interface;
+	reg sw_clk;					//switch clock
+	reg rst;					//비동기 reset
+	reg [4:0]	eBCD;			//encoded key in
+	reg [31:0]	ans;			//연산 결과
+	wire [31:0]	operand1;		//피연산자
+	wire [31:0]	operand2;		//피연산자
+	wire [2:0]	operator;		//연산자
+	wire [31:0]	fnd_serial;		//segment 출력 데이터
+
+	initial begin
+		sw_clk	<= 0;
+		rst		<= 1;
+		eBCD	<= 0;
+		ans		<= 0;
+		forever #1 sw_clk =~ sw_clk;
+	end
+
+	initial begin
+		//1
+		#10	eBCD = 5'h11;
+		#1	eBCD = 5'h00;
+		//2
+		#10	eBCD = 5'h12;
+		#1	eBCD = 5'h00;
+		//3
+		#10	eBCD = 5'h13;
+		#1	eBCD = 5'h00;
+		//4
+		#10	eBCD = 5'h14;
+		#1	eBCD = 5'h00;
+		//5
+		#10	eBCD = 5'h15;
+		#1	eBCD = 5'h00;
+		//6
+		#10	eBCD = 5'h16;
+		#1	eBCD = 5'h00;
+		//7
+		#10	eBCD = 5'h17;
+		#1	eBCD = 5'h00;
+		//8
+		#10	eBCD = 5'h18;
+		#1	eBCD = 5'h00;
+		//9
+		#10	eBCD = 5'h19;
+		#1	eBCD = 5'h00;
+		#10 $finish;
+	end
+
+	/*interface*/
+	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
+							.operand1(operand1), .operand2(operand2), .operator(operator), .fnd_serial(fnd_serial));
+endmodule
+
+module tb_top_calculator;
 	reg clock_50m;		//보드 입력 clk
 	reg [15:0] pb;		//16bit key pad 입력
 	/*segment_driver*/
@@ -332,7 +386,7 @@ module tb_interface();
 	clock_divider	CLK     (.clock_50m(clock_50m), .rst(rst),
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));	
 	/*segment 출력*/
-	segment_driver	SDI     (.fnd_clk(fnd_clk), .fnd_serial(fnd_serial),
+	segment_driver SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
 	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
