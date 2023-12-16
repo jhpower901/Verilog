@@ -23,7 +23,7 @@ module calculate (sw_clk, rst, operand1, operand2, operator, ans);
 			*/
 			case(operator)
 				1 : result <= operand1 * operand2;
-				2 : result <= operand1 / operand2;
+				2 : result <= operand2 ? 'h00EE0000 : operand1 / operand2;	//DIV 0!
 				3 : result <= operand1 + operand2;
 				4 : result <= operand1 - operand2;
 				5 : result <= operand1 % operand2

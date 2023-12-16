@@ -30,6 +30,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	localparam fnd_r = 8'b0101_0000;		//r
 	localparam fnd_h = 8'b0100_0000;		//-
 	localparam fnd_n = 8'b0101_0100;		//n
+	localparam fnd_N = 8'b0011_0111;		//N
 	localparam fnd_u = 8'b0011_1110;		//u
 	localparam fnd_i = 8'b0011_0000;		//i
 	localparam fnd_L = 8'b0011_1110;		//L
@@ -72,7 +73,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[0] <= fnd_r;
 				end
 				//PLUS
-				'h0010_0000 : begin
+				'h0030_0000 : begin
 					segment[5] <= fnd_;
 					segment[4] <= fnd_p;
 					segment[3] <= fnd_L;
@@ -81,7 +82,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[0] <= fnd_;
 				end
 				//MINUS
-				'h0020_0000 : begin
+				'h0040_0000 : begin
 					segment[5] <= fnd_n;
 					segment[4] <= fnd_n;
 					segment[3] <= fnd_i;
@@ -90,7 +91,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[0] <= fnd_5;
 				end
 				//MULTIPLE
-				'h0030_0000 : begin
+				'h0010_0000 : begin
 					segment[5] <= fnd_;
 					segment[4] <= fnd_;
 					segment[3] <= fnd_n;
@@ -99,7 +100,7 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[0] <= fnd_L;
 				end
 				//DIVID
-				'h0040_0000 : begin
+				'h0020_0000 : begin
 					segment[5] <= fnd_;
 					segment[4] <= fnd_0;
 					segment[3] <= fnd_i;
@@ -124,6 +125,24 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[2] <= fnd_p;
 					segment[1] <= fnd_y;
 					segment[0] <= fnd_;
+				end
+				//ANS
+				'h00B0_0000 : begin
+					segment[5] <= fnd_;
+					segment[4] <= fnd_;
+					segment[3] <= fnd_;
+					segment[2] <= fnd_A;
+					segment[1] <= fnd_N;
+					segment[0] <= fnd_5;
+				end
+				//-ANS
+				'hE0B0_0000 : begin
+					segment[5] <= fnd_h;
+					segment[4] <= fnd_;
+					segment[3] <= fnd_;
+					segment[2] <= fnd_A;
+					segment[1] <= fnd_N;
+					segment[0] <= fnd_5;
 				end
 				//Negative
 				'hE000_000 : begin
