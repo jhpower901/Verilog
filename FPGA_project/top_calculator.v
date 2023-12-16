@@ -213,8 +213,8 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 						else if (buffer[3:0] > 'h9) begin
 							state <= operator_in;		//연산자 입력 모드
 							operand1 <= ans;			//피연산자1에 ans 대입
-						end else begin
-							state <= ideal;
+						end else begin					//숫자 입력 시
+							state <= ideal;				//초기 상태로
 						end
 					end
 				end

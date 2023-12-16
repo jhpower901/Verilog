@@ -28,8 +28,10 @@ module clock_divider (clock_50m, rst, sw_clk, fnd_clk);
 			sw_clk <= 0;
 		end else begin
 			init_counter <= init_counter + 1;	//50MHz clock signal
-			sw_clk <= init_counter[20];		// clock for keypad(switch)
-			fnd_clk <= init_counter[16];	// clock for 7-segment
+			//sw_clk <= init_counter[20];		// clock for keypad(switch)
+			//fnd_clk <= init_counter[16];	// clock for 7-segment
+			sw_clk <= init_counter[6];		// clock for keypad(switch)
+			fnd_clk <= init_counter[2];	// clock for 7-segment
 		end
 	end
 	
