@@ -184,5 +184,3 @@ module tb_calulate();
 	calculate      CAL     (.sw_clk(sw_clk), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 endmodule
-
-module buffer
