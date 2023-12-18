@@ -36,28 +36,22 @@ endmodule
 
 module tb_clock_divider;
 	reg clock_50m;
-	reg rst;
 	wire sw_clk;
 	wire fnd_clk;
 
 	initial begin
-		rst <= 1;
 		clock_50m <= 0;
 		forever #1 clock_50m = ~clock_50m;
 	end
 
 	initial begin
-		#10
-		rst = 0;
-		#100000
-		rst = 1;
 		#1000000000
 		$finish;
 	end
 
 
 	/*clock 분주*/
-	clock_divider  CLK     (.clock_50m(clock_50m), .rst(rst),
+	clock_divider	CLK     (.clock_50m(clock_50m),
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));		
 endmodule
 
@@ -472,10 +466,10 @@ module tb_top_calculator;
 
 
 	/*clock 분주*/
-	clock_divider	CLK     (.clock_50m(clock_50m), .rst(rst),
+	clock_divider	CLK     (.clock_50m(clock_50m),
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));	
 	/*segment 출력*/
-	segment_driver SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
+	segment_driver	SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
 	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),

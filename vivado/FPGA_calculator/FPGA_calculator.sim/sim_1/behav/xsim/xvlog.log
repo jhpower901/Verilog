@@ -1,0 +1,14 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/calculate.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module calculate
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/clock_divider.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module clock_divider
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/interface.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module interface
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/keypad_driver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module keypad_driver
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/segment_driver.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module segment_driver
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/sources_1/imports/FPGA_project/top_calculator.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module top_calculator
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
