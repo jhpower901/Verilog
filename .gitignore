@@ -18,3 +18,7 @@ transcript
 
 ### vivado ###
 *.flock
+
+
+### document ###
+*.hwp
