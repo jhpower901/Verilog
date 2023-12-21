@@ -1,0 +1,45 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "fnd_s[0]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[1]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[2]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[3]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[4]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_s[5]",
+					"strict" : false
+				},
+				{
+					"name" : "fnd_d[6]",
+					"strict" : false
+				},
+				{
+					"name" : "pb[12]",
+					"strict" : false
+				},
+				{
+					"name" : "clock_50m",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
