@@ -30,17 +30,15 @@ module top_calculator(clock_50m, pb, fnd_s, fnd_d);
 	clock_divider	CLK     (.clock_50m(clock_50m),
 							.sw_clk(sw_clk), .fnd_clk(fnd_clk));	
 	/*segment 출력*/
-	segment_driver SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
+	segment_driver	SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
-	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
+	keypad_driver 	KDI     (.sw_clk(sw_clk), .pb(pb), .mode(mode),
 							.eBCD(eBCD), .rst(rst));
 	/*연산기+error detector*/
-
 	calculate		CAL     (.enable(cal_enable), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
-							.operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
-
+							.mode(mode), .operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
 endmodule

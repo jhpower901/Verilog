@@ -23,11 +23,11 @@ module clock_divider (clock_50m, sw_clk, fnd_clk);
 	always @(posedge clock_50m) begin
 		init_counter <= init_counter + 1;	//50MHz clock signal
 		/*실제 50MHz 동작 코드*/
-		sw_clk <= init_counter[20];			// clock for keypad(switch)
-		fnd_clk <= init_counter[16];		// clock for 7-segment
+		// sw_clk <= init_counter[20];			// clock for keypad(switch)
+		// fnd_clk <= init_counter[16];		// clock for 7-segment
 		/*testbench용 코드*/
-		// sw_clk <= init_counter[5];		// clock for keypad(switch)
-		// fnd_clk <= init_counter[1];		// clock for 7-segment
+		sw_clk <= init_counter[5];		// clock for keypad(switch)
+		fnd_clk <= init_counter[1];		// clock for 7-segment
 	end
 	
 endmodule

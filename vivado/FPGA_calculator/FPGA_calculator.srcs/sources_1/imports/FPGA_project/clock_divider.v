@@ -1,33 +1,33 @@
 module clock_divider (clock_50m, sw_clk, fnd_clk);
 	/* clock divider
 	* [31:0]init_counter 2^(-21) divid -> 50Mhz/(2^21)
-	* init_counterÀÇ 20¹øÂ° bit´Â clock_50mÀÌ 2^20ÁÖ±â¸¶´Ù °ªÀÌ ¹Ù²ñ
-	* µû¶ó¼­ sw_clkÀÇ ÁÖÆÄ¼ö´Â 50Mhz/(2^21) = 23.84Hz
-	* ÁÖ±â´Â 41.94ms
+	* init_counterì˜ 20ë²ˆì§¸ bitëŠ” clock_50mì´ 2^20ì£¼ê¸°ë§ˆë‹¤ ê°’ì´ ë°”ë€œ
+	* ë”°ë¼ì„œ sw_clkì˜ ì£¼íŒŒìˆ˜ëŠ” 50Mhz/(2^21) = 23.84Hz
+	* ì£¼ê¸°ëŠ” 41.94ms
 	* sw_clk = 23.84Hz
 	*
 	* 2^(-17) divide -> 50Mhz/(2^17) = 381.47Hz
-	* ÁÖ±â´Â 2.6214ms
+	* ì£¼ê¸°ëŠ” 2.6214ms
 	* fnd_clk = 381.47Hz
 	*/
-	input clock_50m;	//º¸µå ÀÔ·Â Å¬·°
-	output sw_clk;		//sw µ¿ÀÛ clk
-	output fnd_clk;		//segment Ç¥½Ã ÁÖÆÄ¼ö clk
+	input clock_50m;	//ë³´ë“œ ì…ë ¥ í´ëŸ­
+	output sw_clk;		//sw ë™ì‘ clk
+	output fnd_clk;		//segment í‘œì‹œ ì£¼íŒŒìˆ˜ clk
 
 	reg [31:0] init_counter = 0;	//50MHz counter
-	reg sw_clk;					//2^(-21) ºĞÁÖ 
-	reg fnd_clk;				//2^(-17) ºĞÁÖ
+	reg sw_clk;					//2^(-21) ë¶„ì£¼ 
+	reg fnd_clk;				//2^(-17) ë¶„ì£¼
 
 
 	// clock_50m. clock counter.
 	always @(posedge clock_50m) begin
 		init_counter <= init_counter + 1;	//50MHz clock signal
-		/*½ÇÁ¦ 50MHz µ¿ÀÛ ÄÚµå*/
-		sw_clk <= init_counter[20];			// clock for keypad(switch)
-		fnd_clk <= init_counter[16];		// clock for 7-segment
-		/*testbench¿ë ÄÚµå*/
-		// sw_clk <= init_counter[5];		// clock for keypad(switch)
-		// fnd_clk <= init_counter[1];		// clock for 7-segment
+		/*ì‹¤ì œ 50MHz ë™ì‘ ì½”ë“œ*/
+		// sw_clk <= init_counter[20];			// clock for keypad(switch)
+		// fnd_clk <= init_counter[16];		// clock for 7-segment
+		/*testbenchìš© ì½”ë“œ*/
+		sw_clk <= init_counter[5];		// clock for keypad(switch)
+		fnd_clk <= init_counter[1];		// clock for 7-segment
 	end
 	
 endmodule

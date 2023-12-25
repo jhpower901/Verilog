@@ -1,13 +1,13 @@
 module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	input fnd_clk;				//fnd clock
 	input rst;
-	input [31:0] fnd_serial;	//Ãâ·ÂÇØ¾ßÇÏ´Â µ¥ÀÌÅÍ
-	output reg [5:0] fnd_s;		//segment select negative decoder ÇÊ¿ä
+	input [31:0] fnd_serial;	//ì¶œë ¥í•´ì•¼í•˜ëŠ” ë°ì´í„°
+	output reg [5:0] fnd_s;		//segment select negative decoder í•„ìš”
 	output reg [7:0] fnd_d;		//segment anode  positive decoder 
 
 	reg [2:0] fnd_cnt = 0;		//segment selector
-	reg [7:0] segment [5:0];	//fnd Ç¥½Ã À§Ä¡º° µ¥ÀÌÅÍ
-	reg [47:0] segment_serial;	//Ãâ·Â anode serial
+	reg [7:0] segment [5:0];	//fnd í‘œì‹œ ìœ„ì¹˜ë³„ ë°ì´í„°
+	reg [47:0] segment_serial;	//ì¶œë ¥ anode serial
 
 
 	localparam fnd_0 = 8'b0011_1111;		//0
@@ -41,27 +41,27 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 	localparam fnd_	 = 8'b0000_0000;		//null
 
 
-	/*fnd_serial¿¡ ´ëÀÀµÇ´Â ¹®ÀÚ segment¿¡ ÀúÀå*/
+	/*fnd_serialì— ëŒ€ì‘ë˜ëŠ” ë¬¸ì segmentì— ì €ì¥*/
 	task set_segment;
-		input [31:0] fnd_serial;		//Ãâ·ÂÇØ¾ßÇÏ´Â µ¥ÀÌÅÍ
-		output [47:0] segment_serial;	//Ãâ·Â anode serial
+		input [31:0] fnd_serial;		//ì¶œë ¥í•´ì•¼í•˜ëŠ” ë°ì´í„°
+		output [47:0] segment_serial;	//ì¶œë ¥ anode serial
 
-		reg [31:0] data;				//µ¥ÀÌÅÍÀÇ Àı´ñ°ª
-		reg [7:0] segment [5:0];		//°¢ ÀÚ¸®¸¶´Ù Ãâ·ÂµÇ´Â anode
-		reg signBit;					//Ãâ·ÂµÇ´Â µ¥ÀÌÅÍÀÇ ºÎÈ£
+		reg [31:0] data;				//ë°ì´í„°ì˜ ì ˆëŒ“ê°’
+		reg [7:0] segment [5:0];		//ê° ìë¦¬ë§ˆë‹¤ ì¶œë ¥ë˜ëŠ” anode
+		reg signBit;					//ì¶œë ¥ë˜ëŠ” ë°ì´í„°ì˜ ë¶€í˜¸
 
 		begin
-			/*ÀÔ·Â µ¥ÀÌÅÍ¿¡ µû¸¥ Ãâ·Â °ª ÁöÁ¤*/
-			//Æ¯Á¤ ¹®ÀÚ Ãâ·ÂÀÎ °æ¿ì È®ÀÎ
+			/*ì…ë ¥ ë°ì´í„°ì— ë”°ë¥¸ ì¶œë ¥ ê°’ ì§€ì •*/
+			//íŠ¹ì • ë¬¸ì ì¶œë ¥ì¸ ê²½ìš° í™•ì¸
 			case (fnd_serial)
 				//NULL
 				'h00CC_0000 : begin
-					segment[5] = fnd_;
-					segment[4] = fnd_;
-					segment[3] = fnd_;
-					segment[2] = fnd_;
-					segment[1] = fnd_;
-					segment[0] = fnd_;
+					segment[5] = fnd_h;
+					segment[4] = fnd_h;
+					segment[3] = fnd_h;
+					segment[2] = fnd_h;
+					segment[1] = fnd_h;
+					segment[0] = fnd_h;
 				end
 				//Error
 				'h00EE_0000 : begin
@@ -154,9 +154,9 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 					segment[0] = fnd_0;
 				end
 				default : begin
-					signBit = fnd_serial[31];			//ºÎÈ£ ºñÆ® ÃßÃâ
-					if (signBit)						//À½¼öÀÏ ¶§
-						data = ~fnd_serial + 1;			//2ÀÇ º¸¼ö
+					signBit = fnd_serial[31];			//ë¶€í˜¸ ë¹„íŠ¸ ì¶”ì¶œ
+					if (signBit)						//ìŒìˆ˜ì¼ ë•Œ
+						data = ~fnd_serial + 1;			//2ì˜ ë³´ìˆ˜
 					else
 						data = fnd_serial;
 
@@ -237,8 +237,8 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 							9 : segment[4] = fnd_9;
 						endcase
 					end
-					if (signBit)							//À½¼öÀÏ ¶§
-						segment[5] = fnd_h;				//ºÎÈ£ Ãâ·Â
+					if (signBit)							//ìŒìˆ˜ì¼ ë•Œ
+						segment[5] = fnd_h;				//ë¶€í˜¸ ì¶œë ¥
 					else begin
 						if (!(data / 100000))
 							segment[5] = fnd_;
@@ -272,22 +272,22 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 			segment[3] <= fnd_h;
 			segment[4] <= fnd_h;
 			segment[5] <= fnd_h;
-			/*segment Ãâ·Â*/
+			/*segment ì¶œë ¥*/
 			fnd_cnt <= (fnd_cnt == 5) ? 0 : fnd_cnt + 1;		//fnd selector count
-			fnd_d <= segment[fnd_cnt];						//ÇØ´ç À§Ä¡¿¡ Ãâ·ÂÇÒ anode
-			fnd_s <= ~(6'b00_0001 << fnd_cnt);				//segment ¼±ÅÃ
+			fnd_d <= segment[fnd_cnt];						//í•´ë‹¹ ìœ„ì¹˜ì— ì¶œë ¥í•  anode
+			fnd_s <= ~(6'b00_0001 << fnd_cnt);				//segment ì„ íƒ
 		end else begin
-			set_segment(fnd_serial, segment_serial);		//Àü´Ş ¹ŞÀº µ¥ÀÌÅÍ µğÄÚµù
+			set_segment(fnd_serial, segment_serial);		//ì „ë‹¬ ë°›ì€ ë°ì´í„° ë””ì½”ë”©
 			segment[0] <= segment_serial[7:0];
 			segment[1] <= segment_serial[15:8];
 			segment[2] <= segment_serial[23:16];
 			segment[3] <= segment_serial[31:24];
 			segment[4] <= segment_serial[39:32];
 			segment[5] <= segment_serial[47:40];
-			/*segment Ãâ·Â*/
+			/*segment ì¶œë ¥*/
 			fnd_cnt <= (fnd_cnt == 5) ? 0 : fnd_cnt + 1;		//fnd selector count
-			fnd_d <= segment[fnd_cnt];						//ÇØ´ç À§Ä¡¿¡ Ãâ·ÂÇÒ anode
-			fnd_s <= ~(6'b00_0001 << fnd_cnt);				//segment ¼±ÅÃ
+			fnd_d <= segment[fnd_cnt];						//í•´ë‹¹ ìœ„ì¹˜ì— ì¶œë ¥í•  anode
+			fnd_s <= ~(6'b00_0001 << fnd_cnt);				//segment ì„ íƒ
 		end
 	end
 endmodule

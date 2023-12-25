@@ -1,5 +1,5 @@
 EDA Netlist Writer report for top_calculator
-Thu Dec 21 18:37:19 2023
+Tue Dec 26 05:24:52 2023
 Quartus Prime Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
 
 
@@ -37,7 +37,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------+
 ; EDA Netlist Writer Summary                                        ;
 +---------------------------+---------------------------------------+
-; EDA Netlist Writer Status ; Successful - Thu Dec 21 18:37:19 2023 ;
+; EDA Netlist Writer Status ; Successful - Tue Dec 26 05:24:52 2023 ;
 ; Revision Name             ; top_calculator                        ;
 ; Top-level Entity Name     ; top_calculator                        ;
 ; Family                    ; Cyclone IV E                          ;
@@ -81,14 +81,14 @@ https://fpgasoftware.intel.com/eula.
 Info: *******************************************************************
 Info: Running Quartus Prime EDA Netlist Writer
     Info: Version 22.1std.0 Build 915 10/25/2022 SC Lite Edition
-    Info: Processing started: Thu Dec 21 18:37:18 2023
+    Info: Processing started: Tue Dec 26 05:24:49 2023
 Info: Command: quartus_eda --read_settings_files=off --write_settings_files=off top_calculator -c top_calculator
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (204019): Generated file top_calculator.vo in folder "C:/Verilog/FPGA_project/simulation/questa/" for EDA simulation tool
 Info: Quartus Prime EDA Netlist Writer was successful. 0 errors, 1 warning
-    Info: Peak virtual memory: 4644 megabytes
-    Info: Processing ended: Thu Dec 21 18:37:19 2023
-    Info: Elapsed time: 00:00:01
-    Info: Total CPU time (on all processors): 00:00:01
+    Info: Peak virtual memory: 4692 megabytes
+    Info: Processing ended: Tue Dec 26 05:24:52 2023
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

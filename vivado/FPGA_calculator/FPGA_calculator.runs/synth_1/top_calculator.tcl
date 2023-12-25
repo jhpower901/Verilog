@@ -102,6 +102,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Verilog/vivado/FPGA_calculator/FPGA_calculator.srcs/utils_1/imports/synth_1/top_calculator.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

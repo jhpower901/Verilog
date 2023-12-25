@@ -6,31 +6,37 @@
 
 module tb_keypad_driver;
 	reg			sw_clk;
-	reg	[15:0]	npb;
 	reg	[15:0]	pb;
+	reg			mode;
 	wire [4:0]	eBCD;
 	wire 		rst;
 
+	reg	[15:0]	npb;
+
 	initial begin
-		sw_clk <= 0;
-		npb <= 'h0000;
-		pb <= ~npb;
+		sw_clk = 0;
+		npb = 'h0000;
+		pb = ~npb;
 		forever #0.5 sw_clk = ~sw_clk;
 	end
 
 	initial begin
 		repeat(20) begin
 			#5
-			npb <= npb ? npb << 1 : 'h0001 ;
-			pb <= ~npb;
-			#3
-			pb <= 'hFFFF;
+			npb = npb ? npb << 1 : 'h0001 ;
+			pb = ~npb;
+			#5
+			pb = 'hFFFF;
+			#10
+			mode = 1;
+			#1
+			mode = 0;
 		end
 		#10 $finish;
 	end
 
 	/*keypad 입력*/
-	keypad_driver  KDI     (.sw_clk(sw_clk), .pb(pb),
+	keypad_driver  KDI     (.sw_clk(sw_clk), .pb(pb), .mode(mode),
 							.eBCD(eBCD), .rst(rst));
 endmodule
 
@@ -244,6 +250,7 @@ module tb_interface;
 	reg rst;					//비동기 reset
 	reg [4:0]	eBCD;			//encoded key in
 	reg [31:0]	ans;			//연산 결과
+	wire		mode;			//키보드 버퍼 읽기 모드 0:only read, 1:read and delete
 	wire [31:0]	operand1;		//피연산자
 	wire [31:0]	operand2;		//피연산자
 	wire [2:0]	operator;		//연산자
@@ -315,7 +322,7 @@ module tb_interface;
 
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
-							.operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
+							.mode(mode), .operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
 endmodule
 
 module tb_top_calculator;
@@ -459,6 +466,37 @@ module tb_top_calculator;
 		//rst
 		#200 pb <= ~'h1000; #200
 		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//9
+		#200 pb <= ~'h0400; #200
+		#200 pb <= ~'h0000; #200
+		//+
+		#200 pb <= ~'h0800; #200
+		#200 pb <= ~'h0000; #200
+		//1
+		#200 pb <= ~'h0001; #200
+		#200 pb <= ~'h0000; #200
+		//=
+		#200 pb <= ~'h8000; #200
+		#200 pb <= ~'h0000; #200
+		#200
+		//rst
+		#200 pb <= ~'h1000; #200
+		#200 pb <= ~'h0000; #200
 		$finish;
 	end
 
@@ -472,13 +510,12 @@ module tb_top_calculator;
 	segment_driver	SDI     (.fnd_clk(fnd_clk), .rst(rst), .fnd_serial(fnd_serial),
 							.fnd_s(fnd_s), .fnd_d(fnd_d));
 	/*keypad 입력*/
-	keypad_driver	KDI     (.sw_clk(sw_clk), .pb(pb),
+	keypad_driver 	KDI     (.sw_clk(sw_clk), .pb(pb), .mode(mode),
 							.eBCD(eBCD), .rst(rst));
 	/*연산기+error detector*/
-
 	calculate		CAL     (.enable(cal_enable), .rst(rst), .operand1(operand1), .operand2(operand2), .operator(operator),
 							.ans(ans));
 	/*interface*/
 	interface		UI		(.sw_clk(sw_clk), .rst(rst), .eBCD(eBCD), .ans(ans),
-							.operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
+							.mode(mode), .operand1(operand1), .operand2(operand2), .operator(operator), .cal_enable(cal_enable), .fnd_serial(fnd_serial));
 endmodule

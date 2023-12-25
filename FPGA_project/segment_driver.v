@@ -56,12 +56,12 @@ module segment_driver (fnd_clk, rst, fnd_serial, fnd_s, fnd_d);
 			case (fnd_serial)
 				//NULL
 				'h00CC_0000 : begin
-					segment[5] = fnd_;
-					segment[4] = fnd_;
-					segment[3] = fnd_;
-					segment[2] = fnd_;
-					segment[1] = fnd_;
-					segment[0] = fnd_;
+					segment[5] = fnd_h;
+					segment[4] = fnd_h;
+					segment[3] = fnd_h;
+					segment[2] = fnd_h;
+					segment[1] = fnd_h;
+					segment[0] = fnd_h;
 				end
 				//Error
 				'h00EE_0000 : begin
