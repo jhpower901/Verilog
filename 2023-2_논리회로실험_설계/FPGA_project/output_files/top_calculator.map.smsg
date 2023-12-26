@@ -1,0 +1,5 @@
+Info (10281): Verilog HDL Declaration information at segment_driver.v(6): object "fnd_d" differs only in case from object "fnd_D" in the same scope File: C:/Verilog/FPGA_project/segment_driver.v Line: 6
+Info (10281): Verilog HDL Declaration information at segment_driver.v(32): object "fnd_n" differs only in case from object "fnd_N" in the same scope File: C:/Verilog/FPGA_project/segment_driver.v Line: 32
+Info (10281): Verilog HDL Declaration information at segment_driver.v(31): object "fnd_h" differs only in case from object "fnd_H" in the same scope File: C:/Verilog/FPGA_project/segment_driver.v Line: 31
+Warning (10268): Verilog HDL information at keypad_driver.v(27): always construct contains both blocking and non-blocking assignments File: C:/Verilog/FPGA_project/keypad_driver.v Line: 27
+Warning (10268): Verilog HDL information at interface.v(57): always construct contains both blocking and non-blocking assignments File: C:/Verilog/FPGA_project/interface.v Line: 57

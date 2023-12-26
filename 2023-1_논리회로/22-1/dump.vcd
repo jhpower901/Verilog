@@ -1,0 +1,595 @@
+$date
+	Sat May 27 03:25:33 2023
+$end
+$version
+	ModelSim Version 2020.1
+$end
+$timescale
+	100ps
+$end
+
+$scope module tb_top $end
+$var reg 12 ! info_bits [11:0] $end
+$var wire 1 " esti_bits [11] $end
+$var wire 1 # esti_bits [10] $end
+$var wire 1 $ esti_bits [9] $end
+$var wire 1 % esti_bits [8] $end
+$var wire 1 & esti_bits [7] $end
+$var wire 1 ' esti_bits [6] $end
+$var wire 1 ( esti_bits [5] $end
+$var wire 1 ) esti_bits [4] $end
+$var wire 1 * esti_bits [3] $end
+$var wire 1 + esti_bits [2] $end
+$var wire 1 , esti_bits [1] $end
+$var wire 1 - esti_bits [0] $end
+$var wire 1 . ham_dis [3] $end
+$var wire 1 / ham_dis [2] $end
+$var wire 1 0 ham_dis [1] $end
+$var wire 1 1 ham_dis [0] $end
+
+$scope module top0 $end
+$var wire 1 2 info_bits [11] $end
+$var wire 1 3 info_bits [10] $end
+$var wire 1 4 info_bits [9] $end
+$var wire 1 5 info_bits [8] $end
+$var wire 1 6 info_bits [7] $end
+$var wire 1 7 info_bits [6] $end
+$var wire 1 8 info_bits [5] $end
+$var wire 1 9 info_bits [4] $end
+$var wire 1 : info_bits [3] $end
+$var wire 1 ; info_bits [2] $end
+$var wire 1 < info_bits [1] $end
+$var wire 1 = info_bits [0] $end
+$var wire 1 " esti_bits [11] $end
+$var wire 1 # esti_bits [10] $end
+$var wire 1 $ esti_bits [9] $end
+$var wire 1 % esti_bits [8] $end
+$var wire 1 & esti_bits [7] $end
+$var wire 1 ' esti_bits [6] $end
+$var wire 1 ( esti_bits [5] $end
+$var wire 1 ) esti_bits [4] $end
+$var wire 1 * esti_bits [3] $end
+$var wire 1 + esti_bits [2] $end
+$var wire 1 , esti_bits [1] $end
+$var wire 1 - esti_bits [0] $end
+$var wire 1 . ham_dis [3] $end
+$var wire 1 / ham_dis [2] $end
+$var wire 1 0 ham_dis [1] $end
+$var wire 1 1 ham_dis [0] $end
+$var wire 1 > codeword [16] $end
+$var wire 1 ? codeword [15] $end
+$var wire 1 @ codeword [14] $end
+$var wire 1 A codeword [13] $end
+$var wire 1 B codeword [12] $end
+$var wire 1 C codeword [11] $end
+$var wire 1 D codeword [10] $end
+$var wire 1 E codeword [9] $end
+$var wire 1 F codeword [8] $end
+$var wire 1 G codeword [7] $end
+$var wire 1 H codeword [6] $end
+$var wire 1 I codeword [5] $end
+$var wire 1 J codeword [4] $end
+$var wire 1 K codeword [3] $end
+$var wire 1 L codeword [2] $end
+$var wire 1 M codeword [1] $end
+$var wire 1 N codeword [0] $end
+
+$scope module enc $end
+$var wire 1 2 info_bits [11] $end
+$var wire 1 3 info_bits [10] $end
+$var wire 1 4 info_bits [9] $end
+$var wire 1 5 info_bits [8] $end
+$var wire 1 6 info_bits [7] $end
+$var wire 1 7 info_bits [6] $end
+$var wire 1 8 info_bits [5] $end
+$var wire 1 9 info_bits [4] $end
+$var wire 1 : info_bits [3] $end
+$var wire 1 ; info_bits [2] $end
+$var wire 1 < info_bits [1] $end
+$var wire 1 = info_bits [0] $end
+$var wire 1 > codeword [16] $end
+$var wire 1 ? codeword [15] $end
+$var wire 1 @ codeword [14] $end
+$var wire 1 A codeword [13] $end
+$var wire 1 B codeword [12] $end
+$var wire 1 C codeword [11] $end
+$var wire 1 D codeword [10] $end
+$var wire 1 E codeword [9] $end
+$var wire 1 F codeword [8] $end
+$var wire 1 G codeword [7] $end
+$var wire 1 H codeword [6] $end
+$var wire 1 I codeword [5] $end
+$var wire 1 J codeword [4] $end
+$var wire 1 K codeword [3] $end
+$var wire 1 L codeword [2] $end
+$var wire 1 M codeword [1] $end
+$var wire 1 N codeword [0] $end
+$var wire 1 O p1 $end
+$var wire 1 P p2 $end
+$var wire 1 Q p3 $end
+$var wire 1 R p4 $end
+$var wire 1 S p5 $end
+$upscope $end
+
+$scope module dec $end
+$var wire 1 > codeword [16] $end
+$var wire 1 ? codeword [15] $end
+$var wire 1 @ codeword [14] $end
+$var wire 1 A codeword [13] $end
+$var wire 1 B codeword [12] $end
+$var wire 1 C codeword [11] $end
+$var wire 1 D codeword [10] $end
+$var wire 1 E codeword [9] $end
+$var wire 1 F codeword [8] $end
+$var wire 1 G codeword [7] $end
+$var wire 1 H codeword [6] $end
+$var wire 1 I codeword [5] $end
+$var wire 1 J codeword [4] $end
+$var wire 1 K codeword [3] $end
+$var wire 1 L codeword [2] $end
+$var wire 1 M codeword [1] $end
+$var wire 1 N codeword [0] $end
+$var reg 12 T esti_bits [11:0] $end
+$var reg 5 U syndrome [0:4] $end
+$var reg 17 V codeword_reg [16:0] $end
+$upscope $end
+
+$scope module comp $end
+$var wire 1 2 info_bits [11] $end
+$var wire 1 3 info_bits [10] $end
+$var wire 1 4 info_bits [9] $end
+$var wire 1 5 info_bits [8] $end
+$var wire 1 6 info_bits [7] $end
+$var wire 1 7 info_bits [6] $end
+$var wire 1 8 info_bits [5] $end
+$var wire 1 9 info_bits [4] $end
+$var wire 1 : info_bits [3] $end
+$var wire 1 ; info_bits [2] $end
+$var wire 1 < info_bits [1] $end
+$var wire 1 = info_bits [0] $end
+$var wire 1 " esti_bits [11] $end
+$var wire 1 # esti_bits [10] $end
+$var wire 1 $ esti_bits [9] $end
+$var wire 1 % esti_bits [8] $end
+$var wire 1 & esti_bits [7] $end
+$var wire 1 ' esti_bits [6] $end
+$var wire 1 ( esti_bits [5] $end
+$var wire 1 ) esti_bits [4] $end
+$var wire 1 * esti_bits [3] $end
+$var wire 1 + esti_bits [2] $end
+$var wire 1 , esti_bits [1] $end
+$var wire 1 - esti_bits [0] $end
+$var reg 4 W ham_dis [3:0] $end
+$var reg 12 X info_bits_reg [11:0] $end
+$var reg 12 Y esti_bits_reg [11:0] $end
+$var integer 32 Z sum $end
+$var integer 32 [ i $end
+$upscope $end
+$upscope $end
+$upscope $end
+$enddefinitions $end
+#0
+$dumpvars
+b10101111 !
+b10101111 T
+b1110 U
+b101001110101 V
+b0 W
+b10101111 X
+b10101111 Y
+b0 Z
+b1100 [
+1-
+1,
+1+
+1*
+0)
+1(
+0'
+1&
+0%
+0$
+0#
+0"
+01
+00
+0/
+0.
+1N
+0M
+1L
+0K
+1J
+1I
+1H
+0G
+0F
+1E
+0D
+1C
+0B
+0A
+0@
+0?
+0>
+1O
+0P
+0Q
+0R
+0S
+1=
+1<
+1;
+1:
+09
+18
+07
+16
+05
+04
+03
+02
+$end
+#200
+b101001011101 !
+0<
+19
+08
+17
+06
+14
+12
+1S
+1P
+1R
+1Q
+1M
+1K
+0J
+1G
+1F
+0E
+1D
+0C
+1A
+1?
+1>
+b11010010111101111 V
+b11000010111101111 V
+b11010010111101111 V
+b101001011101 T
+b101001011101 X
+b0 [
+b1 [
+b1 Z
+b10 [
+b11 [
+b100 [
+b10 Z
+b101 [
+b11 Z
+b110 [
+b100 Z
+b111 [
+b101 Z
+b1000 [
+b1001 [
+b110 Z
+b1010 [
+b1011 [
+b111 Z
+b1100 [
+b111 W
+11
+10
+1/
+0,
+1)
+0(
+1'
+0&
+1$
+1"
+b101001011101 Y
+b0 Z
+b0 [
+b1 [
+b10 [
+b11 [
+b100 [
+b101 [
+b110 [
+b111 [
+b1000 [
+b1001 [
+b1010 [
+b1011 [
+b1100 [
+b0 W
+01
+00
+0/
+#400
+b100101111010 !
+0=
+1<
+0;
+18
+15
+04
+0R
+0O
+0N
+0L
+1J
+0I
+0G
+1E
+1B
+0A
+b11001011101011010 V
+b11011011101011010 V
+b11001011101011010 V
+b100101111010 T
+b100101111010 X
+b0 [
+b1 Z
+b1 [
+b10 Z
+b10 [
+b11 Z
+b11 [
+b100 [
+b101 [
+b100 Z
+b110 [
+b111 [
+b1000 [
+b101 Z
+b1001 [
+b110 Z
+b1010 [
+b1011 [
+b1100 [
+b110 W
+10
+1/
+0-
+1,
+0+
+1(
+1%
+0$
+b100101111010 Y
+b0 Z
+b0 [
+b1 [
+b10 [
+b11 [
+b100 [
+b101 [
+b110 [
+b111 [
+b1000 [
+b1001 [
+b1010 [
+b1011 [
+b1100 [
+b0 W
+00
+0/
+#600
+b10111010000 !
+0<
+0:
+08
+16
+13
+02
+0S
+1R
+0P
+0M
+0J
+0H
+1G
+0E
+1C
+1@
+0?
+0>
+b101110110001000 V
+b111110110001000 V
+b101110110001000 V
+b10111010000 T
+b10111010000 X
+b0 [
+b1 [
+b1 Z
+b10 [
+b11 [
+b10 Z
+b100 [
+b101 [
+b11 Z
+b110 [
+b111 [
+b100 Z
+b1000 [
+b1001 [
+b1010 [
+b101 Z
+b1011 [
+b110 Z
+b1100 [
+b110 W
+10
+1/
+0,
+0*
+0(
+1&
+1#
+0"
+b10111010000 Y
+b0 Z
+b0 [
+b1 [
+b10 [
+b11 [
+b100 [
+b101 [
+b110 [
+b111 [
+b1000 [
+b1001 [
+b1010 [
+b1011 [
+b1100 [
+b0 W
+00
+0/
+#800
+b101111111000 !
+1:
+18
+14
+03
+12
+1S
+0R
+1O
+0Q
+1N
+0K
+1H
+0G
+1E
+1A
+0@
+1?
+1>
+b11011111101000001 V
+b11001111101000001 V
+b11011111101000001 V
+b101111111000 T
+b101111111000 X
+b0 [
+b1 [
+b10 [
+b11 [
+b1 Z
+b100 [
+b101 [
+b10 Z
+b110 [
+b111 [
+b1000 [
+b1001 [
+b11 Z
+b1010 [
+b100 Z
+b1011 [
+b101 Z
+b1100 [
+b101 W
+11
+1/
+1*
+1(
+1$
+0#
+1"
+b101111111000 Y
+b0 Z
+b0 [
+b1 [
+b10 [
+b11 [
+b100 [
+b101 [
+b110 [
+b111 [
+b1000 [
+b1001 [
+b1010 [
+b1011 [
+b1100 [
+b0 W
+01
+0/
+#1000
+b0 !
+0:
+09
+08
+07
+06
+05
+04
+02
+0S
+0O
+0N
+0H
+0F
+0E
+0D
+0C
+0B
+0A
+0?
+0>
+b0 V
+b10000000000000 V
+b0 V
+b0 T
+b0 X
+b0 [
+b1 [
+b10 [
+b11 [
+b1 Z
+b100 [
+b10 Z
+b101 [
+b11 Z
+b110 [
+b100 Z
+b111 [
+b101 Z
+b1000 [
+b110 Z
+b1001 [
+b111 Z
+b1010 [
+b1011 [
+b1000 Z
+b1100 [
+b1000 W
+1.
+0*
+0)
+0(
+0'
+0&
+0%
+0$
+0"
+b0 Y
+b0 Z
+b0 [
+b1 [
+b10 [
+b11 [
+b100 [
+b101 [
+b110 [
+b111 [
+b1000 [
+b1001 [
+b1010 [
+b1011 [
+b1100 [
+b0 W
+0.

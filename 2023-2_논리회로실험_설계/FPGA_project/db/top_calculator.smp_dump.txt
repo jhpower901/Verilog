@@ -1,0 +1,9 @@
+
+State Machine - |top_calculator|interface:UI|state
+Name state.ERROR state.calculating state.operand2_in state.operator_in state.operand1_in state.ideal 
+state.ideal 0 0 0 0 0 0 
+state.operand1_in 0 0 0 0 1 1 
+state.operator_in 0 0 0 1 0 1 
+state.operand2_in 0 0 1 0 0 1 
+state.calculating 0 1 0 0 0 1 
+state.ERROR 1 0 0 0 0 1 
