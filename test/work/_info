@@ -1,0 +1,287 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+vcalculate
+!s110 1710221866
+!i10b 1
+!s100 73WU`L?0>7ek<PRgO<7Si0
+Z0 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IBYPg170?ecXimBLV`<bH40
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/jhpower901/Verilog/test
+Z3 w1709778440
+8C:/jhpower901/Verilog/test/calculate.v
+FC:/jhpower901/Verilog/test/calculate.v
+!i122 0
+L0 1 45
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1710221866.000000
+!s107 C:/jhpower901/Verilog/test/calculate.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/test/calculate.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vclock_divider
+Z7 !s110 1710221867
+!i10b 1
+!s100 ?5fPJ`Xda8Y?=I7RbJAX71
+R0
+IfGZUTE?J`56aTlzOoM@m@0
+R1
+R2
+R3
+8clock_divider.v
+Fclock_divider.v
+!i122 5
+L0 1 33
+R4
+r1
+!s85 0
+31
+Z8 !s108 1710221867.000000
+Z9 !s107 interface.v|segment_driver.v|clock_divider.v|keypad_driver.v|C:/jhpower901/Verilog/test/tb_calculator.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/test/tb_calculator.v|
+!i113 1
+R5
+R6
+vinterface
+R7
+!i10b 1
+!s100 ;F=Fk<AjWX<ceV1W?H>Vl1
+R0
+IFUbOQFCBj[2>Z8RMTeE^13
+R1
+R2
+R3
+8interface.v
+Finterface.v
+!i122 5
+L0 1 287
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vkeypad_driver
+R7
+!i10b 1
+!s100 []RVZ3F4M@ce`Gi?O8a7]3
+R0
+IUA>kWSSiJb6JeAmM3T^CJ2
+R1
+R2
+R3
+8keypad_driver.v
+Fkeypad_driver.v
+!i122 5
+L0 10 84
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vsegment_driver
+R7
+!i10b 1
+!s100 AYG1^6jOLJhQ8b44?6Fnk2
+R0
+IjhcZe5ei4J`gU:Yd8`DI42
+R1
+R2
+R3
+8segment_driver.v
+Fsegment_driver.v
+!i122 5
+L0 1 293
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_calulate
+R7
+!i10b 1
+!s100 FDU^io[f:R?IXlLX8[>h42
+R0
+IAmRKQHfIj9FLdbl2AjU3=2
+R1
+R2
+R3
+Z11 8C:/jhpower901/Verilog/test/tb_calculator.v
+Z12 FC:/jhpower901/Verilog/test/tb_calculator.v
+!i122 5
+L0 122 125
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_clock_divider
+R7
+!i10b 1
+!s100 JcSjnBIYkB8263dQ>8:IV3
+R0
+IO^2ll:DE28<_<6go_W<BS0
+R1
+R2
+R3
+R11
+R12
+!i122 5
+L0 43 20
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_interface
+R7
+!i10b 1
+!s100 fBdIA_C>ROg_VGfcbYEhc1
+R0
+I^US=No]QCHkh8eno5G:VH1
+R1
+R2
+R3
+R11
+R12
+!i122 5
+L0 248 79
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_keypad_driver
+R7
+!i10b 1
+!s100 ZAf99Ikl2Bb=ZW0AZAlb?0
+R0
+IO1WBMCe=hUAIHUc;A;fU<2
+R1
+R2
+R3
+R11
+R12
+!i122 5
+L0 7 35
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_segment_driver
+R7
+!i10b 1
+!s100 Ble:khzb_N?MkUlgE8kjN0
+R0
+IdBETRCz1Rbo]@>3kd0b2B3
+R1
+R2
+R3
+R11
+R12
+!i122 5
+L0 64 57
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtb_top_calculator
+R7
+!i10b 1
+!s100 2hJz:@18l5A<n?:8]<oE`3
+R0
+I4kg?TM_4c@UilnP5oTS:O0
+R1
+R2
+R3
+R11
+R12
+!i122 5
+L0 328 194
+R4
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R5
+R6
+vtop_calculator
+R7
+!i10b 1
+!s100 DH1J`L:4zGAm`XzM`IW:F1
+R0
+I`PN9Ba0h752_V<@kSgY;Q0
+R1
+R2
+R3
+8C:/jhpower901/Verilog/test/top_calculator.v
+FC:/jhpower901/Verilog/test/top_calculator.v
+!i122 6
+L0 1 44
+R4
+r1
+!s85 0
+31
+R8
+!s107 C:/jhpower901/Verilog/test/top_calculator.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/test/top_calculator.v|
+!i113 1
+R5
+R6

@@ -1,0 +1,103 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/SulHoe/24-1_Digital_Design/ahnjaehyung
+vassignemt1
+Z0 !s110 1710919187
+!i10b 1
+!s100 n86i17j=_V<QgnnW[HIBo0
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IO1zgeO:gM;X_L@B16FnT92
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/jhpower901/Verilog/Digital_System_Design
+w1710919096
+8C:\jhpower901\Verilog\Digital_System_Design\assignment1.v
+FC:\jhpower901\Verilog\Digital_System_Design\assignment1.v
+!i122 2
+Z4 L0 1 6
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1710919187.000000
+!s107 C:\jhpower901\Verilog\Digital_System_Design\assignment1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\jhpower901\Verilog\Digital_System_Design\assignment1.v|
+!i113 1
+Z7 o-work work
+Z8 tCvgOpt 0
+vassignment1
+Z9 !s110 1710920100
+!i10b 1
+!s100 mdMaLPU4SX`k`z8ReL>[Q1
+R1
+I@=R7?:<_Bbg;Z1VnDb5z50
+R2
+R3
+w1710920000
+8C:/jhpower901/Verilog/Digital_System_Design/assignment1.v
+FC:/jhpower901/Verilog/Digital_System_Design/assignment1.v
+!i122 19
+R4
+R5
+r1
+!s85 0
+31
+Z10 !s108 1710920100.000000
+!s107 C:/jhpower901/Verilog/Digital_System_Design/assignment1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/assignment1.v|
+!i113 1
+R7
+R8
+vtb_assignmnet
+R0
+!i10b 1
+!s100 ;f4zc>FkD;SnZ6ZAM8E:T3
+R1
+ILN3gdjd[KkmO2P[Dh1eWb0
+R2
+R3
+w1710919182
+8C:\jhpower901\Verilog\Digital_System_Design\tb_assignment.v
+FC:\jhpower901\Verilog\Digital_System_Design\tb_assignment.v
+!i122 3
+L0 2 16
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:\jhpower901\Verilog\Digital_System_Design\tb_assignment.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:\jhpower901\Verilog\Digital_System_Design\tb_assignment.v|
+!i113 1
+R7
+R8
+vtb_assignmnet1
+R9
+!i10b 1
+!s100 UR;C<gAhT]HD:bmb6=SN71
+R1
+IKbUNb<[TZK;Pzc?Mjj90H1
+R2
+R3
+w1710920080
+8C:/jhpower901/Verilog/Digital_System_Design/tb_assignment.v
+FC:/jhpower901/Verilog/Digital_System_Design/tb_assignment.v
+!i122 20
+L0 2 20
+R5
+r1
+!s85 0
+31
+R10
+!s107 C:/jhpower901/Verilog/Digital_System_Design/tb_assignment.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/tb_assignment.v|
+!i113 1
+R7
+R8
