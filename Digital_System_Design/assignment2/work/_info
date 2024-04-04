@@ -1,0 +1,173 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/jhpower901/Verilog/Digital_System_Design/assignment1
+vadder
+Z0 !s110 1712244321
+!i10b 1
+!s100 EZFZ13mjneV5`[[675F>I2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+INB7KCH9c6moHDhUgL?2QA1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/jhpower901/Verilog/Digital_System_Design/assignment2
+Z4 w1712244238
+Z5 8C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2_hierarchy.v
+Z6 FC:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2_hierarchy.v
+!i122 54
+L0 41 9
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1712244321.000000
+!s107 C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2_hierarchy.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2_hierarchy.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+vassignmnet2
+!s110 1712244320
+!i10b 1
+!s100 LHDiSMkTWh>YhV3c3UB7G0
+R1
+I0oDC[jj3eM`@>U1>gOg6I1
+R2
+R3
+w1712241885
+8C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignmnet2.v
+FC:/jhpower901/Verilog/Digital_System_Design/assignment2/assignmnet2.v
+!i122 52
+L0 1 53
+R7
+r1
+!s85 0
+31
+!s108 1712244320.000000
+!s107 C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignmnet2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignmnet2.v|
+!i113 1
+R10
+R11
+vmultiplier
+R0
+!i10b 1
+!s100 @MF>@`m`UQ8W@>]E0c^4H1
+R1
+ImV3k17oQ80[1eXYcM02E[1
+R2
+R3
+R4
+R5
+R6
+!i122 54
+L0 61 8
+R7
+r1
+!s85 0
+31
+R8
+Z12 !s107 C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2_hierarchy.v|
+R9
+!i113 1
+R10
+R11
+vshifters
+R0
+!i10b 1
+!s100 5Cko5:SHMjYMAGH3DKjVz0
+R1
+I74h9F7][PLN`9>9BfWSC:0
+R2
+R3
+R4
+R5
+R6
+!i122 54
+L0 70 20
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+vsimpleALU
+R0
+!i10b 1
+!s100 0KI_8aIe:Mk=@:^0CZ?g^0
+R1
+IUZ5X5=UlVd?13SnUh>L=^3
+R2
+R3
+R4
+R5
+R6
+!i122 54
+L0 1 39
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+nsimple@a@l@u
+vsubtractor
+R0
+!i10b 1
+!s100 z1>1;<::R75`Lj2a_1_X53
+R1
+IN11H3f7hCF<D_^LF]XYX^1
+R2
+R3
+R4
+R5
+R6
+!i122 54
+L0 51 9
+R7
+r1
+!s85 0
+31
+R8
+R12
+R9
+!i113 1
+R10
+R11
+vtb_assignmnet2
+R0
+!i10b 1
+!s100 AdS^@]2?5mXY<8PF2?mIn2
+R1
+Ig42K_a?jgz=]enk6Wn5<M1
+R2
+R3
+w1712244317
+8C:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v
+FC:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v
+!i122 53
+L0 2 76
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v|
+!i113 1
+R10
+R11
