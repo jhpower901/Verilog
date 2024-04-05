@@ -20,30 +20,30 @@ module tb_assignmnet2 ();
 					3'b001: ref = in_A - in_B;
 					3'b010: ref = in_A * in_B;
 					3'b011: begin
-						in_B = {0, in_B[14:0]} % 17;
+						in_B = {1'b0, in_B[14:0]} % 17;
 						ref = in_A << in_B;
 					end
 					3'b100: begin
-						in_B = {0, in_B[14:0]} % 17;
+						in_B = {1'b0, in_B[14:0]} % 17;
 						ref = in_A >> in_B;
 					end
 					3'b101: begin
-						in_B = {0, in_B[14:0]} % 17;
+						in_B = {1'b0, in_B[14:0]} % 17;
 						ref = in_A <<< in_B;
 					end
 					3'b110: begin
-						in_B = {0, in_B[14:0]} % 17;
+						in_B = {1'b0, in_B[14:0]} % 17;
 						ref = in_A >>> in_B;
 					end
 					default: ref = 0;
 				endcase
-				#100;
+
 				if ($signed(ref) != $signed(result)) begin
 					ERROR = ERROR + 1;
 				end
 				$display("ref: %d, res: %d\n", ref, result);
+				#100;
 			end
-
 		end
 		$display("The number of errors: %d\n", ERROR);
 
