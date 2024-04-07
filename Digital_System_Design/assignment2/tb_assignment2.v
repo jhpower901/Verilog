@@ -77,7 +77,6 @@ module tb_assignmnet2 ();
 		$finish;
 	end
 
-	//assignmnet2 ALU (.in_A(in_A), .in_B(in_B), .opcode(opcode), .result(result), .is_ovf(is_ovf));
 	simpleALU ALU (.in_A(in_A), .in_B(in_B), .opcode(opcode), .result(result), .is_ovf(is_ovf));
 
 endmodule
