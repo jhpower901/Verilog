@@ -56,21 +56,25 @@ module tb_assignmnet2 ();
 		//overflow 1 p + p = n
 		in_A = {4'b0111, 12'hFFF};
 		in_B = 16'b1;
+		ref = in_A + in_B;
 		opcode = 3'b000;
 		#100;
 		//overflow 2 n + n = p
 		in_A = {1'b1, 15'b0};
 		in_B = {1'b1, 15'b0};
+		ref = in_A + in_B;
 		opcode = 3'b000;
 		#100;
 		//overflow 3 p - n = n
 		in_A = 16'b1;
 		in_B = {1'b1, 15'b0};
+		ref = in_A - in_B;
 		opcode = 3'b001;
 		#100;
 		//overflow 4 n - p = p
 		in_A = {1'b1, 15'b0};
 		in_B = 16'b1;
+		ref = in_A - in_B;
 		opcode = 3'b001;
 		#100;
 

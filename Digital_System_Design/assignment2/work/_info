@@ -10,23 +10,23 @@ z2
 cModel Technology
 dC:/jhpower901/Verilog/Digital_System_Design/assignment1
 vadder
-Z0 !s110 1712498312
+Z0 !s110 1712513258
 !i10b 1
 !s100 ]4aL93;8OLeffmW0N7FbK3
 Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
 I]_831>;j8;hA>NH;HKb:K3
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 Z3 dC:/jhpower901/Verilog/Digital_System_Design/assignment2
-Z4 w1712495269
+Z4 w1712505325
 Z5 8C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2.v
 Z6 FC:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2.v
-!i122 173
+!i122 179
 L0 42 9
 Z7 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z8 !s108 1712498312.000000
+Z8 !s108 1712513258.000000
 !s107 C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/assignment2/assignment2.v|
 !i113 1
@@ -66,7 +66,7 @@ R3
 R4
 R5
 R6
-!i122 173
+!i122 179
 L0 62 8
 R7
 r1
@@ -89,7 +89,7 @@ R3
 R4
 R5
 R6
-!i122 173
+!i122 179
 L0 71 15
 R7
 r1
@@ -112,7 +112,7 @@ R3
 R4
 R5
 R6
-!i122 173
+!i122 179
 L0 1 40
 R7
 r1
@@ -136,7 +136,7 @@ R3
 R4
 R5
 R6
-!i122 173
+!i122 179
 L0 52 9
 R7
 r1
@@ -151,16 +151,16 @@ R11
 vtb_assignmnet2
 R0
 !i10b 1
-!s100 B6Q<WeeGb8aURUOLR[k<31
+!s100 _Bk4?A4hSl4J2F^XL4RZZ1
 R1
-IK[R:HPfTNMUz<4Gf3;Vg@1
+IN3b`O?QC<FoR0A5GobgCf3
 R2
 R3
-w1712498289
+w1712513229
 8C:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v
 FC:/jhpower901/Verilog/Digital_System_Design/assignment2/tb_assignment2.v
-!i122 172
-L0 2 81
+!i122 178
+L0 2 85
 R7
 r1
 !s85 0

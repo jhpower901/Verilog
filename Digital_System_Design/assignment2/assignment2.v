@@ -76,7 +76,7 @@ module shifters (
 	output					is_ovf		//overflow checker
 );
 	assign is_ovf = 0;
-	assign result = 	(opcode == 2'b11) ? in_A << in_B :	//logical shift left
+	assign result = (opcode == 2'b11) ? in_A << in_B :	//logical shift left
 					(opcode == 2'b00) ? in_A >> in_B :	//logical shift right
 					(opcode == 2'b01) ? in_A <<< in_B :	//arithmetic shift left
 					(opcode == 2'b10) ? {{16{in_A[15]}}, in_A} >>> in_B :	//arithnetic shift right
