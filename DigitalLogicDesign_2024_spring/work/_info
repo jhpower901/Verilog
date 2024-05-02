@@ -1,0 +1,172 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_pro/21.1
+vchannel
+Z0 !s110 1714673699
+!i10b 1
+!s100 ]ofBW]9mRXSc_Z_z0E7W?3
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+IionPAeEo@72igDoTIn]f]3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring
+w1714672875
+8C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/channel.v
+FC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/channel.v
+!i122 88
+L0 1 21
+Z4 OV;L;2020.1;71
+r1
+!s85 0
+31
+!s108 1714673698.000000
+!s107 C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/channel.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/channel.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vreciever
+R0
+!i10b 1
+!s100 6B9ZUJ[:VK@_Q6f7m5H]:3
+R1
+In?[EL[YG=4JR;EV_j0RUP1
+R2
+R3
+w1714673206
+8C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/reciever.v
+FC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/reciever.v
+!i122 89
+L0 1 6
+R4
+r1
+!s85 0
+31
+Z7 !s108 1714673699.000000
+!s107 C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/reciever.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/reciever.v|
+!i113 1
+R5
+R6
+vsender
+R0
+!i10b 1
+!s100 ikk2<UTYfRMcPMjCAH_<]2
+R1
+IbSWnnWM[:ff>R?G9<MFEd2
+R2
+R3
+w1714665835
+8C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/sender.v
+FC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/sender.v
+!i122 90
+L0 1 7
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/sender.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/sender.v|
+!i113 1
+R5
+R6
+vtb_channel
+R0
+!i10b 1
+!s100 [A`iWWH6;@:kP9ToSJ8e=0
+R1
+IbZOGSCD?PVETz]Q?RkDST3
+R2
+R3
+Z8 w1714673687
+Z9 8C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/tb_top.v
+Z10 FC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/tb_top.v
+!i122 91
+L0 48 26
+R4
+r1
+!s85 0
+31
+R7
+!s107 C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/tb_top.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/tb_top.v|
+!i113 1
+R5
+R6
+vtb_reciever
+R0
+!i10b 1
+!s100 Fi?SEK@JBaFC;kdYcXKai2
+R1
+IX6Q>=_[8jO:F0^DG;n1Pj3
+R2
+R3
+R8
+R9
+R10
+!i122 91
+L0 75 16
+R4
+r1
+!s85 0
+31
+R7
+Z12 !s107 C:/jhpower901/Verilog/DigitalLogicDesign_2024_spring/tb_top.v|
+R11
+!i113 1
+R5
+R6
+vtb_sender
+R0
+!i10b 1
+!s100 6RGT>U0<8z@WdUQ5JESj23
+R1
+I7gn9lFP>RiR:o_z;fdbZV2
+R2
+R3
+R8
+R9
+R10
+!i122 91
+L0 30 17
+R4
+r1
+!s85 0
+31
+R7
+R12
+R11
+!i113 1
+R5
+R6
+vtb_top
+R0
+!i10b 1
+!s100 k6U9U>zXV92Sn>_f1>oJB2
+R1
+I]=@oGB;V5Ee5XT3P@6fZX1
+R2
+R3
+R8
+R9
+R10
+!i122 91
+L0 3 26
+R4
+r1
+!s85 0
+31
+R7
+R12
+R11
+!i113 1
+R5
+R6
