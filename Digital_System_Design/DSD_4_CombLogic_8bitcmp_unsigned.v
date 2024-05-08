@@ -1,6 +1,6 @@
-module 8bcmp_insigned_BehavialModel (
-	input	[7:0]	P, Q;
-	output	reg		PGTQ, PEQQ, PLTQ;
+module cmp8b_insigned_BehavialModel (
+	input	[7:0]	P, Q,
+	output	reg		PGTQ, PEQQ, PLTQ
 );
 
 always @(*) begin
@@ -18,9 +18,10 @@ end
 
 endmodule
 
-module parity_check (
-	parameter 			BITS = 8,
-	input	[BITS-1, 0]	IN1, IN2,
+module parity_check #(
+	parameter 			BITS = 8
+) (
+	input	[BITS-1:0]	IN1, IN2,
 	output				EVEN
 );
 
@@ -28,11 +29,12 @@ module parity_check (
 
 endmodule
 
-module 8bcmp_insigned_StructualModel (
+module cmp8b_insigned_StructualModel (
 	input	[7:0]	P, Q,
-	output	reg		PGTQ, PEQQ, PLTQ,
+	output	reg		PGTQ, PEQQ, PLTQ
 );
 	wire 	[7:1]	trunc_eq_w;			//i번째 bit 앞의 값들이 같은지 비교해서 결과를 저장할 벡터
+	integer j;
 	genvar i;
 	generate
 		for (i = 7; i >= 1; i = i - 1)
@@ -45,8 +47,8 @@ module 8bcmp_insigned_StructualModel (
 		if (P[7]&~Q[7])
 			PGTQ = 1'b1;
 		else
-		for (i = 6; i > 0; i = i - 1) begin
-			if (P[i]&~Q[i] && trunc_eq_w[i+1])
+		for (j = 6; j > 0; j = j - 1) begin
+			if (P[j]&~Q[j] && trunc_eq_w[j+1])
 				PGTQ = 1'b1;
 		end
 		if (~(P[0]^Q[0]) && trunc_eq_w[1])

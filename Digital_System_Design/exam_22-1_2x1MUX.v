@@ -28,7 +28,7 @@ module MUX2x1_BehavialModel (
 );
 	always @(*) begin
 		if (EN_L) begin
-			F = 1' b0;
+			F = 1'b0;
 		end else begin
 			case (SEL)
 				0 : F = A;

@@ -1,0 +1,177 @@
+m255
+K4
+z2
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/jhpower901/Verilog/DigitalLogicDesign_2024_spring
+vcmp8b_insigned_BehavialModel
+Z0 !s110 1715106239
+!i10b 1
+!s100 M8WH`;K4c8c0WmXTal5HN2
+Z1 !s11b Dg1SIo80bB@j0V0VzS_@n1
+Ib80cdmAYLhEGlkHJ]Y2PN3
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+Z3 dC:/jhpower901/Verilog/Digital_System_Design
+Z4 w1715105750
+Z5 8C:/jhpower901/Verilog/Digital_System_Design/DSD_4_CombLogic_8bitcmp_unsigned.v
+Z6 FC:/jhpower901/Verilog/Digital_System_Design/DSD_4_CombLogic_8bitcmp_unsigned.v
+!i122 24
+L0 1 19
+Z7 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z8 !s108 1715106239.000000
+Z9 !s107 C:/jhpower901/Verilog/Digital_System_Design/DSD_4_CombLogic_8bitcmp_unsigned.v|
+Z10 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/DSD_4_CombLogic_8bitcmp_unsigned.v|
+!i113 1
+Z11 o-work work
+Z12 tCvgOpt 0
+ncmp8b_insigned_@behavial@model
+vcmp8b_insigned_StructualModel
+R0
+!i10b 1
+!s100 cQNX[n?3fMn7VaP;Eg55?0
+R1
+IMeT:CgJTa6fW7b^0z:b?Z3
+R2
+R3
+R4
+R5
+R6
+!i122 24
+L0 32 27
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+ncmp8b_insigned_@structual@model
+vMUX2x1_BehavialModel
+R0
+!i10b 1
+!s100 W?n6`9KzmQR4XLZaJXGTc3
+R1
+IIH6EiJHDX8Sek8QdakCFi1
+R2
+R3
+Z13 w1715105782
+Z14 8C:/jhpower901/Verilog/Digital_System_Design/exam_22-1_2x1MUX.v
+Z15 FC:/jhpower901/Verilog/Digital_System_Design/exam_22-1_2x1MUX.v
+!i122 26
+L0 25 16
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/jhpower901/Verilog/Digital_System_Design/exam_22-1_2x1MUX.v|
+Z16 !s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/exam_22-1_2x1MUX.v|
+!i113 1
+R11
+R12
+n@m@u@x2x1_@behavial@model
+vMUX2x1_DataflowModel
+R0
+!i10b 1
+!s100 QOVoYA[5cMm^b_eBnmFf10
+R1
+IC:2D;Zgg]IA>f][]EP65a3
+R2
+R3
+R13
+R14
+R15
+!i122 26
+L0 17 7
+R7
+r1
+!s85 0
+31
+R8
+Z17 !s107 C:/jhpower901/Verilog/Digital_System_Design/exam_22-1_2x1MUX.v|
+R16
+!i113 1
+R11
+R12
+n@m@u@x2x1_@dataflow@model
+vMUX2x1_StructualModel
+R0
+!i10b 1
+!s100 eHj7E7o]cMCV74X:k4CK@2
+R1
+I9aC`L_]03b1RCcjkza<UJ0
+R2
+R3
+R13
+R14
+R15
+!i122 26
+L0 1 15
+R7
+r1
+!s85 0
+31
+R8
+R17
+R16
+!i113 1
+R11
+R12
+n@m@u@x2x1_@structual@model
+vparity_check
+R0
+!i10b 1
+!s100 1f:oLFTcdYmF@ja[P<;8J2
+R1
+IG<fR?;5doG=<5k]^mD;<E0
+R2
+R3
+R4
+R5
+R6
+!i122 24
+L0 21 10
+R7
+r1
+!s85 0
+31
+R8
+R9
+R10
+!i113 1
+R11
+R12
+vsequence_detector
+R0
+!i10b 1
+!s100 2eB8YCS9KgQ69@MXCeB:61
+R1
+Idd:JBgME6`AVjY;L1k@k^1
+R2
+R3
+w1715106231
+8C:/jhpower901/Verilog/Digital_System_Design/DSD_6_sequence_detector.v
+FC:/jhpower901/Verilog/Digital_System_Design/DSD_6_sequence_detector.v
+!i122 25
+L0 8 38
+R7
+r1
+!s85 0
+31
+R8
+!s107 C:/jhpower901/Verilog/Digital_System_Design/DSD_6_sequence_detector.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/jhpower901/Verilog/Digital_System_Design/DSD_6_sequence_detector.v|
+!i113 1
+R11
+R12
