@@ -18,7 +18,7 @@ module hunch_fsm(
     output reg  [2:0]   WINNER_DISP,
     output reg          A_DISP, B_DISP, C_DISP
 );
-// state 정의
+// state define
 localparam S_INIT   = 0;
 localparam S_AS     = 1;
 localparam S_BS     = 2;
@@ -35,6 +35,7 @@ localparam S_DRAW   = 10;
 reg [3:0]   c_state;    //current state
 reg [3:0]   n_state;    //next state
 
+// state machine of eche input
 always @(posedge CLK or posedge RST) begin
     if (RST) begin
         A_DISP <= 0;
